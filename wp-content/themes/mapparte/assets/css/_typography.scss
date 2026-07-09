@@ -1,0 +1,50 @@
+// @font-face {
+//   font-family: "GothamPro-Bold";
+//   src: url("../fonts/GothamPro-Bold.eot") format("embedded-opentype"),
+//     url("../fonts/GothamPro-Bold.woff2") format("woff2"), url("../fonts/GothamPro-Bold.woff") format("woff"),
+//     url("../fonts/GothamPro-Bold.ttf") format("truetype");
+//   font-display: swap;
+// }
+// @font-face {
+//   font-family: "GothamPro-medium";
+//   src: url("../fonts/gotham-pro-medium.eot") format("embedded-opentype"),
+//     url("../fonts/gotham-pro-medium.woff2") format("woff2"), url("../fonts/gotham-pro-medium.woff") format("woff"),
+//     url("../fonts/gotham-pro-medium.ttf") format("truetype");
+//   font-display: swap;
+// }
+
+h1 {
+  @include defaultFontStyle($Roboto, 400, 4, 5, $black);
+  font-weight: 500;
+  padding: 4rem 0 2rem 0;
+}
+h2 {
+  @include defaultFontStyle($Roboto, 400, 3.6, 4.6, $black);
+  padding: 3rem 0 1rem 0;
+}
+h3 {
+  @include defaultFontStyle($Roboto, 400, 3.2, 4.2, $black);
+  padding: 1rem 0 0.5rem 0;
+}
+h4 {
+  @include defaultFontStyle($Roboto, 400, 2.8, 3.8, $black);
+  padding: 1rem 0 0.5rem 0;
+}
+h5 {
+  @include defaultFontStyle($Roboto, 400, 2.2, 3.4, $black);
+  padding: 1rem 0 0.5rem 0;
+}
+h6 {
+  @include defaultFontStyle($Roboto, 400, 1.9, 3.2, $black);
+  padding: 0.5rem 0 0.2rem 0;
+}
+p {
+  @include defaultFontStyle($Roboto, 400, 1.8, 3.2, $black);
+}
+span {
+  @include defaultFontStyle($Roboto, 400, 1.5, 2.8, $black);
+}
+
+em, i {
+  font-style: italic;
+}

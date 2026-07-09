@@ -1,0 +1,1 @@
+<p class="my-space-desc"><?php echo __("Indica come hai organizzato lo spazio per svolgere tutte le attività in sicurezza.","mapparte"); ?></p>

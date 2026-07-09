@@ -1,0 +1,3 @@
+<p class="my-space-desc"><?php echo __("Sarà un processo facile e guidato. In pochi e semplici passi ti sarà richiesto di inserire tutti i dati relativi al tuo spazio in modo da descriverlo chiaramente.","mapparte"); ?><p>
+<p class="my-space-desc" style="font-weight:bold"><?php echo __("Inserisci il tuo spazio indicando il numero di sale complessivo; se il tuo spazio ha più sale, successivamente, ti invitiamo a inserire  singolarmente ogni sala, seguendo la stessa procedura, per ottimizzarne l’utilizzo.","mapparte"); ?></p>
+<p class="my-space-desc"><?php echo __("Iniziamo: Seleziona la categoria più appropriata al tuo spazio. Che tipo di spazio è? Scegli dall’elenco quello più idoneo.","mapparte"); ?></p>

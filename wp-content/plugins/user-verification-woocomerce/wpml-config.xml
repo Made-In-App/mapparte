@@ -1,0 +1,19 @@
+<wpml-config>
+
+  <admin-texts>
+
+    <key name="xoo-uv-email-options">
+      <key name="m-subject-txt" />
+      <key name="m-body-txt" />
+      <key name="m-footer-txt" />
+      <key name="m-verifybtn-txt" />
+    </key>
+
+    <key name="xoo-uv-general-options">
+      <key name="txt-onregister" />
+      <key name="txt-login-error" />
+    </key>
+
+  </admin-texts>
+
+</wpml-config>

@@ -1,0 +1,14 @@
+<wpml-config>
+
+  <admin-texts>
+
+    <key name="xoo-sl-gl-options">
+      <key name="gl-txt-heading" />
+      <key name="gl-txt-sucess" />
+      <key name="gl-fb-btntxt" />
+      <key name="gl-goo-btntxt" />
+    </key>
+
+  </admin-texts>
+
+</wpml-config>

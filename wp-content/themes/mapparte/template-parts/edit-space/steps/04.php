@@ -1,0 +1,94 @@
+<?php
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+global $step_name, $space_data;
+$step_name = __('Elenca i prezzi',"mapparte");
+?>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="italian" role="tabpanel"
+         aria-labelledby="italian-tab">
+        <h4 class="my-space-ttl"><?php echo esc_html($step_name); ?></h4>
+        <div class="dimensioni-wrapper">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h6><?php echo __("Tariffa oraria infrasettimanale","mapparte"); ?></h6>
+                    <div class="form-floating input-group">
+				        <?php $options = array(
+					        'field_groups' => array(), // this will find the field groups for this post (post ID's of the acf post objects)
+					        'fields'       => array( 'price_hour' ),
+					        'form'         => false, // set this to false to prevent the <form> tag from being created
+					        'html_before_fields' => '', // html inside form before fields
+					        'html_after_fields' => '', // html inside form after fields
+				        );
+				        acf_form( $options );
+				        ?>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <h6><?php echo __("Sconto giornaliero","mapparte"); ?> %</h6>
+                    <div class="form-floating input-group">
+				        <?php $options = array(
+					        'field_groups' => array(), // this will find the field groups for this post (post ID's of the acf post objects)
+					        'fields'       => array( 'discount_perc_day' ),
+					        'form'         => false, // set this to false to prevent the <form> tag from being created
+					        'html_before_fields' => '', // html inside form before fields
+					        'html_after_fields' => '', // html inside form after fields
+				        );
+				        acf_form( $options );
+				        ?>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h6><?php echo __("Tariffa oraria weekend","mapparte"); ?></h6>
+                    <div class="form-floating input-group">
+				        <?php $options = array(
+					        'field_groups' => array(), // this will find the field groups for this post (post ID's of the acf post objects)
+					        'fields'       => array( 'price_hour_weekend' ),
+					        'form'         => false, // set this to false to prevent the <form> tag from being created
+					        'html_before_fields' => '', // html inside form before fields
+					        'html_after_fields' => '', // html inside form after fields
+				        );
+				        acf_form( $options );
+				        ?>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <h6><?php echo __("Sconto weekend","mapparte"); ?> %</h6>
+                    <div class="form-floating input-group">
+				        <?php $options = array(
+					        'field_groups' => array(), // this will find the field groups for this post (post ID's of the acf post objects)
+					        'fields'       => array( 'discount_perc_weekend' ),
+					        'form'         => false, // set this to false to prevent the <form> tag from being created
+					        'html_before_fields' => '', // html inside form before fields
+					        'html_after_fields' => '', // html inside form after fields
+				        );
+				        acf_form( $options );
+				        ?>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <h4 class="my-space-ttl"><?php echo __("Sconti","mapparte"); ?></h4>
+                <p class="my-space-desc"><?php echo __("Per 12 ore consecutive cliccando su accetto/non accetto viene applicato uno sconto del 10 percento sulla tariffa oraria infrasettimanale e tariffa oraria weekend.","mapparte"); ?> </p>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-check">
+			            <?php $options = array(
+				            'field_groups' => array(), // this will find the field groups for this post (post ID's of the acf post objects)
+				            'fields'       => array( 'discount' ),
+				            'form'         => false, // set this to false to prevent the <form> tag from being created
+				            'html_before_fields' => '', // html inside form before fields
+				            'html_after_fields' => '', // html inside form after fields
+			            );
+			            acf_form( $options );
+			            ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

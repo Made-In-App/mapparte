@@ -1,0 +1,2117 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mapparte\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-25 07:54+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.2; wp-5.7\n"
+"X-Domain: mapparte"
+
+#: lib/class-bookings.php:103
+#, php-format
+msgid ""
+"%s ha accettato la tua richiesta. Per effettuare il pagamento e confermare "
+"la prenotazione accedi alla tua area riservata entro 2 giorni!"
+msgstr ""
+
+#: lib/class-messages.php:120
+#, php-format
+msgid "%s hai ricevuto un nuovo messaggio da  %s:<br><br>%s"
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/04.php:2
+msgid "1)\ttariffa oraria infrasettimanale,"
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/accettata.php:19
+#: template-parts/admin/booking-steps/guest/nuova-richiesta.php:19
+#: template-parts/admin/booking-steps/host/accettata.php:19
+#: template-parts/admin/booking-steps/host/nuova-richiesta.php:19
+msgid "2 giorni rimanenti"
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/04.php:3
+msgid "2)\ttariffa oraria del weekend."
+msgstr ""
+
+#: lib/class-bookings.php:78
+#, php-format
+msgid ""
+"<b>%s</b> ha accettato la tua richiesta.<br>Per effettuare il pagamento e "
+"confermare la prenotazione accedi alla tua area riservata entro 2 giorni!<br>"
+"<br>%s%s"
+msgstr ""
+
+#: lib/class-bookings.php:72
+#, php-format
+msgid "<b>Messaggio:</b><br>%s<br><br>"
+msgstr ""
+
+#: template-parts/home/in-vetrina.php:39
+msgid "A partire da"
+msgstr ""
+
+#: template-parts/space/detail-space.php:107
+#, php-format
+msgid "A partire da %s euro al giorno"
+msgstr ""
+
+#: template-parts/search/card.php:49 template-parts/search/card-map.php:8
+#: template-parts/space/booking-form.php:2
+#: template-parts/space/detail-space.php:101
+#, php-format
+msgid "A partire da %s € l'ora"
+msgstr ""
+
+#: lib/class-edit-space.php:440
+msgid "A presto e buon lavoro,<br>Il team Mapparte!"
+msgstr ""
+
+#: template-parts/space/detail-space.php:67
+msgid "ACCESSIBILE<br>AI DISABILI"
+msgstr ""
+
+#: template-parts/search/panel.php:172
+#: template-parts/space/detail-space.php:130
+msgid "Accessibilità"
+msgstr ""
+
+#: template-parts/search/panel.php:157
+#: template-parts/edit-space/steps/07.php:89
+msgid "Accessibilità per disabili"
+msgstr ""
+
+#: template-parts/edit-space/steps/07.php:119
+msgid "Accesso allo spazio"
+msgstr ""
+
+#: template-parts/space/detail-space.php:160
+#: template-parts/edit-space/steps/07.php:177
+msgid "Accessori"
+msgstr ""
+
+#: template-parts/admin/booking-steps/host/nuova-richiesta.php:37
+msgid "ACCETTA LA PRENOTAZIONE"
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/accettata.php:12
+#: template-parts/admin/booking-steps/host/accettata.php:12
+msgid "ACCETTATA"
+msgstr ""
+
+#: template-parts/admin/booking-steps/host/nuova-richiesta.php:36
+msgid "accettata"
+msgstr ""
+
+#: page-profilo.php:208
+msgid "Account"
+msgstr ""
+
+#: template-parts/admin/subscription-detail.php:22
+msgid "Acquisto sponsorizzazione"
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/rating-location.php:11
+msgid "Aderenza alla descrizione"
+msgstr ""
+
+#: template-parts/space/detail-space.php:227
+#: template-parts/edit-space/steps/08.php:59
+msgid "Aerazione"
+msgstr ""
+
+#: lib/class-edit-space.php:342
+msgid ""
+"Affinchè il tuo spazio diventi pubblico è necessario connettere \n"
+"\t\t\t\t\til tuo account Mapparte alla piattaforma di pagamento Stripe.<br>"
+"<br>"
+msgstr ""
+
+#: stripe/Utils.php:18
+msgid "Aggiorna le informazioni di verifica su stripe"
+msgstr ""
+
+#: page-profilo.php:303
+msgid "Aggiorna Password"
+msgstr ""
+
+#: lib/class-media-upload.php:40
+msgid "Aggiungi un'immagine"
+msgstr ""
+
+#: page-profilo.php:169
+msgid ""
+"Aiuta gli organizzatori di eventi a conoscerti Parla loro delle cose che ti "
+"piacciono: quali sono i tuoi hobby? Hai una passione per gli eventi e "
+"l'hosting? Condividi la tua musica, cibo, libri, artisti preferiti, ecc."
+msgstr ""
+
+#: lib/class-email-notifications.php:97
+msgid "Al"
+msgstr ""
+
+#: template-parts/edit-space/steps/07.php:31
+msgid "Altezza sala (m.)"
+msgstr ""
+
+#: template-parts/edit-space/logged.php:63 template-parts/space/modal.php:38
+msgid "Annulla"
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/accettata.php:40
+#: template-parts/admin/booking-steps/guest/nuova-richiesta.php:30
+msgid "ANNULLA LA PRENOTAZIONE"
+msgstr ""
+
+#: template-parts/space/detail-space.php:186
+msgid "Apparecchiature"
+msgstr ""
+
+#: template-parts/edit-space/steps/07.php:193
+msgid "Apparecchiature a/v"
+msgstr ""
+
+#: template-parts/search/panel.php:213
+msgid "applica filtri"
+msgstr ""
+
+#: template-parts/faq/detail-come-funziona.php:26
+#: template-parts/home/come-funziona.php:36
+#: template-parts/home/come-funziona.php:68
+msgid "Approfondisci"
+msgstr ""
+
+#: lib/class-edit-space.php:375
+msgid "Approva lo spazio"
+msgstr ""
+
+#. Name of the template
+msgid "Attiva Sponsorizzazione"
+msgstr ""
+
+#: template-parts/space/detail-space.php:18
+#: template-parts/edit-space/steps/03.php:83
+msgid "Attività"
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/details.php:52
+#: template-parts/admin/booking-steps/host/details.php:51
+msgid "Attività prevista"
+msgstr ""
+
+#: template-parts/space/detail-space.php:223
+#: template-parts/edit-space/steps/08.php:29
+msgid "Attrezzature"
+msgstr ""
+
+#: page-preferiti.php:42
+msgid "Attualmente non hai nessun preferito"
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/11.php:1
+msgid "Bene, hai completato l’inserimento del tuo spazio. "
+msgstr ""
+
+#: template-parts/edit-space/steps/01.php:11
+msgid "Benvenuto"
+msgstr ""
+
+#: template-parts/edit-space/steps/03.php:26
+#: template-parts/edit-space/steps/03.php:118
+msgid "Breve descrizione (max 40 caratteri)"
+msgstr ""
+
+#: template-parts/edit-space/steps/03.php:30
+#: template-parts/edit-space/steps/03.php:122
+msgid "Breve descrizione dello spazio"
+msgstr ""
+
+#: lib/class-edit-space.php:433
+#, php-format
+msgid ""
+"Buone notizie: <b>%s</b> è online!<br><br>\n"
+"\t\t\t\tDa adesso sarà visibile sul nostro portale.<br>\n"
+"\t\t\t\tTutte le informazioni inserite appariranno nella scheda completa del "
+"tuo spazio.<br><br>\n"
+"\t\t\t\tPotrai modificarle in qualsiasi momento accedendo alla dashboard del "
+"tuo profilo.<br><br>\n"
+"\t\t\t\tRicordati di attivare il tuo account di Stripe nella tua dashboard "
+"personale, alla voce \"Profilo e account\". \n"
+"\t\t\t\t"
+msgstr ""
+
+#: lib/class-edit-space.php:354
+#, php-format
+msgid ""
+"Buongiorno %s,<br>\n"
+"\t\t\t\tabbiamo ricevuto i dati relativi al tuo spazio, ora in fase di "
+"approvazione.<br>\n"
+"\t\t\t\tAppena il tuo annuncio sarà online ti verrà comunicato.<br><br>%s\n"
+"\t\t\t\tContattaci per informazioni o dubbi, saremo lieti di aiutarti!\n"
+"\t\t\t\t"
+msgstr ""
+
+#: lib/class-edit-space.php:378
+#, php-format
+msgid ""
+"Buongiorno,<br>\n"
+"\t\t\t\tl'utente %s ha aggiunto un nuovo spazio.<br>\n"
+"\t\t\t\tVai alla scheda di modifica per approvare lo spazio."
+msgstr ""
+
+#: page-profilo.php:272
+msgid "cambio password"
+msgstr ""
+
+#: template-parts/edit-space/steps/07.php:222
+#: template-parts/edit-space/steps/07.php:234
+msgid "campi obbligatori"
+msgstr ""
+
+#: template-parts/edit-space/steps/09.php:55
+#: template-parts/edit-space/steps/09.php:70
+msgid "Campo libero di testo"
+msgstr ""
+
+#: template-parts/edit-space/steps/09.php:58
+#: template-parts/edit-space/steps/09.php:73
+msgid "Campo libero di testo Covid"
+msgstr ""
+
+#: template-parts/admin/my-spaces.php:35
+msgid "Cancella"
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/accettata.php:40
+#: template-parts/admin/booking-steps/guest/cancellata.php:12
+#: template-parts/admin/booking-steps/guest/nuova-richiesta.php:30
+#: template-parts/admin/booking-steps/host/cancellata.php:12
+#: template-parts/admin/booking-steps/host/nuova-richiesta.php:41
+msgid "CANCELLATA"
+msgstr ""
+
+#: template-parts/search/panel.php:146
+msgid "Capienza massima persone"
+msgstr ""
+
+#: template-parts/search/panel.php:185
+#: template-parts/space/detail-space.php:212
+#: template-parts/edit-space/steps/08.php:15
+msgid "Caratteristiche"
+msgstr ""
+
+#: template-parts/magazine/search.php:4
+msgid "Cerca nel magazine"
+msgstr ""
+
+#: template-parts/search/panel.php:88
+msgid "Cerca per tariffa"
+msgstr ""
+
+#: lib/class-bookings.php:126 lib/class-bookings.php:335
+msgid "Cerca su Mapparte"
+msgstr ""
+
+#: template-parts/search/panel.php:64
+msgid "Cerca sulla mappa"
+msgstr ""
+
+#. Name of the template
+#: template-parts/home/main-slider.php:29 template-parts/space/breadcrumb.php:7
+msgid "Cerca uno spazio"
+msgstr ""
+
+#: template-parts/edit-space/steps/01.php:21
+msgid "Che tipo di spazio hai?"
+msgstr ""
+
+#: template-parts/space/modal.php:23
+msgid "Chiedere maggiori informazioni"
+msgstr ""
+
+#: lib/class-bookings.php:145
+#, php-format
+msgid ""
+"Ci dispiace! %s non ha accettato la tua prenotazione. :( Prosegui nella "
+"ricerca, siamo sicuri che ci sono tanti altri spazi adatti alle tue esigenze!"
+msgstr ""
+
+#: lib/class-bookings.php:328
+#, php-format
+msgid ""
+"Ci dispiace! <b>%s</b> non ha accettato la tua prenotazione. :(\n"
+"<br>Prosegui nella ricerca, siamo sicuri che ci sono tanti altri spazi "
+"adatti alle tue esigenze!\n"
+"<br><br>%s"
+msgstr ""
+
+#: lib/class-bookings.php:118
+#, php-format
+msgid ""
+"Ci dispiace! <b>%s</b> non ha accettato la tua prenotazione. :(\n"
+"<br>Prosegui nella ricerca, siamo sicuri che ci sono tanti altri spazi "
+"adatti alle tue esigenze! \n"
+"<br><br>%s%s"
+msgstr ""
+
+#: template-parts/admin/my-bookings.php:25
+#: template-parts/admin/received-bookings.php:23
+msgid "Cliente"
+msgstr ""
+
+#: template-parts/admin/my-bookings.php:24
+#: template-parts/admin/received-bookings.php:22
+msgid "Codice"
+msgstr ""
+
+#: page-profilo.php:103 page-profilo.php:104
+msgid "Cognome"
+msgstr ""
+
+#: template-parts/home/come-funziona.php:27
+msgid "COME CERCARE E PRENOTARE GLI SPAZI"
+msgstr ""
+
+#. Name of the template
+msgid "Come Funziona"
+msgstr ""
+
+#: template-parts/faq/breadcrumb.php:8 template-parts/home/come-funziona.php:5
+msgid "Come funziona"
+msgstr ""
+
+#: template-parts/home/come-funziona.php:59
+msgid "COME INSERIRE UNO SPAZIO"
+msgstr ""
+
+#: template-parts/home/come-funziona.php:16
+#: template-parts/home/come-funziona.php:48
+msgid "COME REGISTRARSI"
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/08.php:1
+msgid ""
+"Compila secondo la tipologia del tuo spazio indicando e descrivendo "
+"attrezzature tecniche e servizi disponibili. Ricordati che per mostrare "
+"meglio ciò di cui disponi puoi aggiungere delle foto nella Photo Gallery "
+"(step 5)."
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/07.php:1
+#: template-parts/edit-space/steps/sidebars/08.php:3
+msgid ""
+"Compila tutti i campi dettagliatamente. Dedica un po’ di tempo a questa fase:"
+" più sarai preciso più sarà facile farti trovare dagli utenti."
+msgstr ""
+
+#: lib/class-frontend-utils.php:192
+#: template-parts/admin/booking-steps/guest/feedback.php:12
+#: template-parts/admin/booking-steps/host/feedback.php:12
+msgid "COMPLETATA"
+msgstr ""
+
+#: template-parts/space/modal.php:24
+msgid "Comunicare il tuo budget"
+msgstr ""
+
+#: stripe/Utils.php:117
+msgid "CONFERMA E PAGA LA PRENOTAZIONE…"
+msgstr ""
+
+#: page-profilo.php:296 page-profilo.php:297
+msgid "Conferma Password"
+msgstr ""
+
+#: lib/class-sponsorship.php:72
+#, php-format
+msgid ""
+"Congratulazioni! Hai scelto di attivare il piano <b>%s</b> per <b>%s</b>!<br>"
+"\n"
+"\t\t\tA partire dal %s %s<br>\n"
+"\t\t\tTrovi tutti i dettagli nella tua area riservata.<br>"
+msgstr ""
+
+#: template-parts/admin/subscription.php:19
+msgid "Congratulazioni! Piano acquistato con successo!"
+msgstr ""
+
+#: stripe/Utils.php:14
+msgid "Connetti a Stripe"
+msgstr ""
+
+#: lib/class-edit-space.php:345
+msgid "Connetti il tuo account a Stripe"
+msgstr ""
+
+#: template-parts/faq/detail-faq.php:51
+msgid "CONSULTA LE NOSTRE"
+msgstr ""
+
+#: template-parts/space/booking-form.php:73
+#: template-parts/space/booking-form.php:80
+#: template-parts/space/detail-booking.php:18
+#: template-parts/space/detail-booking.php:25
+msgid "Contatta l'host"
+msgstr ""
+
+#: template-parts/space/detail-space.php:377
+#: template-parts/space/detail-space.php:382
+msgid "Contatta l’host"
+msgstr ""
+
+#: template-parts/faq/detail-come-funziona.php:42
+#: template-parts/faq/detail-faq.php:55
+#: template-parts/home/i-servizi-di-mapparte.php:32
+msgid "Contattaci"
+msgstr ""
+
+#. Name of the template
+#: template-parts/footer.php:14 template-parts/footer.php:24
+msgid "Contatti"
+msgstr ""
+
+#: template-parts/edit-space/logged.php:96
+msgid "Continua"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-users.php:325
+msgid "Controlla la tua email per il link da cui recuperare la password."
+msgstr ""
+
+#: template-parts/space/booking-form.php:9
+#: template-parts/space/booking-form.php:10
+msgid "Cosa stai pianificando?"
+msgstr ""
+
+#: template-parts/edit-space/steps/05.php:12
+msgid "Crea la Photo Gallery del tuo spazio"
+msgstr ""
+
+#: page-profilo.php:50
+#: template-parts/admin/booking-steps/host/rating-host.php:11
+msgid "Cura"
+msgstr ""
+
+#: template-parts/admin/message-details.php:20
+#: template-parts/admin/messages.php:24
+msgid "Da"
+msgstr ""
+
+#: lib/class-frontend-utils.php:192
+msgid "Dai un feedback"
+msgstr ""
+
+#: lib/class-email-notifications.php:96
+msgid "Dal"
+msgstr ""
+
+#: template-parts/home/dal-magazine.php:5
+msgid "Dal Magazine"
+msgstr ""
+
+#: template-parts/admin/message-details.php:23
+#: template-parts/admin/messages-sent.php:28
+#: template-parts/admin/messages.php:28
+#: template-parts/space/booking-form.php:14
+#: template-parts/space/booking-form.php:24
+msgid "Data"
+msgstr ""
+
+#: page-profilo.php:113
+msgid "Data di nascita"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-availability.php:54
+msgid "Data non valida"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-availability.php:36
+msgid "Date - YYYY-MM-DD"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-book.php:381
+#: lib/rest-api/v1/class-rest-api-book.php:402
+msgid "Date non valide"
+msgstr ""
+
+#: page-profilo.php:172
+msgid "dati aziendali"
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/10.php:1
+msgid "Descrivi quali sono i termini di cancellazione per il tuo spazio."
+msgstr ""
+
+#: template-parts/edit-space/steps/03.php:36
+#: template-parts/edit-space/steps/03.php:128
+msgid "Descrizione dettagliata"
+msgstr ""
+
+#: template-parts/edit-space/steps/03.php:39
+#: template-parts/edit-space/steps/03.php:131
+msgid "Descrizione dettagliata dello spazio"
+msgstr ""
+
+#: template-parts/admin/messages-sent.php:24
+msgid "Destinatario"
+msgstr ""
+
+#: lib/class-email-notifications.php:99
+msgid "Destinazione d'uso"
+msgstr ""
+
+#: template-parts/edit-space/steps/08.php:6
+msgid "Dettagli creativi"
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/details.php:8
+#: template-parts/admin/booking-steps/host/details.php:7
+msgid "DETTAGLI DELLA RICHIESTA"
+msgstr ""
+
+#: template-parts/edit-space/steps/07.php:6
+msgid "Dettagli generali"
+msgstr ""
+
+#: template-parts/space/detail-space.php:350
+msgid "Dettagli sull'host"
+msgstr ""
+
+#. Name of the template
+msgid "Dettaglio Sponsorizzazione"
+msgstr ""
+
+#: lib/class-media-upload.php:44
+msgid "Devi essere loggato per fare uploadare immagini"
+msgstr ""
+
+#: template-parts/magazine/detail.php:19
+#: template-parts/magazine/evidence.php:61
+msgid "di"
+msgstr ""
+
+#: template-parts/edit-space/steps/07.php:15
+msgid "Dimensione in metri quadri"
+msgstr ""
+
+#: template-parts/search/panel.php:136
+msgid "Dimensioni in mq"
+msgstr ""
+
+#: template-parts/edit-space/steps/06.php:9
+msgid "Disponibilità"
+msgstr ""
+
+#: template-parts/edit-space/steps/07.php:133
+msgid "Disponibilità spazio esterno"
+msgstr ""
+
+#: template-parts/home/main-slider.php:50
+msgid ""
+"Diventa un host, condividi il tuo spazio e fai crescere la tua attività."
+msgstr ""
+
+#: template-parts/edit-space/steps/06.php:36
+msgid "dom"
+msgstr ""
+
+#: lib/class-frontend-utils.php:379
+msgid "Domenica"
+msgstr ""
+
+#: template-parts/home/main-slider.php:34 template-parts/search/panel.php:33
+msgid "Dove"
+msgstr ""
+
+#: template-parts/edit-space/steps/02.php:6
+msgid "Dove si trova il tuo spazio?"
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/11.php:3
+msgid ""
+"E il tuo spazio sarà online,  visibile e prenotabile sul sito. E sulla app.  "
+"*Stripe è un fornitore di servizi di pagamento regolamentato, una "
+"piattaforma affidabile e sicura che gestisce miliardi di transazioni in "
+"tutto il mondo. Poi  attiva il tuo account Stripe per ricevere gli importi "
+"delle prenotazioni direttamente sul tuo conto corrente.  Stripe è un "
+"fornitore di servizi di pagamento regolamentato, una piattaforma affidabile "
+"e sicura che gestisce miliardi di transazioni in tutto il mondo."
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/08.php:2
+msgid "Ecco qui alcuni suggerimenti per aiutarti nella compilazione."
+msgstr ""
+
+#: lib/class-bookings.php:84
+msgid "Effettua il pagamento"
+msgstr ""
+
+#: template-parts/admin/subscription-detail.php:57
+#: template-parts/admin/booking-steps/guest/accettata.php:29
+msgid "EFFETTUA IL PAGAMENTO SU STRIPE"
+msgstr ""
+
+#: template-parts/admin/sidebar.php:18
+msgid "Effettuate"
+msgstr ""
+
+#: template-parts/edit-space/steps/04.php:6
+msgid "Elenca i prezzi"
+msgstr ""
+
+#: stripe/Utils.php:82 stripe/Utils.php:169
+msgid "Email"
+msgstr ""
+
+#: template-parts/edit-space/steps/10.php:33
+msgid "Ente Gestore"
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/10.php:3
+msgid ""
+"Ente gestore: inserisci la tipologia dell’ente che gestisce lo spazio, ad "
+"esempio associazione, società, privato, selezionando dal menù proposto. "
+msgstr ""
+
+#: lib/class-edit-profile.php:82
+msgid "Errore! Inserisci una password valida."
+msgstr ""
+
+#: lib/class-edit-profile.php:85
+msgid "Errore!<br/>Inserisci correttamente la vecchia password."
+msgstr ""
+
+#: template-parts/space/detail-space.php:111
+msgid "euro a weekend"
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/10.php:4
+msgid "E’ un dato rilevante per l’emissione della nostra ricevuta."
+msgstr ""
+
+#. Name of the template
+msgid "Faq"
+msgstr ""
+
+#: template-parts/search/panel.php:40
+msgid "Filtri"
+msgstr ""
+
+#: template-parts/space/modal.php:21
+msgid "Fornire il maggior numero di dettagli"
+msgstr ""
+
+#: lib/class-filters.php:102
+msgid "Gestisci"
+msgstr ""
+
+#: template-parts/edit-space/steps/06.php:36
+msgid "gio"
+msgstr ""
+
+#: lib/class-frontend-utils.php:376
+msgid "Giovedì"
+msgstr ""
+
+#: template-parts/home/gli-spazi.php:5
+msgid "Gli spazi"
+msgstr ""
+
+#: stripe/Utils.php:33 stripe/Utils.php:131
+msgid "Grazie per aver completato il pagamento."
+msgstr ""
+
+#: lib/class-bookings.php:463
+msgid ""
+"Grazie per aver utilizzato Mapparte! Come è stata la tua esperienza? La tua "
+"opinione è importante, per noi e per la community. Clicca qui per lasciare "
+"una recensione!"
+msgstr ""
+
+#: lib/class-bookings.php:438
+#, php-format
+msgid ""
+"Grazie per aver utilizzato Mapparte!<br>\n"
+"\t\t\t\t\tCome è stata la tua esperienza?<br>\n"
+"\t\t\t\t\tLa tua opinione è importante, per noi e per la community.<br><br>"
+"%s<br><br>\n"
+"\t\t\t\t\tClicca qui per lasciare una recensione!<br><br>"
+msgstr ""
+
+#: lib/class-sponsorship.php:81
+msgid "Grazie!"
+msgstr ""
+
+#: lib/class-edit-space.php:360
+msgid "Grazie.<br>Il team Mapparte!"
+msgstr ""
+
+#: template-parts/space/banner.php:36
+msgid "Guarda la gallery completa"
+msgstr ""
+
+#: lib/class-messages.php:95
+msgid "Hai ricevuto un nuovo messaggio. Accedi al sito per visualizzarlo."
+msgstr ""
+
+#: lib/class-messages.php:65
+#, php-format
+msgid "Hai ricevuto un nuovo messaggio:<br><br>%s"
+msgstr ""
+
+#: lib/class-bookings.php:195
+#, php-format
+msgid ""
+"Hai ricevuto un pagamento da <b>%s.</b><br>Controlla  il saldo nel tuo "
+"account di Stripe.<br><br>%s"
+msgstr ""
+
+#: template-parts/faq/breadcrumb.php:7
+msgid "Home"
+msgstr ""
+
+#. Name of the template
+msgid "Homepage"
+msgstr ""
+
+#: template-parts/admin/my-spaces.php:13 template-parts/admin/sidebar.php:9
+msgid "I miei spazi"
+msgstr ""
+
+#. Name of the template
+msgid "i miei spazi"
+msgstr ""
+
+#: template-parts/home/i-numeri.php:5
+msgid "I numeri di Mapparte"
+msgstr ""
+
+#: template-parts/home/i-servizi-di-mapparte.php:5
+msgid "I Servizi"
+msgstr ""
+
+#: stripe/Utils.php:109 stripe/Utils.php:196
+msgid "I tuoi dati sono sicuri. Leggi la nostra"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-book.php:617
+msgid "ID booking non valido"
+msgstr ""
+
+#: lib/class-email-notifications.php:92
+#: template-parts/admin/booking-steps/guest/details.php:13
+#: template-parts/admin/booking-steps/host/details.php:12
+msgid "ID prenotazione"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-availability.php:58
+#: lib/rest-api/v1/class-rest-api-availability.php:64
+#: lib/rest-api/v1/class-rest-api-book.php:578
+#: lib/rest-api/v1/class-rest-api-book.php:584
+msgid "ID spazio non valido"
+msgstr ""
+
+#: page-profilo.php:228
+msgid "Il nome utente non può essere modificato."
+msgstr ""
+
+#: template-parts/space/detail-space.php:393
+msgid "Il pagamento avviene tramite Stripe. Per maggiori info consulta le"
+msgstr ""
+
+#: template-parts/home/bando.php:10
+msgid ""
+"Il progetto MAPPARTE PRO ha ottenuto un finanziamento di 71.999,75 € dalla "
+"Regione Autonoma Friuli Venezia Giulia sul bando POR FESR 2014-2020, Linea "
+"di intervento 2.1.b.1 bis «Concessione di sovvenzioni per il finanziamento "
+"di programmi personalizzati di pre-incubazione e incubazione d’impresa, "
+"finalizzati alla realizzazione di progetti di creazione o di sviluppo di "
+"nuove imprese caratterizzate da una significativa valenza o da un rilevante "
+"connotato culturale e/o creativo»"
+msgstr ""
+
+#: lib/class-bookings.php:91 lib/class-bookings.php:133
+#: lib/class-bookings.php:177 lib/class-bookings.php:200
+#: lib/class-bookings.php:342 lib/class-bookings.php:374
+#: lib/class-bookings.php:451 lib/class-bookings.php:491
+#: lib/class-messages.php:76 lib/class-messages.php:133
+#: lib/class-sponsorship.php:81
+msgid "Il team Mapparte!"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-contact.php:31
+msgid "Il tuo messaggio"
+msgstr ""
+
+#. Name of the template
+msgid "il tuo spazio"
+msgstr ""
+
+#: lib/class-sponsorship.php:42
+msgid "il tuo spazio avrà maggiore visibilità per un anno!"
+msgstr ""
+
+#: lib/class-sponsorship.php:34
+msgid "il tuo spazio avrà maggiore visibilità per un mese!"
+msgstr ""
+
+#: template-parts/space/detail-space.php:231
+#: template-parts/edit-space/steps/08.php:43
+msgid "Illuminazione"
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/accettata.php:15
+#: template-parts/admin/booking-steps/host/accettata.php:15
+msgid "In attesa del pagamento"
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/nuova-richiesta.php:15
+#: template-parts/admin/booking-steps/host/nuova-richiesta.php:15
+msgid "In attesa di una tua risposta"
+msgstr ""
+
+#: template-parts/edit-space/steps/09.php:20
+#: template-parts/edit-space/steps/09.php:66
+msgid ""
+"In relazione alla pandemia in corso è necessario utilizzare le idonee misure "
+"di sicurezza. Quale è la tua strategia?"
+msgstr ""
+
+#: template-parts/home/in-vetrina.php:5
+msgid "In vetrina"
+msgstr ""
+
+#: template-parts/detail-sponsorizzazione.php:35
+#: template-parts/admin/subscription.php:58
+msgid "Incrementa la visibilità del tuo spazio per un anno"
+msgstr ""
+
+#: template-parts/detail-sponsorizzazione.php:27
+#: template-parts/admin/subscription.php:48
+msgid "Incrementa la visibilità del tuo spazio per un mese"
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/09.php:1
+msgid ""
+"Indica come hai organizzato lo spazio per svolgere tutte le attività in "
+"sicurezza."
+msgstr ""
+
+#: template-parts/admin/booking-details.php:13
+#: template-parts/admin/subscription-detail.php:13
+#: template-parts/admin/subscription.php:12
+#: template-parts/edit-space/logged.php:58
+msgid "INDIETRO"
+msgstr ""
+
+#: stripe/Utils.php:92 stripe/Utils.php:179
+msgid "Indirizzo"
+msgstr ""
+
+#: template-parts/home/come-funziona.php:42
+msgid "Informazione per l’host"
+msgstr ""
+
+#: template-parts/home/come-funziona.php:10
+msgid "Informazione per l’utente"
+msgstr ""
+
+#: template-parts/footer.php:30
+msgid "INFORMAZIONI"
+msgstr ""
+
+#: template-parts/edit-space/steps/03.php:7
+msgid "Informazioni di base"
+msgstr ""
+
+#: page-profilo.php:357
+msgid "informazioni su stripe"
+msgstr ""
+
+#: template-parts/home/main-slider.php:55
+msgid "Inizia"
+msgstr ""
+
+#: template-parts/edit-space/steps/02.php:12
+msgid "Iniziamo"
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/01.php:3
+msgid ""
+"Iniziamo: Seleziona la categoria più appropriata al tuo spazio. Che tipo di "
+"spazio è? Scegli dall’elenco quello più idoneo."
+msgstr ""
+
+#: template-parts/admin/subscription-detail.php:42
+msgid "inizio"
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/04.php:6
+msgid ""
+"Inoltre c’è lo sconto pacchetto ore, che  si applica, se lo scegli, sulla "
+"prenotazione di più di 12 ore consecutive  da parte dell’utente. E’ pre-"
+"derminato  nella misura del 10%. E’ alternativo, e non si cumula, alla "
+"tariffa giornaliera.  Maggiori info  sulle Faq."
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/02.php:1
+msgid ""
+"Inserisci il nome completo della via,viale, piazza ecc., il numero civico, "
+"il CAP."
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/03.php:1
+msgid "Inserisci il nome del tuo spazio."
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/02.php:3
+msgid ""
+"Inserisci il quartiere dove lo spazio è ubicato e il piano (0 equivale a "
+"piano terra) "
+msgstr ""
+
+#. Name of the template
+#: template-parts/home/main-slider.php:47
+msgid "Inserisci il tuo spazio"
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/01.php:2
+msgid ""
+"Inserisci il tuo spazio indicando il numero di sale complessivo; se il tuo "
+"spazio ha più sale, successivamente, ti invitiamo a inserire  singolarmente "
+"ogni sala, seguendo la stessa procedura, per ottimizzarne l’utilizzo."
+msgstr ""
+
+#: template-parts/edit-space/steps/02.php:12
+msgid "Inserisci l’indirizzo oppure sposta il marker sulla mappa."
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/05.php:1
+msgid ""
+"Inserisci minimo 3 - massimo 10 immagini che rappresentino al meglio il tuo "
+"spazio. Per rendere il tutto più efficace valorizza  sia la ‘spaziosità’ del "
+" luogo che i suoi dettagli. Inserisci anche la planimetria se la possiedi."
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/03.php:2
+msgid ""
+"Inserisci nel campo ‘breve descrizione’  un titolo per il tuo spazio, come "
+"ad esempio ‘sala prove musicali insonorizzata’."
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/03.php:4
+msgid ""
+"Inserisci nella voce ‘descrizione del locale’ tutti  le informazioni e  i "
+"dettagli che possono risultare utili al tuo utente."
+msgstr ""
+
+#: template-parts/admin/message-details.php:64
+#: template-parts/admin/booking-steps/guest/rating.php:41
+#: template-parts/admin/booking-steps/host/rating.php:29
+msgid "Invia"
+msgstr ""
+
+#: template-parts/edit-space/steps/11.php:20
+msgid "Invia la richiesta di approvazione a mapparte"
+msgstr ""
+
+#: template-parts/space/modal.php:39
+msgid "invia messaggio"
+msgstr ""
+
+#: template-parts/space/booking-form.php:68
+#: template-parts/space/booking-form.php:77
+#: template-parts/space/detail-booking.php:15
+#: template-parts/space/detail-booking.php:22
+msgid "invia richiesta prenotazione"
+msgstr ""
+
+#: template-parts/admin/booking-steps/booking-messages.php:25
+msgid "INVIA UN MESSAGGIO"
+msgstr ""
+
+#: template-parts/admin/booking-steps/host/nuova-richiesta.php:32
+msgid "Invia un messaggio all’utente"
+msgstr ""
+
+#: template-parts/admin/sidebar.php:30
+msgid "Inviati"
+msgstr ""
+
+#: template-parts/home/i-numeri.php:19
+msgid "ISCRITTI"
+msgstr ""
+
+#: page-profilo.php:66
+msgid "Iscritto dal"
+msgstr ""
+
+#: template-parts/newsletter.php:5
+msgid "Iscriviti alla newsletter"
+msgstr ""
+
+#: template-parts/home/testimonianze.php:5
+msgid "La nostra community: i Mapparters"
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/pagata.php:15
+#: template-parts/admin/booking-steps/host/pagata.php:15
+msgid "La prenotazione è andata a buon fine"
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/05.php:3
+msgid ""
+"La risoluzione consigliata per le foto è 1500 di larghezza per 500 di "
+"altezza pixel,  formato orizzontale."
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/04.php:4
+msgid ""
+"La tariffa giornaliera è infrasettimanale o del weekend. Il sistema calcola "
+"la tariffa giornaliera in base a  tutte le ore di apertura nella giornata,  "
+"applicando la  percentuale di sconto da te scelta,  al costo orario."
+msgstr ""
+
+#: lib/class-bookings.php:173
+#, php-format
+msgid ""
+"La tua prenotazione è confermata.<br>Per eventuali annullamenti leggi la "
+"politica di cancellazione dello spazio.<br><br>%s"
+msgstr ""
+
+#: template-parts/search/panel.php:135 template-parts/search/panel.php:145
+msgid "Larghezza"
+msgstr ""
+
+#: template-parts/edit-space/steps/07.php:45
+msgid "Larghezza sala (m.)"
+msgstr ""
+
+#: lib/class-bookings.php:444
+msgid "Lascia la tua recensione"
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/feedback.php:16
+#: template-parts/admin/booking-steps/host/feedback.php:16
+msgid "Lascia un feedback"
+msgstr ""
+
+#: lib/class-bookings.php:484
+msgid "Lascia un feedback sull'utente"
+msgstr ""
+
+#: lib/class-bookings.php:479
+#, php-format
+msgid ""
+"Lascia un feedback sull'utente!<br>\n"
+"\t\t\t\t\tCome è stata la tua esperienza da host?<br>\n"
+"\t\t\t\t\tLa tua opinione è importante, per noi e per la community.<br><br>"
+"%s<br><br>\n"
+"\t\t\t\t\tClicca qui per lasciare una recensione sull'utente!<br><br>"
+msgstr ""
+
+#: template-parts/edit-space/steps/05.php:18
+msgid "Le foto valorizzano il tuo spazio."
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/details.php:68
+#: template-parts/admin/booking-steps/host/details.php:67
+msgid "Leggi"
+msgstr ""
+
+#: template-parts/home/dal-magazine.php:10
+msgid ""
+"Leggi le notizie interessanti dal mondo creativo, articoli su spazi che "
+"nascono e si reinventano, approfondimenti sul riutilizzo e molto altro."
+msgstr ""
+
+#. Name of the template
+msgid "Lista spazi"
+msgstr ""
+
+#: template-parts/space/detail-space.php:25
+msgid "Lo spazio"
+msgstr ""
+
+#: lib/class-email-notifications.php:95
+msgid "Location"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-login.php:198
+msgid "Logged user"
+msgstr ""
+
+#: template-parts/edit-space/steps/06.php:36
+msgid "lun"
+msgstr ""
+
+#: lib/class-frontend-utils.php:373
+msgid "Lunedì"
+msgstr ""
+
+#: template-parts/edit-space/steps/07.php:59
+msgid "Lunghezza sala (m.)"
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/02.php:2
+msgid "L’indirizzo completo sarà visibile all’utente una volta loggato."
+msgstr ""
+
+#: lib/class-bookings.php:370
+#, php-format
+msgid ""
+"L’utente non ha effettuato il pagamento.</b><br>La prenotazone e' stata "
+"cancellata automaticamente.<br><br>%s"
+msgstr ""
+
+#. Name of the theme
+#. Description of the theme
+#. Author of the theme
+msgid "Mapparte"
+msgstr ""
+
+#: lib/class-messages.php:118
+msgid "Mapparte -  richiesta di informazioni all’host"
+msgstr ""
+
+#: lib/class-bookings.php:76
+msgid "Mapparte - Conferma prenotazione"
+msgstr ""
+
+#: lib/class-bookings.php:171
+msgid "Mapparte - Hai effettuato il pagamento"
+msgstr ""
+
+#: lib/class-sponsorship.php:70
+#, php-format
+msgid "Mapparte - Il tuo piano %s è attivo!"
+msgstr ""
+
+#: lib/class-edit-space.php:431
+msgid "Mapparte - Il tuo spazio è pubblicato!"
+msgstr ""
+
+#: lib/class-edit-space.php:338
+msgid "Mapparte - Inserimento del tuo spazio - in attesa di pubblicazione"
+msgstr ""
+
+#: lib/class-bookings.php:193
+msgid "Mapparte - L’utente ha effettuato il pagamento"
+msgstr ""
+
+#: lib/class-bookings.php:368
+msgid "Mapparte - L’utente non ha effettuato il pagamento"
+msgstr ""
+
+#: lib/class-messages.php:63
+msgid "Mapparte - Nuovo messaggio."
+msgstr ""
+
+#: lib/class-bookings.php:116 lib/class-bookings.php:326
+msgid "Mapparte - Prenotazione non confermata "
+msgstr ""
+
+#: lib/class-bookings.php:436 lib/class-bookings.php:477
+msgid "Mapparte - Richiesta di feedback"
+msgstr ""
+
+#: lib/class-edit-space.php:373
+msgid "Mapparte - Un utente ha richiesto l'approvazione di uno spazio"
+msgstr ""
+
+#: lib/class-space.php:124
+msgid "Mapparte ha appena pubblicato uno spazio di tuo interesse."
+msgstr ""
+
+#: template-parts/edit-space/steps/06.php:36
+msgid "mar"
+msgstr ""
+
+#: lib/class-frontend-utils.php:374
+msgid "Martedì"
+msgstr ""
+
+#: template-parts/edit-space/steps/09.php:38
+msgid "Massimo di persone"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-search-fields.php:68
+msgid "max"
+msgstr ""
+
+#: template-parts/edit-space/steps/06.php:36
+msgid "mer"
+msgstr ""
+
+#: lib/class-frontend-utils.php:375
+msgid "Mercoledì"
+msgstr ""
+
+#. Name of the template
+#: template-parts/admin/sidebar.php:24
+msgid "Messaggi"
+msgstr ""
+
+#: template-parts/admin/messages-sent.php:8
+msgid "Messaggi inviati"
+msgstr ""
+
+#: template-parts/admin/message-details.php:14
+#: template-parts/admin/messages-sent.php:25
+#: template-parts/admin/messages.php:25
+msgid "Messaggio"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-contact.php:57
+msgid "Messaggio inviato con successo."
+msgstr ""
+
+#: template-parts/space/modal.php:30
+msgid "Messaggio per l'host"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-search-fields.php:67
+msgid "min"
+msgstr ""
+
+#: template-parts/space/detail-space.php:104
+msgid "minimo"
+msgstr ""
+
+#: template-parts/search/panel.php:198
+msgid "N. sale"
+msgstr ""
+
+#: page-profilo.php:339 page-profilo.php:341
+msgid "Nazione"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-search-fields.php:73
+msgid "No"
+msgstr ""
+
+#: page-profilo.php:94 page-profilo.php:95
+#: template-parts/admin/my-spaces.php:29
+msgid "Nome"
+msgstr ""
+
+#: page-profilo.php:332
+msgid "Nome del titolare del conto registrato"
+msgstr ""
+
+#: stripe/Utils.php:77 stripe/Utils.php:164
+msgid "Nome del titolare della carta"
+msgstr ""
+
+#: page-profilo.php:178 page-profilo.php:180
+msgid "Nome dell'azienda"
+msgstr ""
+
+#: template-parts/edit-space/steps/03.php:16
+#: template-parts/edit-space/steps/03.php:20
+#: template-parts/edit-space/steps/03.php:108
+#: template-parts/edit-space/steps/03.php:112
+msgid "Nome dello spazio"
+msgstr ""
+
+#: page-profilo.php:221 page-profilo.php:223
+msgid "Nome utente"
+msgstr ""
+
+#: lib/class-frontend-scripts.php:36
+msgid "Non disponibile"
+msgstr ""
+
+#: lib/class-admin.php:175
+msgid "Non sei autorizzato a cancellare lo spazio."
+msgstr ""
+
+#: template-parts/search/featured-logged.php:7
+#: template-parts/search/featured.php:7
+msgid "Non sono stati trovati risultati, riprovare modificando i filtri"
+msgstr ""
+
+#: stripe/Utils.php:99 stripe/Utils.php:186
+msgid "Numero della carta"
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/details.php:58
+#: template-parts/admin/booking-steps/host/details.php:57
+msgid "Numero di ospiti previsti"
+msgstr ""
+
+#: page-profilo.php:148 page-profilo.php:189
+msgid "Numero di telefono"
+msgstr ""
+
+#: template-parts/edit-space/steps/07.php:75
+msgid "Numero massimo di persone (no covid)"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-book.php:413
+#: template-parts/edit-space/steps/03.php:45
+msgid "Numero minimo ore prenotabili"
+msgstr ""
+
+#: template-parts/space/booking-form.php:40
+msgid "Numero ospiti"
+msgstr ""
+
+#: lib/class-email-notifications.php:98
+msgid "Numero persone"
+msgstr ""
+
+#: template-parts/edit-space/steps/03.php:63
+msgid "Numero sale"
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/nuova-richiesta.php:12
+#: template-parts/admin/booking-steps/host/nuova-richiesta.php:12
+msgid "NUOVA"
+msgstr ""
+
+#: page-profilo.php:288 page-profilo.php:289
+msgid "Nuova Password"
+msgstr ""
+
+#: template-parts/edit-space/steps/08.php:15
+msgid "Obbligatorie"
+msgstr ""
+
+#: template-parts/newsletter.php:6
+msgid ""
+"Ogni mese riceverai contenuti speciali che Mapparte riserva alla sua "
+"Community"
+msgstr ""
+
+#: template-parts/faq/detail-faq.php:52
+msgid "OPPURE"
+msgstr ""
+
+#: template-parts/space/detail-space.php:104
+msgid "ora"
+msgstr ""
+
+#: template-parts/space/detail-space.php:81
+msgid "Orari di apertura"
+msgstr ""
+
+#: template-parts/search/panel.php:92
+#: lib/rest-api/v1/class-rest-api-search-fields.php:59
+msgid "oraria infrasettimanale"
+msgstr ""
+
+#: template-parts/search/panel.php:95
+#: lib/rest-api/v1/class-rest-api-search-fields.php:60
+msgid "oraria weekend"
+msgstr ""
+
+#: template-parts/space/booking-form.php:28
+msgid "Orario fine"
+msgstr ""
+
+#: template-parts/space/booking-form.php:18
+msgid "Orario inizio"
+msgstr ""
+
+#: template-parts/space/detail-space.php:104
+msgid "ore"
+msgstr ""
+
+#: template-parts/space/modal.php:22
+msgid "Organizzare una visita"
+msgstr ""
+
+#: stripe/Utils.php:204
+msgid "PAGA LA SPONSORIZZAZIONE…"
+msgstr ""
+
+#: page-profilo.php:315
+msgid "Pagamenti"
+msgstr ""
+
+#: stripe/Utils.php:32 stripe/Utils.php:130
+msgid "Pagamento effettuato"
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/pagata.php:12
+#: template-parts/admin/booking-steps/host/pagata.php:12
+msgid "PAGATA"
+msgstr ""
+
+#: template-parts/space/detail-space.php:306
+#: template-parts/edit-space/steps/07.php:149
+msgid "Parcheggio"
+msgstr ""
+
+#: template-parts/search/panel.php:191
+#: template-parts/space/detail-space.php:235
+#: template-parts/edit-space/steps/07.php:105
+msgid "Pavimento"
+msgstr ""
+
+#: template-parts/edit-space/steps/04.php:75
+msgid ""
+"Per 12 ore consecutive cliccando su accetto/non accetto viene applicato uno "
+"sconto del 10 percento sulla tariffa oraria infrasettimanale e tariffa "
+"oraria weekend."
+msgstr ""
+
+#: template-parts/edit-space/steps/06.php:15
+msgid ""
+"Per aumentare le prenotazioni è importante indicare tutti gli orari di "
+"disponibilità dello spazio durante la settimana."
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/04.php:5
+msgid ""
+"Per chiarezza:  la tua tariffa giornaliera è intesa come prenotazione di "
+"tutte le ore di apertura di un determinato giorno."
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/11.php:4
+msgid ""
+"Per inserire o aggiornare le coordinate bancarie del tuo conto entra nella  "
+"tua dashboard personale -  sezione “Profilo e account”. Per info e "
+"chiarimenti contattaci su "
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/06.php:1
+msgid ""
+"Per selezionare orari diversi: da Pc tenere premuto il tasto Control, da Mac "
+"tenere  premuto il tasto Command; da cellulare inserire manualmente "
+"aggiungendo gli orari."
+msgstr ""
+
+#: template-parts/space/detail-space.php:57
+msgid "PERSONE"
+msgstr ""
+
+#: template-parts/home/in-vetrina.php:41 template-parts/search/card.php:50
+msgid "persone"
+msgstr ""
+
+#: page-profilo.php:231
+msgid "PIANI DI SPONSORIZZAZIONE DEGLI SPAZI"
+msgstr ""
+
+#: template-parts/edit-space/steps/02.php:45
+msgid "Piano"
+msgstr ""
+
+#: template-parts/admin/subscription.php:28
+msgid "Piano Attivo"
+msgstr ""
+
+#: template-parts/space/booking-form.php:36
+msgid "più giorni"
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/details.php:64
+#: template-parts/admin/booking-steps/host/details.php:63
+msgid "Policy di cancellazione"
+msgstr ""
+
+#: template-parts/edit-space/steps/10.php:24
+#: template-parts/edit-space/steps/10.php:27
+#: template-parts/edit-space/steps/10.php:58
+#: template-parts/edit-space/steps/10.php:61
+msgid "Politica di cancellazione"
+msgstr ""
+
+#: template-parts/edit-space/steps/10.php:6
+msgid "Politica di cancellazione ed Ente gestore"
+msgstr ""
+
+#: template-parts/space/detail-space.php:337
+msgid "Politiche di cancellazione"
+msgstr ""
+
+#: template-parts/footer.php:25
+msgid "Posizioni aperte"
+msgstr ""
+
+#: template-parts/space/booking-form.php:49
+msgid "Possiedi un coupon?"
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/05.php:2
+msgid "Potrai aggiungere o modificare le foto in qualsiasi momento."
+msgstr ""
+
+#: template-parts/edit-space/steps/09.php:24
+msgid "Precauzioni prese"
+msgstr ""
+
+#. Name of the template
+#: page-preferiti.php:18 template-parts/admin/sidebar.php:38
+msgid "Preferiti"
+msgstr ""
+
+#: template-parts/home/gli-spazi.php:7
+msgid "Prenota gli spazi per le tue attività creative"
+msgstr ""
+
+#: template-parts/admin/message-details.php:22
+#: template-parts/admin/messages-sent.php:27
+#: template-parts/admin/messages.php:27
+msgid "Prenotazione"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-book.php:635
+msgid "Prenotazione effettuata con successo"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-book.php:632
+msgid "Prenotazione non effettuata"
+msgstr ""
+
+#: template-parts/admin/sidebar.php:12
+msgid "Prenotazioni"
+msgstr ""
+
+#. Name of the template
+msgid "Prenotazioni Effettuate"
+msgstr ""
+
+#: template-parts/admin/my-bookings.php:7
+msgid "Prenotazioni effettuate"
+msgstr ""
+
+#. Name of the template
+#: template-parts/admin/received-bookings.php:5
+msgid "Prenotazioni ricevute"
+msgstr ""
+
+#: page-profilo.php:165
+msgid "Presentazione"
+msgstr ""
+
+#: template-parts/space/detail-space.php:96
+msgid "Prezzi"
+msgstr ""
+
+#: lib/class-email-notifications.php:100
+#: template-parts/admin/my-bookings.php:28
+#: template-parts/admin/my-spaces.php:31
+#: template-parts/admin/received-bookings.php:26
+#: template-parts/search/panel.php:106
+#: template-parts/admin/booking-steps/guest/details.php:46
+#: template-parts/admin/booking-steps/host/details.php:45
+msgid "Prezzo"
+msgstr ""
+
+#: template-parts/space/booking-form.php:53
+msgid "Prezzo stimato"
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/rating-location.php:17
+msgid "Professionalità"
+msgstr ""
+
+#. Name of the template
+#: page-profilo.php:28 template-parts/admin/subscription-detail.php:33
+msgid "Profilo"
+msgstr ""
+
+#: template-parts/admin/sidebar.php:35
+msgid "Profilo e account"
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/rating-location.php:5
+msgid "Pulizia"
+msgstr ""
+
+#: page-profilo.php:42
+#: template-parts/admin/booking-steps/host/rating-host.php:5
+msgid "Puntualità"
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/details.php:74
+msgid "Puoi lasciare un feedback <br>sull’host e il locale"
+msgstr ""
+
+#: template-parts/admin/booking-steps/host/details.php:73
+#: template-parts/admin/booking-steps/host/feedback.php:24
+msgid "Puoi lasciare un feedback sul cliente"
+msgstr ""
+
+#: template-parts/edit-space/steps/09.php:56
+#: template-parts/edit-space/steps/09.php:71
+msgid ""
+"Qualcos’altro che vorresti condividere sulle tue precauzioni anti-covid?"
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/04.php:1
+msgid ""
+"Quale è la tariffa per affittare il tuo spazio? Inserisci il prezzo, inclusa "
+"IVA, in base allo slot orario. Abbiamo previsto l’inserimento della:"
+msgstr ""
+
+#: page-profilo.php:353
+msgid ""
+"Quando un utente prenota il tuo spazio ed effettua il pagamento, riceverai "
+"automaticamente l’importo, al netto della nostra commissione."
+msgstr ""
+
+#: template-parts/edit-space/steps/09.php:39
+msgid "quante persone alla volta puoi ospitare?"
+msgstr ""
+
+#: template-parts/edit-space/steps/02.php:31
+msgid "Quartiere"
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/cancellata.php:15
+#: template-parts/admin/booking-steps/host/cancellata.php:15
+msgid "Questa prenotazione è stata cancellata"
+msgstr ""
+
+#: template-parts/space/modal.php:18
+msgid "Registrato da"
+msgstr ""
+
+#: template-parts/space/detail-space.php:325
+#: template-parts/edit-space/steps/07.php:207
+msgid "Regole dello spazio"
+msgstr ""
+
+#: page-profilo.php:128 page-profilo.php:130
+msgid "Residenza"
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/11.php:2
+msgid ""
+"Riceverai conferma  via email che la richiesta è andata a buon fine e il tuo "
+"spazio è on line. "
+msgstr ""
+
+#: template-parts/admin/sidebar.php:15
+msgid "Ricevute"
+msgstr ""
+
+#: template-parts/admin/sidebar.php:27
+msgid "Ricevuti"
+msgstr ""
+
+#: template-parts/edit-space/steps/11.php:6
+msgid "Richiesta approvazione spazio"
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/accettata.php:3
+#: template-parts/admin/booking-steps/guest/cancellata.php:3
+#: template-parts/admin/booking-steps/guest/feedback.php:3
+#: template-parts/admin/booking-steps/guest/nuova-richiesta.php:3
+#: template-parts/admin/booking-steps/guest/pagata.php:3
+#: template-parts/admin/booking-steps/host/cancellata.php:3
+#: template-parts/admin/booking-steps/host/accettata.php:3
+#: template-parts/admin/booking-steps/host/feedback.php:3
+#: template-parts/admin/booking-steps/host/nuova-richiesta.php:3
+#: template-parts/admin/booking-steps/host/pagata.php:3
+msgid "Richiesta di prenotazione per"
+msgstr ""
+
+#: template-parts/admin/booking-steps/host/nuova-richiesta.php:24
+msgid ""
+"Ricorda che alla scadenza dei giorni rimanenti la richiesta verrà "
+"automaticamente marcata come “cancellata”"
+msgstr ""
+
+#: template-parts/admin/booking-steps/host/nuova-richiesta.php:41
+msgid "RIFIUTA LA PRENOTAZIONE"
+msgstr ""
+
+#: template-parts/search/panel.php:212
+msgid "Ripristina"
+msgstr ""
+
+#: page-profilo.php:58
+#: template-parts/admin/booking-steps/host/rating-host.php:17
+msgid "Rispetto delle dotazioni"
+msgstr ""
+
+#: template-parts/admin/message-details.php:58
+msgid "Rispondi"
+msgstr ""
+
+#: lib/class-messages.php:69 lib/class-messages.php:126
+msgid "Rispondi al messaggio"
+msgstr ""
+
+#: template-parts/search/panel.php:80
+msgid "RISULTATI"
+msgstr ""
+
+#: template-parts/edit-space/steps/06.php:36
+msgid "sab"
+msgstr ""
+
+#: lib/class-frontend-utils.php:378
+msgid "Sabato"
+msgstr ""
+
+#: page-profilo.php:197 page-profilo.php:347
+msgid "SALVA"
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/01.php:1
+msgid ""
+"Sarà un processo facile e guidato. In pochi e semplici passi ti sarà "
+"richiesto di inserire tutti i dati relativi al tuo spazio in modo da "
+"descriverlo chiaramente."
+msgstr ""
+
+#: template-parts/admin/subscription-detail.php:44
+msgid "scadenza"
+msgstr ""
+
+#: template-parts/home/bando.php:18
+msgid "Scarica il Poster"
+msgstr ""
+
+#: template-parts/footer.php:37
+msgid "Scarica l’App"
+msgstr ""
+
+#: template-parts/admin/subscription.php:41
+msgid "Scegli un piano per"
+msgstr ""
+
+#: template-parts/edit-space/steps/04.php:74
+msgid "Sconti"
+msgstr ""
+
+#: template-parts/edit-space/steps/04.php:29
+msgid "Sconto giornaliero"
+msgstr ""
+
+#: template-parts/edit-space/steps/04.php:59
+msgid "Sconto weekend"
+msgstr ""
+
+#: template-parts/footer.php:20
+msgid "SCOPRI"
+msgstr ""
+
+#: template-parts/home/testimonianze.php:7
+msgid "Scopri cosa dicono di noi i Mapparters"
+msgstr ""
+
+#: template-parts/home/in-vetrina.php:60
+msgid "Scopri di più"
+msgstr ""
+
+#: template-parts/home/main-slider.php:30
+msgid "Scopri e prenota spazi per la tua prossima attività creativa"
+msgstr ""
+
+#: template-parts/home/in-vetrina.php:7
+msgid "Scopri gli spazi interessanti"
+msgstr ""
+
+#: template-parts/home/i-servizi-di-mapparte.php:7
+msgid "Scopri i partner di Mapparte e le offerte dedicate alla Community"
+msgstr ""
+
+#: template-parts/space/modal.php:35
+msgid "Scrivi qui li tuo messaggio."
+msgstr ""
+
+#: template-parts/space/modal.php:20
+msgid "Scrivi un messaggio per"
+msgstr ""
+
+#: page-profilo.php:373
+msgid ""
+"Se desideri visualizzare o aggiornare le informazioni che hai fornito a "
+"Stripe, premi semplicemente \"Aggiorna le informazioni di verifica\" a "
+"fianco."
+msgstr ""
+
+#: template-parts/email-notifications/footer.php:34
+msgid ""
+"Se dovessi aver ricevuto questa email per sbaglio ti chiediamo semplicemente "
+"di ignorarla e non riceverai nessuna ulteriore comunicazione."
+msgstr ""
+
+#: template-parts/space/booking-form.php:61
+msgid ""
+"Se hai bisogno di conoscere ulteriori dettagli scrivi qui il tuo messaggio "
+"per l’Host"
+msgstr ""
+
+#: template-parts/space/modal.php:31
+msgid ""
+"Se hai bisogno di conoscere ulteriori dettagli scrivi qui il tuo messaggio "
+"per l’Host."
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/08.php:4
+msgid ""
+"Se hai delle attrezzature particolari, inseriscile nel campo di descrizione "
+"a testo libero."
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/nuova-richiesta.php:23
+msgid ""
+"Se l’host non risponderà entro la scadenza dei giorni rimanenti la richiesta "
+"verrà automaticamente marcata come “cancellata”"
+msgstr ""
+
+#: template-parts/admin/booking-steps/guest/accettata.php:23
+#: template-parts/admin/booking-steps/host/accettata.php:23
+msgid ""
+"Se l’utente non prenoterà entro la scadenza dei giorni rimanenti la "
+"richiesta verrà automaticamente marcata come “cancellata”"
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/05.php:4
+msgid "Se puoi, aggiungi anche la planimetria dello spazio tra le immagini."
+msgstr ""
+
+#: lib/class-frontend-scripts.php:38
+msgid "Seleziona data e ora valide"
+msgstr ""
+
+#: lib/class-frontend-scripts.php:37
+msgid "Seleziona un orario"
+msgstr ""
+
+#: template-parts/space/booking-form.php:10
+msgid "Seleziona un'attività"
+msgstr ""
+
+#: template-parts/search/panel.php:90
+msgid "Seleziona una tariffa"
+msgstr ""
+
+#: template-parts/space/detail-space.php:254
+#: template-parts/edit-space/steps/07.php:163
+msgid "Servizi"
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/10.php:2
+msgid ""
+"Sii il più preciso e chiaro possibile per evitare fraintendimenti con il tuo "
+"utente."
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-availability.php:72
+msgid "Slot disponibili"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-login.php:270
+msgid "Something went wrong during the registration"
+msgstr ""
+
+#: template-parts/home/i-numeri.php:29
+msgid "SPAZI"
+msgstr ""
+
+#: template-parts/space/detail-space.php:280
+msgid "Spazi esterni"
+msgstr ""
+
+#. Name of the template
+#: template-parts/admin/message-details.php:21
+#: template-parts/admin/messages-sent.php:26
+#: template-parts/admin/messages.php:8 template-parts/admin/messages.php:26
+#: template-parts/admin/my-bookings.php:23
+#: template-parts/admin/received-bookings.php:21
+msgid "Spazio"
+msgstr ""
+
+#: template-parts/search/panel.php:179
+msgid "Spazio esterno"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-availability.php:50
+msgid "Spazio non disponibile"
+msgstr ""
+
+#: template-parts/edit-space/logged.php:110
+#: lib/rest-api/v1/class-rest-api-contact.php:61
+msgid "Spazio non trovato"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-space.php:209
+msgid "Spazio trovato"
+msgstr ""
+
+#: lib/class-frontend-utils.php:260
+msgid "Spesso prenotato per"
+msgstr ""
+
+#: template-parts/admin/my-spaces.php:33
+msgid "Sponsorizzazione"
+msgstr ""
+
+#. Name of the template
+msgid "Sponsorizzazioni"
+msgstr ""
+
+#: template-parts/admin/my-bookings.php:29
+#: template-parts/admin/my-spaces.php:34
+#: template-parts/admin/received-bookings.php:27
+msgid "Stato"
+msgstr ""
+
+#: page-profilo.php:368
+msgid ""
+"Stripe é un fornitore di servizi di pagamento regolamentato ed é tenuto a "
+"raccogliere vari documenti per elaborare i pagamenti. Queste regole di "
+"conformitå vengono aggiornate regolarmente, quindi potrebbe essere "
+"necessario fornire ulteriori informazioni in futuro. Ti informeremo qui e "
+"via e-mail se questo é il caso."
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-search-fields.php:72
+msgid "Sì"
+msgstr ""
+
+#: template-parts/search/panel.php:98
+#: lib/rest-api/v1/class-rest-api-search-fields.php:61
+msgid "tariffa giornaliera"
+msgstr ""
+
+#: template-parts/edit-space/steps/04.php:15
+msgid "Tariffa oraria infrasettimanale"
+msgstr ""
+
+#: template-parts/edit-space/steps/04.php:45
+msgid "Tariffa oraria weekend"
+msgstr ""
+
+#: template-parts/search/panel.php:101
+#: lib/rest-api/v1/class-rest-api-search-fields.php:62
+msgid "tariffa weekend"
+msgstr ""
+
+#: page-profilo.php:146 page-profilo.php:187 stripe/Utils.php:87
+#: stripe/Utils.php:174
+msgid "Telefono"
+msgstr ""
+
+#: template-parts/footer.php:33
+msgid "Termini e Condizioni d’uso"
+msgstr ""
+
+#. Name of the template
+msgid "Test push notification"
+msgstr ""
+
+#: template-parts/admin/my-spaces.php:32 template-parts/search/panel.php:166
+msgid "Tipologia"
+msgstr ""
+
+#: template-parts/admin/subscription-detail.php:49
+msgid "Totale"
+msgstr ""
+
+#: page-profilo.php:352
+msgid ""
+"Trasferiamo direttamente sul tuo conto bancario l’importo della prenotazione "
+"grazie alla nostra integrazione con Stripe, una piattaforma affidabile e "
+"sicura che gestisce miliardi di transazioni in tutto il mondo."
+msgstr ""
+
+#: template-parts/search/panel.php:80
+msgid "TROVATI"
+msgstr ""
+
+#: template-parts/footer.php:8
+msgid "Tutti i diritti riservati"
+msgstr ""
+
+#: lib/class-sponsorship.php:41
+msgid "Un anno in cima ai risultati in homepage"
+msgstr ""
+
+#: lib/class-sponsorship.php:33
+msgid "Un mese in cima ai risultati in homepage"
+msgstr ""
+
+#: template-parts/edit-space/logged.php:111
+#: template-parts/edit-space/steps/01.php:17
+msgid ""
+"Unisciti alla community e dai la possibilità agli utenti di conoscerti e "
+"scoprire il tuo spazio."
+msgstr ""
+
+#: template-parts/edit-space/steps/sidebars/03.php:3
+msgid ""
+"Uno spazio può essere polifunzionale: quale attività è possibile svolgere "
+"nel tuo spazio? Seleziona tra le attività elencate quella che si addice di "
+"più. Se la tua attività non è presente clicca la voce “altro”. Ricordati di "
+"inserirla anche nella descrizione dello spazio."
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-login.php:40
+msgid "User login"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-users.php:300
+msgid "User login / User email"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-login.php:45
+msgid "User password"
+msgstr ""
+
+#: lib/class-email-notifications.php:93
+#: template-parts/admin/booking-steps/host/details.php:18
+msgid "utente"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-users.php:148
+msgid "Utente aggiornato con successo"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-users.php:58
+msgid "Utente creato con successo"
+msgstr ""
+
+#: lib/rest-api/v1/class-rest-api-users.php:103
+msgid "Utente trovato"
+msgstr ""
+
+#: template-parts/home/dal-magazine.php:14
+msgid "VAI AL MAGAZINE"
+msgstr ""
+
+#: template-parts/admin/subscription.php:33
+msgid "Valido fino"
+msgstr ""
+
+#: page-profilo.php:280 page-profilo.php:281
+msgid "Vecchia Password"
+msgstr ""
+
+#: template-parts/home/gli-spazi.php:34 template-parts/home/gli-spazi.php:36
+msgid "Vedi tutte le categorie"
+msgstr ""
+
+#: template-parts/edit-space/steps/06.php:36
+msgid "ven"
+msgstr ""
+
+#: lib/class-frontend-utils.php:377
+msgid "Venerdì"
+msgstr ""
+
+#: page-profilo.php:351
+msgid "Verifica il tuo account per ricevere i pagamenti tramite Mapparte."
+msgstr ""
+
+#: lib/class-frontend-utils.php:297
+msgid "Visualizza la posizione esatta"
+msgstr ""

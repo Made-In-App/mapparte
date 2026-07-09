@@ -1,0 +1,39 @@
+services:
+  # PHP 8.4 + Nginx - Main service for devcontainer (mapparte.com locale)
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mapparte
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '1.0'
+        reservations:
+          memory: 256M
+          cpus: '0.5'
+    volumes:
+      - ..:/var/www/html
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./docker/php/php.ini:/usr/local/etc/php/conf.d/custom.ini
+      - ./ssl:/etc/nginx/ssl
+    networks:
+      - mapparte_network
+    environment:
+      - WORDPRESS_DB_HOST=host.docker.internal
+      - WORDPRESS_DB_NAME=mapparte_dev
+      - WORDPRESS_DB_USER=wp_user
+      - WORDPRESS_DB_PASSWORD=wp_password
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+networks:
+  mapparte_network:
+    driver: bridge
+

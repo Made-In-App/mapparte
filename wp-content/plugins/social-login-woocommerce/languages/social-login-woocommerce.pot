@@ -1,0 +1,57 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Social Login Woocommerce\n"
+"POT-Creation-Date: 2020-08-22 11:49+0530\n"
+"PO-Revision-Date: 2019-08-01 20:13+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/class-xoo-sl-handler.php:45
+msgid "Something went wrong, please try again later."
+msgstr ""
+
+#: includes/class-xoo-sl-handler.php:103
+msgid "Please provide a valid email address."
+msgstr ""
+
+#: includes/class-xoo-sl-handler.php:107
+msgid "An account is already registered with your email address. Please log in."
+msgstr ""
+
+#: includes/class-xoo-sl-handler.php:115
+msgid "Please enter a valid account username."
+msgstr ""
+
+#: includes/class-xoo-sl-handler.php:119
+msgid "An account is already registered with that username. Please choose another."
+msgstr ""
+
+#: includes/xoo-framework/class-xoo-helper.php:236
+msgid "You're using outdated version of templates, please fetch a new copy from the plugin templates folder"
+msgstr ""
+
+#: includes/xoo-framework/class-xoo-helper.php:246
+msgid "Templates Status"
+msgstr ""
+
+#: includes/xoo-framework/class-xoo-helper.php:248
+msgid "How to override?"
+msgstr ""
+
+#: includes/xoo-sl-functions.php:149
+msgid "My account"
+msgstr ""
+
+#: includes/xoo-sl-functions.php:155
+msgid "Logout"
+msgstr ""

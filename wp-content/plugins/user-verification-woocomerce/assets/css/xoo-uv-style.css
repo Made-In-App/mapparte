@@ -1,0 +1,24 @@
+.xoo-uv-verified-success, .xoo-uv-verify-notice {
+    z-index: 99999999;
+    position: fixed;
+    top: 0;
+    padding: 20px;
+    left: 0;
+    right: 0;
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+
+.xoo-uv-verified-success span:last-of-type a {
+    text-decoration: underline;
+    color: #3c763d;
+    margin-left: 6px;
+}
+
+
+.xoo-el-notice-success .xoo-uv-verify-notice {
+    position: relative;
+    padding: 10px;
+}

@@ -1,0 +1,295 @@
+html {
+  font-size: 62.5%;
+
+  @include media1921 {
+    font-size: 100%;
+  }
+
+  @include media1920 {
+    font-size: 70%;
+  }
+
+  @include media1680 {
+    font-size: 62.5%;
+  }
+
+  @include media1024 {
+    font-size: 50%;
+  }
+
+  @include media991 {
+    font-size: 43%;
+  }
+
+  @include media767 {
+    font-size: 62.5%;
+  }
+}
+
+body {
+  color: #000000;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+  position: relative;
+  overflow: initial;
+  font-family: $Roboto;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.form-check-input {
+  &:focus {
+    border-color: inherit;
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+.#{$site}-container {
+  width: 100%;
+}
+
+.container {
+  @include media1681 {
+    max-width: 1820px;
+  }
+}
+
+// small heading
+.#{$site}-small-heading {
+  letter-spacing: 0.15em;
+  text-align: center;
+  text-transform: uppercase;
+  @include defaultFontStyle($Roboto, 300, 12, 24, $medium);
+}
+
+// medium heading
+.#{$site}-medium-heading {
+  text-align: center;
+  @include defaultFontStyle($Roboto, 300, 36, 48, $black);
+  @include media576 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+// overrride css
+.#{$site}-slider {
+  .flickity-button {
+    width: 50px;
+    height: 50px;
+    top: calc(50% - 30px);
+    border-radius: 25px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.08);
+    background: $white;
+    @include media576 {
+      display: none;
+    }
+    &.previous {
+      left: 0;
+      &:before {
+        content: "";
+        background: url("../images/next-arrow.svg") no-repeat center center;
+        width: 20px;
+        height: 20px;
+        display: block;
+        margin: auto;
+        transform: rotate(180deg);
+      }
+      svg {
+        display: none;
+      }
+    }
+    &.next {
+      right: 0;
+      &:before {
+        content: "";
+        background: url("../images/next-arrow.svg") no-repeat center center;
+        width: 20px;
+        height: 20px;
+        display: block;
+        margin: auto;
+      }
+      svg {
+        display: none;
+      }
+    }
+  }
+
+  // flickity dots
+  .flickity-page-dots {
+    margin-top: 0px;
+    position: relative;
+    bottom: 0;
+    li {
+      width: 8px;
+      height: 8px;
+      background: $light;
+      margin: 0 8px;
+      opacity: 1;
+      &.is-selected {
+        width: 68px;
+        height: 8px;
+        border-radius: 4px;
+        background: $secondary;
+        transition: width 0.5s ease;
+      }
+    }
+  }
+}
+
+.#{$site}-overlay {
+  background: rgba(25, 35, 44, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 11;
+  cursor: pointer;
+  &.#{$site}-active-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.section-ttl {
+  margin: 4rem 0;
+  color: $white;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+  transition: ease-in all 0.3s;
+  z-index: 1;
+  font-size: 5rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    transition: ease-in all 0.3s;
+  }
+
+  &:hover {
+    color: #333 !important;
+    transition: ease-in all 0.3s;
+
+    &::after {
+      left: 0;
+      transition: ease-in all 0.3s;
+    }
+  }
+
+  @include media425 {
+    font-size: 4rem;
+    line-height: 1;
+  }
+
+  @include customMedia(350) {
+    font-size: 3rem;
+  }
+}
+
+.space-btn {
+  position: relative;
+  margin: auto;
+
+  a {
+    img {
+      transition: ease-in all 0.3s;
+    }
+
+    p {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      text-align: center;
+      transform: translate(0, -50%);
+      font-weight: 400;
+      font-size: 2rem;
+    }
+
+    &:hover {
+      img {
+        opacity: 0.8;
+        transition: ease-in all 0.3s;
+      }
+    }
+  }
+}
+
+.section-subttl {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.section-desc {
+  font-size: 1.8rem;
+  line-height: 2;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  width: 70%;
+  margin: auto;
+  margin-top: 3rem;
+}
+
+.divider-1 {
+  transform: rotate(7deg);
+}
+
+.bg-divider {
+  margin-top: -1px;
+}
+
+.g-5,
+.gx-5 {
+  @include customMedia(350) {
+    --bs-gutter-x: 1rem;
+  }
+}
+
+.breadcum-wrapper {
+  padding: 16rem 0 1rem;
+
+  .breadcum-items {
+    .breadcum-item {
+      font-size: 1.5rem;
+      display: block;
+      font-weight: 400;
+
+      .breadcum-link {
+        color: #000;
+      }
+    }
+  }
+
+  @include media767 {
+    padding: 10rem 0 1rem;
+  }
+}
+
+button {
+  &:focus {
+    outline: none;
+  }
+}

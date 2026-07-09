@@ -1,0 +1,114 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2020-06-12 18:54+0530\n"
+"PO-Revision-Date: 2019-08-01 20:17+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/class-xoo-uv-admin-settings.php:49
+msgid "Email"
+msgstr ""
+
+#: admin/class-xoo-uv-admin-settings.php:50
+msgid "General"
+msgstr ""
+
+#: admin/class-xoo-uv-admin-settings.php:211
+msgid "Settings"
+msgstr ""
+
+#: admin/includes/class-xoo-uv-users-table.php:60
+msgid "Account Status"
+msgstr ""
+
+#: admin/includes/class-xoo-uv-users-table.php:63
+msgid "Active"
+msgstr ""
+
+#: admin/includes/class-xoo-uv-users-table.php:64
+msgid "Verification Pending"
+msgstr ""
+
+#: admin/includes/class-xoo-uv-users-table.php:66
+msgid "Resend Email"
+msgstr ""
+
+#: admin/includes/options/email-options.php:52
+msgid "Please verify your email"
+msgstr ""
+
+#: admin/includes/options/email-options.php:79
+msgid ""
+"[b]Hello,[/b][br][br]Please activate the button below to verify your email "
+"address."
+msgstr ""
+
+#: admin/includes/options/email-options.php:91
+msgid "Regards,[br]XootiX"
+msgstr ""
+
+#: admin/includes/options/email-options.php:103
+msgid "Verify my Email address"
+msgstr ""
+
+#: admin/includes/options/general-options.php:59
+#: templates/xoo-uv-verify-notice.php:2
+msgid ""
+"Thank you for signing up. We need to verify your email address. Please check "
+"your inbox."
+msgstr ""
+
+#: admin/includes/options/general-options.php:70
+msgid ""
+"Your email verification is pending. Please check your inbox & verify your "
+"email address."
+msgstr ""
+
+#: includes/class-xoo-uv-core.php:109
+msgid "Your email has been successfully verified. Please Login"
+msgstr ""
+
+#: includes/class-xoo-uv-email.php:111
+msgid "Failed to generate verify link"
+msgstr ""
+
+#: includes/class-xoo-uv-wc-email.php:11
+msgid "Email Verification"
+msgstr ""
+
+#: includes/class-xoo-uv-wc-email.php:12
+msgid "Verification email is sent on new customer registration."
+msgstr ""
+
+#: includes/class-xoo-uv-wc-email.php:27
+msgid "Welcome to {site_title}"
+msgstr ""
+
+#: includes/xoo-uv-functions.php:58
+msgid "Your email has been successfully verified. Please login."
+msgstr ""
+
+#: templates/xoo-uv-verified-success.php:2
+msgid "Your email has been successfully verified."
+msgstr ""
+
+#: templates/xoo-uv-verified-success.php:4
+msgid "Please Login"
+msgstr ""
+
+#: xoo-uv-main.php:58
+msgid ""
+"WooCommerce Login/Signup Popup is enabled but not effective. It requires "
+"WooCommerce in order to work."
+msgstr ""

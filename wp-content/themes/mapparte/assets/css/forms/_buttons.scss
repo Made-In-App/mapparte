@@ -1,0 +1,36 @@
+.journey-btn {
+  border: 1px solid $light;
+  background: transparent;
+  padding: 10px;
+  border-radius: 100px;
+  min-width: 150px;
+  @include defaultFontStyle($Gothan-b, 300, 15, 28, $black);
+  transition: 0.35s ease all;
+  @include media576 {
+    min-width: 120px;
+    padding: 5px 10px;
+  }
+  &:hover {
+    // background: $primary;
+    border-color: $primary;
+    color: $primary;
+  }
+  &-orange {
+    background: $primary;
+    border-color: $primary;
+    color: $white;
+    &:hover {
+      background: $white;
+      border-color: $primary;
+      color: $primary;
+    }
+  }
+  &-primary {
+    border-color: $primary;
+    &:hover {
+      background: $primary;
+      border-color: $primary;
+      color: $white;
+    }
+  }
+}

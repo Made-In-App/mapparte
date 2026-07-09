@@ -1,0 +1,2376 @@
+[
+    {
+        "key": "group_5f23cfa94fbf1",
+        "title": "FAQ extra fields",
+        "fields": [
+            {
+                "key": "field_6085e751356a1",
+                "label": "Icona",
+                "name": "icona",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "preview_size": "full",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_5f23cfd0cfaf5",
+                "label": "Elenco domande\/risposte",
+                "name": "faq_repeater",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "",
+                "sub_fields": [
+                    {
+                        "key": "field_5f23cfe1cfaf6",
+                        "label": "Domanda",
+                        "name": "domanda",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "maxlength": "",
+                        "rows": "",
+                        "new_lines": ""
+                    },
+                    {
+                        "key": "field_5f23cffbcfaf7",
+                        "label": "Risposta",
+                        "name": "risposta",
+                        "type": "wysiwyg",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "tabs": "all",
+                        "toolbar": "full",
+                        "media_upload": 1,
+                        "delay": 0
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_parent",
+                    "operator": "==",
+                    "value": "45"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_6073759102646",
+        "title": "Galleria Magazine",
+        "fields": [
+            {
+                "key": "field_607375a18426b",
+                "label": "Galleria",
+                "name": "galleria",
+                "type": "gallery",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "insert": "append",
+                "library": "all",
+                "min": "",
+                "max": "",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_605f8299c30d2",
+        "title": "HOME PAGE",
+        "fields": [
+            {
+                "key": "field_605f830d277c4",
+                "label": "GLI SPAZI",
+                "name": "gli_spazi",
+                "type": "taxonomy",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "taxonomy": "activity",
+                "field_type": "multi_select",
+                "allow_null": 0,
+                "add_term": 1,
+                "save_terms": 0,
+                "load_terms": 0,
+                "return_format": "id",
+                "multiple": 0
+            },
+            {
+                "key": "field_6086cb396d5e6",
+                "label": "IN VETRINA",
+                "name": "in_vetrina",
+                "type": "relationship",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "space"
+                ],
+                "taxonomy": "",
+                "filters": [
+                    "search"
+                ],
+                "elements": "",
+                "min": "",
+                "max": "",
+                "return_format": "object"
+            },
+            {
+                "key": "field_6086caf76d5e5",
+                "label": "I SERVIZI",
+                "name": "i_servizi",
+                "type": "relationship",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "service"
+                ],
+                "taxonomy": "",
+                "filters": [
+                    "search"
+                ],
+                "elements": "",
+                "min": "",
+                "max": "",
+                "return_format": "object"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "site-settings"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_605f638520f92",
+        "title": "IMAGE",
+        "fields": [
+            {
+                "key": "field_605f6392848f7",
+                "label": "immagine",
+                "name": "immagine",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "preview_size": "full",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "taxonomy",
+                    "operator": "==",
+                    "value": "all"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_606b2e1529007",
+        "title": "Immagine utente",
+        "fields": [
+            {
+                "key": "field_606b2e1c94ae2",
+                "label": "immagine",
+                "name": "immagine",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "preview_size": "square",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "user_form",
+                    "operator": "==",
+                    "value": "all"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_60281a67bdaa6",
+        "title": "Info spazio",
+        "fields": [
+            {
+                "key": "field_60281a89554a7",
+                "label": "Indirizzo",
+                "name": "address",
+                "type": "google_map",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "center_lat": "41.9028",
+                "center_lng": "12.4964",
+                "zoom": "",
+                "height": ""
+            },
+            {
+                "key": "field_60296fc18f8e9",
+                "label": "Quartiere",
+                "name": "neighbourhood",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "100",
+                    "class": "",
+                    "id": ""
+                },
+                "wpglobus_multilingual_field": 1,
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_60293703fcf8b",
+                "label": "Piano",
+                "name": "floor",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "Seleziona...": "Seleziona...",
+                    "0": "0",
+                    "1": "1",
+                    "2": "2",
+                    "3": "3",
+                    "4": "4",
+                    "5": "5",
+                    "6": "6",
+                    "7": "7",
+                    "8": "8",
+                    "9": "9",
+                    "10": "10"
+                },
+                "default_value": false,
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_602913d130d6a",
+                "label": "Numero minimo di ore prenotabili",
+                "name": "min_hours",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "1": "1",
+                    "2": "2",
+                    "3": "3",
+                    "4": "4",
+                    "5": "5",
+                    "6": "6",
+                    "7": "7",
+                    "8": "8"
+                },
+                "default_value": 1,
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_602970e43a37a",
+                "label": "Numero Sale",
+                "name": "rooms",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "1": "1",
+                    "2": "2",
+                    "3": "3",
+                    "4": "4",
+                    "5": "5",
+                    "6": "6",
+                    "7": "7",
+                    "8": "8",
+                    "9": "9",
+                    ">10": ">10"
+                },
+                "default_value": 1,
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_60a762d70f0c4",
+                "label": "Attività",
+                "name": "activities",
+                "type": "taxonomy",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "taxonomy": "activity",
+                "field_type": "checkbox",
+                "add_term": 0,
+                "save_terms": 1,
+                "load_terms": 1,
+                "return_format": "object",
+                "multiple": 0,
+                "allow_null": 0
+            },
+            {
+                "key": "field_6029145f088ee",
+                "label": "Tariffa oraria",
+                "name": "price_hour",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": "",
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_602914af088ef",
+                "label": "Sconto giornaliero %",
+                "name": "discount_perc_day",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": "",
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_6054ca8737134",
+                "label": "Tariffa oraria weekend",
+                "name": "price_hour_weekend",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": "",
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_602914ca088f0",
+                "label": "Sconto weekend %",
+                "name": "discount_perc_weekend",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": "",
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_6029150a31206",
+                "label": "Adesione allo sconto",
+                "name": "discount",
+                "type": "radio",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "1": "Accetto",
+                    "0": "Non Accetto"
+                },
+                "allow_null": 0,
+                "other_choice": 0,
+                "default_value": 0,
+                "layout": "vertical",
+                "return_format": "value",
+                "save_other_choice": 0
+            },
+            {
+                "key": "field_6029398814552",
+                "label": "Foto",
+                "name": "photos",
+                "type": "gallery",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "medium",
+                "insert": "append",
+                "library": "all",
+                "min": "",
+                "max": "",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_602917a66e033",
+                "label": "Orari di disponibilità",
+                "name": "availability",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_602917ce6e034",
+                        "label": "Lunedì",
+                        "name": "",
+                        "type": "tab",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "placement": "top",
+                        "endpoint": 0
+                    },
+                    {
+                        "key": "field_602b8f2326f61",
+                        "label": "Orari",
+                        "name": "mon_opening_hours",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "table",
+                        "button_label": "Aggiungi",
+                        "sub_fields": [
+                            {
+                                "key": "field_602918146e036",
+                                "label": "Slot apertura",
+                                "name": "mon_open",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "H:i:s",
+                                "return_format": "H:i:s"
+                            },
+                            {
+                                "key": "field_602918256e037",
+                                "label": "Slot chiusura",
+                                "name": "mon_close",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "H:i:s",
+                                "return_format": "H:i:s"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_602918a9ab7a8",
+                        "label": "Martedì",
+                        "name": "",
+                        "type": "tab",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "placement": "top",
+                        "endpoint": 0
+                    },
+                    {
+                        "key": "field_602b9213d3a04",
+                        "label": "Orari",
+                        "name": "tue_opening_hours",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "table",
+                        "button_label": "Aggiungi",
+                        "sub_fields": [
+                            {
+                                "key": "field_6029276aab7a9",
+                                "label": "Slot apertura",
+                                "name": "tue_open",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "H:i:s",
+                                "return_format": "H:i:s"
+                            },
+                            {
+                                "key": "field_60292791ab7aa",
+                                "label": "Slot chiusura",
+                                "name": "tue_close",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "H:i:s",
+                                "return_format": "H:i:s"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_60292814479ab",
+                        "label": "Mercoledì",
+                        "name": "",
+                        "type": "tab",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "placement": "top",
+                        "endpoint": 0
+                    },
+                    {
+                        "key": "field_602b9241d3a05",
+                        "label": "Orari",
+                        "name": "wed_opening_hours",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "table",
+                        "button_label": "Aggiungi",
+                        "sub_fields": [
+                            {
+                                "key": "field_602b9241d3a06",
+                                "label": "Slot apertura",
+                                "name": "wed_open",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "H:i:s",
+                                "return_format": "H:i:s"
+                            },
+                            {
+                                "key": "field_602b9241d3a07",
+                                "label": "Slot chiusura",
+                                "name": "wed_close",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "H:i:s",
+                                "return_format": "H:i:s"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_6029294086354",
+                        "label": "Giovedì",
+                        "name": "",
+                        "type": "tab",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "placement": "top",
+                        "endpoint": 0
+                    },
+                    {
+                        "key": "field_602b95bc5a981",
+                        "label": "Orari",
+                        "name": "thu_opening_hours",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "table",
+                        "button_label": "Aggiungi",
+                        "sub_fields": [
+                            {
+                                "key": "field_602b95bc5a982",
+                                "label": "Slot apertura",
+                                "name": "thu_open",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "H:i:s",
+                                "return_format": "H:i:s"
+                            },
+                            {
+                                "key": "field_602b95bc5a983",
+                                "label": "Slot chiusura",
+                                "name": "thu_close",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "H:i:s",
+                                "return_format": "H:i:s"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_602929eb6f634",
+                        "label": "Venerdì",
+                        "name": "",
+                        "type": "tab",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "placement": "top",
+                        "endpoint": 0
+                    },
+                    {
+                        "key": "field_604fc9de6cff0",
+                        "label": "Orari",
+                        "name": "fri_opening_hours",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "table",
+                        "button_label": "Aggiungi",
+                        "sub_fields": [
+                            {
+                                "key": "field_604fc9de6cff1",
+                                "label": "Slot apertura",
+                                "name": "fri_open",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "H:i:s",
+                                "return_format": "H:i:s"
+                            },
+                            {
+                                "key": "field_604fc9de6cff2",
+                                "label": "Slot chiusura",
+                                "name": "fri_close",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "H:i:s",
+                                "return_format": "H:i:s"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_60292a292343c",
+                        "label": "Sabato",
+                        "name": "",
+                        "type": "tab",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "placement": "top",
+                        "endpoint": 0
+                    },
+                    {
+                        "key": "field_604fca443dc5c",
+                        "label": "Orari",
+                        "name": "sat_opening_hours",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "table",
+                        "button_label": "Aggiungi",
+                        "sub_fields": [
+                            {
+                                "key": "field_604fca443dc5d",
+                                "label": "Slot apertura",
+                                "name": "sat_open",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "H:i:s",
+                                "return_format": "H:i:s"
+                            },
+                            {
+                                "key": "field_604fca443dc5e",
+                                "label": "Slot chiusura",
+                                "name": "sat_close",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "H:i:s",
+                                "return_format": "H:i:s"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_602933aa6fd88",
+                        "label": "Domenica",
+                        "name": "",
+                        "type": "tab",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "placement": "top",
+                        "endpoint": 0
+                    },
+                    {
+                        "key": "field_604fca810339a",
+                        "label": "Orari",
+                        "name": "sun_opening_hours",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "table",
+                        "button_label": "Aggiungi",
+                        "sub_fields": [
+                            {
+                                "key": "field_604fca810339b",
+                                "label": "Slot apertura",
+                                "name": "sun_open",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "H:i:s",
+                                "return_format": "H:i:s"
+                            },
+                            {
+                                "key": "field_604fca810339c",
+                                "label": "Slot chiusura",
+                                "name": "sun_close",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "H:i:s",
+                                "return_format": "H:i:s"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "field_60297248c9c09",
+                "label": "Dimensioni in mq",
+                "name": "space_mq",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": "",
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_6029366066a10",
+                "label": "Altezza sala",
+                "name": "space_height",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": "",
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_6029363466a0f",
+                "label": "Larghezza sala",
+                "name": "space_width",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": "",
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_602936a966a11",
+                "label": "Lunghezza sala",
+                "name": "space_length",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": "",
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_60293752fcf8c",
+                "label": "Max capienza persone",
+                "name": "max_people",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": "",
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_6029739127df6",
+                "label": "Accessibilità",
+                "name": "accessibility",
+                "type": "radio",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "1": "Sì",
+                    "0": "No"
+                },
+                "allow_null": 0,
+                "other_choice": 0,
+                "default_value": 0,
+                "layout": "vertical",
+                "return_format": "value",
+                "save_other_choice": 0
+            },
+            {
+                "key": "field_60625d31dbdde",
+                "label": "Pavimento",
+                "name": "floor_type",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "legno": "legno",
+                    "piastrelle": "piastrelle",
+                    "cotto": "cotto",
+                    "ceramica": "ceramica",
+                    "parquet legno": "parquet legno",
+                    "parquet flottante": "parquet flottante",
+                    "marmo": "marmo",
+                    "cemento": "cemento",
+                    "laminato": "laminato",
+                    "elicotterato": "elicotterato",
+                    "altro": "altro"
+                },
+                "allow_custom": 0,
+                "default_value": [],
+                "layout": "vertical",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            },
+            {
+                "key": "field_60623623b3a22",
+                "label": "Accesso allo spazio",
+                "name": "space_access",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "scale esterne": "scale esterne",
+                    "ascensore": "ascensore",
+                    "rampa di accesso": "rampa di accesso",
+                    "montacarichi": "montacarichi",
+                    "scale interne": "scale interne"
+                },
+                "allow_custom": 0,
+                "default_value": [],
+                "layout": "vertical",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            },
+            {
+                "key": "field_6062369ab3a23",
+                "label": "Disponibilità spazio esterno",
+                "name": "space_external",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "wpglobus_multilingual_field": 1,
+                "choices": {
+                    "giardino": "giardino",
+                    "balcone": "balcone",
+                    "cortile": "cortile",
+                    "terrazza": "terrazza",
+                    "altro": "altro"
+                },
+                "allow_custom": 0,
+                "default_value": [],
+                "layout": "vertical",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            },
+            {
+                "key": "field_606237166fcda",
+                "label": "Parcheggio",
+                "name": "parking",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "gratuito interno": "gratuito interno",
+                    "gratuito esterno": "gratuito esterno",
+                    "pagamento interno": "pagamento interno",
+                    "pagamento esterno": "pagamento esterno",
+                    "custodito": "custodito"
+                },
+                "allow_custom": 0,
+                "default_value": [],
+                "layout": "vertical",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            },
+            {
+                "key": "field_60623902a700a",
+                "label": "Servizi",
+                "name": "services",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "servizi igienici": "servizi igienici",
+                    "servizi igienici accessibili ai disabili": "servizi igienici accessibili ai disabili",
+                    "acqua potabile": "acqua potabile",
+                    "riscaldamento": "riscaldamento",
+                    "aria condizionata (impianti di aerazione)": "aria condizionata (impianti di aerazione)",
+                    "portineria": "portineria",
+                    "wi-fi": "wi-fi"
+                },
+                "allow_custom": 0,
+                "default_value": [],
+                "layout": "vertical",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            },
+            {
+                "key": "field_6062395a57f92",
+                "label": "Accessori",
+                "name": "accessories",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "frigorifero": "frigorifero",
+                    "bollitore": "bollitore",
+                    "macchina caffè": "macchina caffè",
+                    "microonde": "microonde",
+                    "angolo cottura": "angolo cottura"
+                },
+                "allow_custom": 0,
+                "default_value": [],
+                "layout": "vertical",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            },
+            {
+                "key": "field_60623996049f3",
+                "label": "Apparecchiature a\/v",
+                "name": "equipment_av",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "insonorizzazione": "insonorizzazione",
+                    "amplificazione": "amplificazione",
+                    "mixer": "mixer",
+                    "impianto audio": "impianto audio",
+                    "videoproiettore": "videoproiettore",
+                    "schermo\/tv": "schermo\/tv",
+                    "microfono": "microfono",
+                    "altro": "altro"
+                },
+                "allow_custom": 0,
+                "default_value": [],
+                "layout": "vertical",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            },
+            {
+                "key": "field_60623aedb1a04",
+                "label": "Regole dello spazio",
+                "name": "space_rules",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "fumatori ammessi \/ smoker friendly": "fumatori ammessi \/ smoker friendly",
+                    "animali ammessi \/ pet friendly": "animali ammessi \/ pet friendly"
+                },
+                "allow_custom": 0,
+                "default_value": [],
+                "layout": "vertical",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            },
+            {
+                "key": "field_60623cad3dbfd",
+                "label": "Caratteristiche",
+                "name": "features",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "spogliatoio": "spogliatoio",
+                    "camerini": "camerini",
+                    "docce": "docce",
+                    "spazio relax": "spazio relax",
+                    "zona comfort": "zona comfort",
+                    "piscina": "piscina",
+                    "piscina riscaldata": "piscina riscaldata"
+                },
+                "allow_custom": 0,
+                "default_value": [],
+                "layout": "vertical",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            },
+            {
+                "key": "field_60623ccc3dbfe",
+                "label": "Attrezzature",
+                "name": "equipment",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "tappetini": "tappetini",
+                    "specchi": "specchi",
+                    "sedie": "sedie",
+                    "tavoli": "tavoli",
+                    "sbarre per danza": "sbarre per danza",
+                    "tatami": "tatami",
+                    "cuscini": "cuscini",
+                    "lettino per trattamenti": "lettino per trattamenti",
+                    "futon": "futon",
+                    "leggìo": "leggìo",
+                    "cavalletti per sculture\/ dipinti": "cavalletti per sculture\/ dipinti",
+                    "palco": "palco",
+                    "catenelle o binari": "catenelle o binari"
+                },
+                "allow_custom": 0,
+                "default_value": [],
+                "layout": "vertical",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            },
+            {
+                "key": "field_60623d425e4ec",
+                "label": "Illuminazione",
+                "name": "light",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "illuminazione zenitale": "illuminazione zenitale",
+                    "finestre con luce naturale": "finestre con luce naturale",
+                    "faretti orientabili": "faretti orientabili",
+                    "luci colorate": "luci colorate",
+                    "vetrina": "vetrina"
+                },
+                "allow_custom": 0,
+                "default_value": [],
+                "layout": "vertical",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            },
+            {
+                "key": "field_60623d8d5e4ed",
+                "label": "Aerazione",
+                "name": "ventilation",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "prese d’aria a bocca di lupo": "prese d’aria a bocca di lupo",
+                    "porta-finestra": "porta-finestra",
+                    "finestra scorrevole": "finestra scorrevole",
+                    "ventilatore": "ventilatore"
+                },
+                "allow_custom": 0,
+                "default_value": [],
+                "layout": "vertical",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            },
+            {
+                "key": "field_6029754b2c4f4",
+                "label": "Precauzioni covid",
+                "name": "covid",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "segnali di distanziamento di 1 o 2 metri": "segnali di distanziamento di 1 o 2 metri",
+                    "sistema di entrata e uscita separate": "sistema di entrata e uscita separate",
+                    "rilevamento temperatura all’ingresso": "rilevamento temperatura all’ingresso",
+                    "disinfettante mani per tutti gli ospiti": "disinfettante mani per tutti gli ospiti",
+                    "asciugamani adeguati  per tutti gli ospiti": "asciugamani adeguati  per tutti gli ospiti",
+                    "tutte le superfici vengono accuratamente pulite prima di ogni prenotazione": "tutte le superfici vengono accuratamente pulite prima di ogni prenotazione",
+                    "pagamento non in contanti": "pagamento non in contanti",
+                    "servizi igienici indipendenti per gli ospiti": "servizi igienici indipendenti per gli ospiti",
+                    "mascherine richieste per gli ospiti": "mascherine richieste per gli ospiti",
+                    "mascherine richieste per lo staff": "mascherine richieste per lo staff"
+                },
+                "allow_custom": 0,
+                "default_value": [],
+                "layout": "vertical",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            },
+            {
+                "key": "field_602976297f286",
+                "label": "Numero massimo di persone covid",
+                "name": "max_people_covid",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": "",
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_602976567f287",
+                "label": "Altre indicazioni per covid",
+                "name": "covid_notes",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "wpglobus_multilingual_field": 1,
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_60293a6faae32",
+                "label": "Politica di cancellazione",
+                "name": "cancel_policy",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "wpglobus_multilingual_field": 1,
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_602977375ba4a",
+                "label": "Ente gestore",
+                "name": "ente_gestore",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "Seleziona...": "Seleziona...",
+                    "associazione culturale": "associazione culturale",
+                    "onlus": "onlus",
+                    "privato": "privato",
+                    "azienda": "azienda",
+                    "altro": "altro"
+                },
+                "default_value": false,
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_609aac7aa881c",
+                "label": "Scadenza sponsorizzazione",
+                "name": "sponsored_expired",
+                "type": "date_time_picker",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "display_format": "Y-m-d H:i:s",
+                "return_format": "Y-m-d H:i:s",
+                "first_day": 1
+            },
+            {
+                "key": "field_609aacb7a881d",
+                "label": "Tipo sponsorizzazione",
+                "name": "sponsored_type",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "0": "Seleziona...",
+                    "silver": "Silver",
+                    "gold": "Gold"
+                },
+                "default_value": false,
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "space"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_605f83e311fc9",
+        "title": "MAGAZINE",
+        "fields": [
+            {
+                "key": "field_605f83f3c84f2",
+                "label": "IN EVIDENZA",
+                "name": "in_evidenza",
+                "type": "post_object",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "post"
+                ],
+                "taxonomy": "",
+                "allow_null": 0,
+                "multiple": 0,
+                "return_format": "object",
+                "ui": 1
+            },
+            {
+                "key": "field_605f842ac84f3",
+                "label": "ALTRI IN EVIDENZA",
+                "name": "in_evidenza_altri",
+                "type": "relationship",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "post"
+                ],
+                "taxonomy": "",
+                "filters": [
+                    "search"
+                ],
+                "elements": "",
+                "min": "",
+                "max": "",
+                "return_format": "object"
+            },
+            {
+                "key": "field_605f846fc84f5",
+                "label": "BREAKING NEWS",
+                "name": "breaking_news",
+                "type": "relationship",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "post"
+                ],
+                "taxonomy": "",
+                "filters": [
+                    "search"
+                ],
+                "elements": "",
+                "min": "",
+                "max": "",
+                "return_format": "object"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "site-settings"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_60accd811dac3",
+        "title": "Rating Spazio",
+        "fields": [
+            {
+                "key": "field_60accd8120be3",
+                "label": "Pulizia",
+                "name": "pulizia",
+                "type": "star_rating_field",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "max_stars": 5,
+                "return_type": 0,
+                "allow_half": 1,
+                "theme": "default"
+            },
+            {
+                "key": "field_60accd8120c1b",
+                "label": "Aderenza alla descrizione",
+                "name": "aderenza",
+                "type": "star_rating_field",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "max_stars": 5,
+                "return_type": 0,
+                "allow_half": 1,
+                "theme": "default"
+            },
+            {
+                "key": "field_60accd8120c52",
+                "label": "Professionalità",
+                "name": "professionalita",
+                "type": "star_rating_field",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "max_stars": 5,
+                "return_type": 0,
+                "allow_half": 1,
+                "theme": "default"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "space"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_60acb62a99ce4",
+        "title": "Rating Visitatore",
+        "fields": [
+            {
+                "key": "field_60acb6325cea8",
+                "label": "Puntualità",
+                "name": "puntualita",
+                "type": "star_rating_field",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "max_stars": 5,
+                "return_type": 0,
+                "allow_half": 1,
+                "theme": "default"
+            },
+            {
+                "key": "field_60acb71a5cea9",
+                "label": "Cura",
+                "name": "cura",
+                "type": "star_rating_field",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "max_stars": 5,
+                "return_type": 0,
+                "allow_half": 1,
+                "theme": "default"
+            },
+            {
+                "key": "field_60acb7315ceaa",
+                "label": "Rispetto delle dotazioni",
+                "name": "rispetto_delle_dotazioni",
+                "type": "star_rating_field",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "max_stars": 5,
+                "return_type": 0,
+                "allow_half": 1,
+                "theme": "default"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "user_form",
+                    "operator": "==",
+                    "value": "all"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_60a8c06e7ad58",
+        "title": "Sconto piattaforma",
+        "fields": [
+            {
+                "key": "field_60a8c0863eef8",
+                "label": "Ore consecutive",
+                "name": "ore_consecutive",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 12,
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_60a8c09f3eef9",
+                "label": "Sconto applicato",
+                "name": "sconto_applicato",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 10,
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "site-settings"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_6060d7c2503c3",
+        "title": "Settings",
+        "fields": [
+            {
+                "key": "field_6060d7d28efa6",
+                "label": "Google Maps Api",
+                "name": "google_maps_api",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "site-settings"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_6091089100c11",
+        "title": "Stripe Connect",
+        "fields": [
+            {
+                "key": "field_609108bceab66",
+                "label": "stripe_public_key",
+                "name": "stripe_public_key",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_609108c9eab67",
+                "label": "stripe_secret_key",
+                "name": "stripe_secret_key",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_6091a4b680c02",
+                "label": "% Commissioni Stripe",
+                "name": "commissioni_stripe",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "site-settings"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_609108f9098e7",
+        "title": "User meta",
+        "fields": [
+            {
+                "key": "field_60910910bfc56",
+                "label": "Stripe Connected Account",
+                "name": "stripe_connected_account",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "user_form",
+                    "operator": "==",
+                    "value": "all"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_609ae7cbb0423",
+        "title": "Voucher",
+        "fields": [
+            {
+                "key": "field_609ae7e61f481",
+                "label": "Percentuale Sconto",
+                "name": "voucher_discount",
+                "type": "text",
+                "instructions": "Percentuale su spesa massima di 100 euro (Ad esempio con uno sconto del 15% il valore massimo del voucher è 15 euro)",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "wpglobus_multilingual_field": 1,
+                "default_value": 15,
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_609ae83ee40d9",
+                "label": "Scadenza",
+                "name": "expiry_date",
+                "type": "date_time_picker",
+                "instructions": "Lascia questo campo vuoto se vuoi applicare la scadenza predefinita di 2 mesi dalla creazione del voucher",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "display_format": "Y-m-d H:i:s",
+                "return_format": "Y-m-d H:i:s",
+                "first_day": 1
+            },
+            {
+                "key": "field_609ae8ca719d7",
+                "label": "Utente",
+                "name": "user",
+                "type": "user",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "role": "",
+                "allow_null": 0,
+                "multiple": 0,
+                "return_format": "id"
+            },
+            {
+                "key": "field_609afec4c7f6f",
+                "label": "Utilizzato",
+                "name": "used",
+                "type": "radio",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": [
+                    "no",
+                    "sì"
+                ],
+                "allow_null": 0,
+                "other_choice": 0,
+                "default_value": "",
+                "layout": "horizontal",
+                "return_format": "value",
+                "save_other_choice": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "voucher"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    }
+]

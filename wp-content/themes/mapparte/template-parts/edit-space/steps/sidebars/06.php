@@ -1,0 +1,1 @@
+<p class="my-space-desc"><?php echo __("Per selezionare orari diversi: da Pc tenere premuto il tasto Control, da Mac tenere  premuto il tasto Command; da cellulare inserire manualmente aggiungendo gli orari.","mapparte"); ?></p>

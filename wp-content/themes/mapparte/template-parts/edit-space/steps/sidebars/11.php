@@ -1,0 +1,5 @@
+<p class="my-space-desc"><?php echo __("Bene, hai completato l’inserimento del tuo spazio. ","mapparte"); ?> </p>
+<P class="my-space-desc"><?php echo __("Riceverai conferma  via email che la richiesta è andata a buon fine e il tuo spazio è on line. ","mapparte"); ?> </p>
+<p class="my-space-desc"><?php echo __("E il tuo spazio sarà online,  visibile e prenotabile sul sito. E sulla app.  *Stripe è un fornitore di servizi di pagamento regolamentato, una piattaforma affidabile e sicura che gestisce miliardi di transazioni in tutto il mondo. Poi  attiva il tuo account Stripe per ricevere gli importi delle prenotazioni direttamente sul tuo conto corrente.  Stripe è un fornitore di servizi di pagamento regolamentato, una piattaforma affidabile e sicura che gestisce miliardi di transazioni in tutto il mondo.","mapparte"); ?></p>
+<p class="my-space-desc"><?php echo __("Per inserire o aggiornare le coordinate bancarie del tuo conto entra nella  tua dashboard personale -  sezione “Profilo e account”. Per info e chiarimenti contattaci su ","mapparte"); ?><a href="mailto://info@mapparte.com" style="color:#000">info@mapparte.com</a></p>
+

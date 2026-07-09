@@ -1,0 +1,1 @@
+<p class="my-space-desc"><?php echo __("Compila tutti i campi dettagliatamente. Dedica un po’ di tempo a questa fase: più sarai preciso più sarà facile farti trovare dagli utenti.","mapparte"); ?></p>

@@ -1,0 +1,4 @@
+<p class="my-space-desc"><?php echo __("Inserisci minimo 3 - massimo 10 immagini che rappresentino al meglio il tuo spazio. Per rendere il tutto più efficace valorizza  sia la ‘spaziosità’ del  luogo che i suoi dettagli. Inserisci anche la planimetria se la possiedi.","mapparte"); ?></p>
+<p class="my-space-desc"><?php echo __("Potrai aggiungere o modificare le foto in qualsiasi momento.","mapparte"); ?></p>
+<p class="my-space-desc"><?php echo __("La risoluzione consigliata per le foto è 1500 di larghezza per 500 di altezza pixel,  formato orizzontale.","mapparte"); ?></p>
+<p class="my-space-desc"><?php echo __("Se puoi, aggiungi anche la planimetria dello spazio tra le immagini.","mapparte"); ?></p>

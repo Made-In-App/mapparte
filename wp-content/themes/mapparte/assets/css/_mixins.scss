@@ -1,0 +1,97 @@
+/* for common fonts */
+@mixin defaultFontStyle($font, $fontWeight: null, $fontSize: null, $lineHeight: null, $color: null) {
+  font-family: $font;
+  font-style: normal;
+  font-weight: $fontWeight;
+  font-size: ($fontSize) + rem;
+  line-height: ($lineHeight) + rem;
+  color: $color;
+}
+
+//XX large devices
+@mixin media1921 {
+  @media (min-width: #{$screen-1921}) {
+    @content;
+  }
+}
+
+//X large devices
+@mixin media1920 {
+  @media (max-width: #{$screen-1920}) {
+    @content;
+  }
+}
+
+//XX large devices
+@mixin media1681 {
+  @media (min-width: #{$screen-1681}) {
+    @content;
+  }
+}
+
+// large devices
+@mixin media1680 {
+  @media (max-width: #{$screen-1680}) {
+    @content;
+  }
+}
+// ipad pro
+@mixin media1024 {
+  @media (max-width: #{$screen-1024}) {
+    @content;
+  }
+}
+// 991
+@mixin media991 {
+  @media (max-width: #{$screen-991}) {
+    @content;
+  }
+}
+// ipad
+@mixin media767 {
+  @media (max-width: #{$screen-767}) {
+    @content;
+  }
+}
+// smart phones
+@mixin media576 {
+  @media (max-width: #{$screen-576}) {
+    @content;
+  }
+}
+// mobile phones
+@mixin media425 {
+  @media (max-width: #{$screen-425}) {
+    @content;
+  }
+}
+// small mobile phones
+@mixin media375 {
+  @media (max-width: #{$screen-375}) {
+    @content;
+  }
+}
+// custom media query
+@mixin customMedia($screen) {
+  @media (max-width: $screen+"px") {
+    @content;
+  }
+}
+// custom media query
+@mixin customheight($screen) {
+  @media (max-height: $screen+"px") {
+    @content;
+  }
+}
+//custom media query
+@mixin customminwh($width, $height) {
+  @media screen and (min-width: $width+"px") and (max-height: $height+"px") {
+    @content;
+  }
+}
+//custom media query
+@mixin custommaxwh($width, $height) {
+  @media screen and (max-width: $width+"px") and (max-height: $height+"px") {
+    @content;
+  }
+}
