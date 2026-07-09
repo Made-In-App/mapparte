@@ -75,13 +75,13 @@ class Bookings {
 
 					$subject = __("Mapparte - Conferma prenotazione", 'mapparte' );
 
-					$message = sprintf( __("<b>%s</b> ha accettato la tua richiesta.<br>Per effettuare il pagamento e confermare la prenotazione accedi alla tua area riservata entro 2 giorni!<br><br>%s%s", 'mapparte' ),
+					$message = sprintf( __("<b>%s</b> ha accettato la tua richiesta.<br>La prenotazione è confermata: concorda direttamente con l'host le modalità di pagamento.<br><br>%s%s", 'mapparte' ),
 						esc_html( $space_title ),
 						$user_msg,
 						$details_msg
 					);
 
-					$call_to_action = __("Effettua il pagamento", 'mapparte' );
+					$call_to_action = __("Vedi la prenotazione", 'mapparte' );
 
 					$call_to_action_url = sprintf( "%s/?p=%d&post_type=booking",
 						esc_url( get_home_url() ),
@@ -100,7 +100,7 @@ class Bookings {
 
 					\Mapparte\Email_Notification::send_email( $to_email, $subject, $args_notification );
 
-					$message_notification = sprintf( __("%s ha accettato la tua richiesta. Per effettuare il pagamento e confermare la prenotazione accedi alla tua area riservata entro 2 giorni!", 'mapparte' ),
+					$message_notification = sprintf( __("%s ha accettato la tua richiesta. La prenotazione è confermata: concorda direttamente con l'host le modalità di pagamento.", 'mapparte' ),
 						esc_html( $space_title )
 					);
 					if ( $notifiche_prenotazione && $one_signal_ids ) {
@@ -157,60 +157,6 @@ class Bookings {
 			}
 
 			wp_redirect( get_the_permalink() );
-		} else if ( ( isset( $_REQUEST['paymentIntentId'] ) && $_REQUEST['paymentIntentId'] )
-		            && ( isset( $_REQUEST['payment'] ) && 'success' === $_REQUEST['payment'] )
-		            && wp_verify_nonce( urldecode( $_REQUEST['nonce'] ), 'stripe-nonce-seed' ) ) {
-			$request = new \WP_REST_Request( 'PUT', sprintf( '/mapparte/v1/bookings/%d', $post->ID ) );
-			$request->set_query_params( array( 'status' => 'pagata' ) );
-			$rest_response = rest_do_request( $request );
-			$server        = rest_get_server();
-
-			add_post_meta( $post->ID, '_paymentIntentId', $_REQUEST['paymentIntentId'] );
-
-			// Mail per l'utente
-			$subject = __("Mapparte - Hai effettuato il pagamento", 'mapparte' );
-
-			$message = sprintf( __("La tua prenotazione è confermata.<br>Per eventuali annullamenti leggi la politica di cancellazione dello spazio.<br><br>%s", 'mapparte' ),
-				$details_msg
-			);
-
-			$footer = __("Il team Mapparte!", 'mapparte' );
-
-			$args_notification = [
-				'h1'                 => false,
-				'body'               => $message,
-				'call_to_action'     => false,
-				'call_to_action_url' => false,
-				'footer'             => $footer,
-			];
-
-			\Mapparte\Email_Notification::send_email( $to_email, $subject, $args_notification );
-
-			// Mail per l'host
-
-			$host_email = get_the_author_meta( 'email', $host_id );
-
-			$subject = __("Mapparte - L’utente ha effettuato il pagamento", 'mapparte' );
-
-			$message = sprintf( __("Hai ricevuto un pagamento da <b>%s.</b><br>Controlla  il saldo nel tuo account di Stripe.<br><br>%s", 'mapparte' ),
-				esc_html( $user_nicename ),
-				$details_msg
-			);
-
-			$footer = __("Il team Mapparte!", 'mapparte' );
-
-			$args_notification = [
-				'h1'                 => false,
-				'body'               => $message,
-				'call_to_action'     => false,
-				'call_to_action_url' => false,
-				'footer'             => $footer,
-			];
-
-			\Mapparte\Email_Notification::send_email( $host_email, $subject, $args_notification );
-
-			wp_redirect( get_the_permalink( $post->ID ) );
-
 		} else if ( isset ( $_REQUEST['acf'] ) ) {
 
 			$guest_id = (int) $booking_details['userId'];
@@ -289,7 +235,7 @@ class Bookings {
 
 		$query = "select ID,post_status FROM " . $wpdb->prefix . "posts WHERE 1=1";
 		$query .= " AND ( post_modified < '$date' )";
-		$query .= " AND post_type = 'booking' AND ( post_status = 'nuova-richiesta' OR post_status = 'accettata' ) ORDER BY post_date DESC LIMIT 20";
+		$query .= " AND post_type = 'booking' AND post_status = 'nuova-richiesta' ORDER BY post_date DESC LIMIT 20";
 
 		$results = $wpdb->get_results( $query );
 
@@ -360,27 +306,6 @@ class Bookings {
 						], $one_signal_ids );
 					}
 
-				} else if ( 'accettata' === $result->post_status ) {
-
-					$to       = get_post_field( 'post_author', $booking_details['spaceId'] );
-					$to_email = get_the_author_meta( 'email', $to );
-
-					$subject = __("Mapparte - L’utente non ha effettuato il pagamento", 'mapparte' );
-
-					$message = sprintf( __("L’utente non ha effettuato il pagamento.</b><br>La prenotazone e' stata cancellata automaticamente.<br><br>%s", 'mapparte' ),
-						$details_msg
-					);
-
-					$footer = __("Il team Mapparte!", 'mapparte' );
-
-					$args_notification = [
-						'h1'                 => false,
-						'body'               => $message,
-						'call_to_action'     => false,
-						'call_to_action_url' => false,
-						'footer'             => $footer,
-					];
-
 				}
 
 				\Mapparte\Email_Notification::send_email( $to_email, $subject, $args_notification );
@@ -398,7 +323,7 @@ class Bookings {
 
 		$query = "select p.ID,p.post_status FROM " . $wpdb->prefix . "posts as p ";
 		$query .= "INNER JOIN " . $wpdb->prefix . "postmeta as m ON ( p.ID = m.post_id ) WHERE 1=1 ";
-		$query .= "AND ( ( m.meta_key = 'toDateTime' AND m.meta_value < '$date' ) AND p.post_type = 'booking' AND p.post_status = 'pagata' ) GROUP BY p.ID ORDER BY p.post_date DESC LIMIT 20";
+		$query .= "AND ( ( m.meta_key = 'toDateTime' AND m.meta_value < '$date' ) AND p.post_type = 'booking' AND p.post_status = 'accettata' ) GROUP BY p.ID ORDER BY p.post_date DESC LIMIT 20";
 
 		$results = $wpdb->get_results( $query );
 
@@ -431,7 +356,7 @@ class Bookings {
 				$one_signal_tokens = json_decode( $one_signal, true );
 				$one_signal_ids = ( is_array( $one_signal_tokens ) ) ? array_keys( $one_signal_tokens ) : false;
 
-				if ( "pagata" === $result->post_status ) {
+				if ( "accettata" === $result->post_status ) {
 					// Mail per l'utente
 					$subject = __("Mapparte - Richiesta di feedback", 'mapparte' );
 

@@ -643,6 +643,15 @@ class Book extends Rest_Api {
 			if ( isset( $data['data'] ) && 404 === $data['data']['status'] ) {
 				$response = Utils::rest_api_response( false, __('ID spazio non valido','mapparte') );
 			} else {
+				if ( 'POST' === $request->get_method() && ! empty( $data['hide_prices'] ) ) {
+					$response = Utils::rest_api_response( false, __( 'Per questo spazio è disponibile solo la richiesta di contatto.', 'mapparte' ) );
+					return rest_ensure_response( [
+						'success'  => $response[0],
+						'code'     => $response[0] ? 'success' : 'fail',
+						'message'  => $response[1],
+						'data'     => $response[2],
+					] );
+				}
 				$response = $this->maybe_store_book_data( $data, $params, $request->get_method() );
 			}
 		}

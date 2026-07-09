@@ -86,6 +86,7 @@
 					} ?>
                 </div>
             </div>
+			<?php if ( empty( $args['hide_prices'] ) ) : ?>
             <div class="col-md-6 pricing-wrapper">
                 <div class="pricing-header">
                     <img class="accordion-icon"
@@ -113,6 +114,7 @@
 					<?php endif; ?>
                 </div>
             </div>
+			<?php endif; ?>
         </div>
         <div class="accordion" id="accordionExample">
             <div class="row">
@@ -326,12 +328,6 @@
 				<?php \Mapparte\Frontend_Utils::show_additional_infos( $args['space_rules'] ); ?>
             </div>
 		<?php endif; ?>
-		<?php if ( isset( $args['covid_notes'] ) && $args['covid_notes'] ) : ?>
-            <div class="space-rule-wrapper">
-                <h4>COVID-19</h4>
-                <p><?php echo esc_html( $args['covid_notes'] ); ?></p>
-            </div>
-		<?php endif; ?>
 		<?php if ( isset( $args['cancel_policy'] ) && $args['cancel_policy'] ) : ?>
             <div class="space-rule-wrapper">
                 <h4><?php echo __("Politiche di cancellazione","mapparte");?></h4>
@@ -390,7 +386,7 @@
 			} ?>
         </div>
         <div class="position-wrapper">
-            <h4 class="position-ttl"><?php echo __("Il pagamento avviene tramite Stripe. Per maggiori info consulta le","mapparte");?> <a href="/come-funziona/">Faq</a></p>
+            <h4 class="position-ttl"><?php echo __("Il pagamento avviene al di fuori della piattaforma, direttamente tra le parti. Per maggiori info consulta le","mapparte");?> <a href="/come-funziona/">Faq</a></h4>
         </div>
     </div>
 </div>

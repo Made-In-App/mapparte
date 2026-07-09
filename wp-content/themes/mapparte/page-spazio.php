@@ -407,14 +407,6 @@ get_header();
                                 dus que pratibus quas est volor</p>
                         </div>
                         <div class="space-rule-wrapper">
-                            <h4>COVID-19</h4>
-                            <p>Il et milles as magnate pre sam quas ducidit etur sequiat ibusda qui atent ipiscimint
-                                fuga. Adio omnis con pelent licilia tianimus, videlit et es verrovit harum quo mil ea
-                                dollam nos atem exeribeaquis et lam volorerspero magnim esti ad ma es magnat quo qua
-                                spernam accus volore nem et a veris eveliquat voleste mpeliquam, qui dent, corio eost
-                                libus, auditius modi coneseque rent.</p>
-                        </div>
-                        <div class="space-rule-wrapper">
                             <h4>Politiche di cancellazione</h4>
                             <p>Mus sint ilitate niatet quatur accae nobit earcidem quis sumendio ex excessi tiasitas eos
                                 re vendips aessimin cum doluptiorest ipit quuntur?</p>

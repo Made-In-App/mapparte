@@ -72,7 +72,7 @@ $step_name = __('Dettagli generali',"mapparte");
             </div>
             <div class="row">
                 <div class="col-sm-6">
-                    <h6><?php echo __("Numero massimo di persone (no covid)","mapparte"); ?> *</h6>
+                    <h6><?php echo __("Numero massimo di persone","mapparte"); ?> *</h6>
                     <div class="form-floating input-group">
 				        <?php $options = array(
 					        'field_groups' => array(), // this will find the field groups for this post (post ID's of the acf post objects)

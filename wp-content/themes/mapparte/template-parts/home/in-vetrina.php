@@ -36,7 +36,11 @@
                                             <p class="featured-desc"><?php echo esc_html( substr( wp_strip_all_tags( get_the_content( null, false, $id ) ), 0, 100 ) ); ?>
                                                 ...</p>
 										<?php endif; ?>
-                                        <p class="featured-price"><?php echo esc_html__( 'A partire da', 'mapparte' ); ?> <?php echo esc_html( get_field( 'price_hour', $id ) ); ?> € l'ora</p>
+										<?php if ( ! get_post_meta( $id, 'hide_prices', true ) ) : ?>
+                                            <p class="featured-price"><?php echo esc_html__( 'A partire da', 'mapparte' ); ?> <?php echo esc_html( get_field( 'price_hour', $id ) ); ?> € l'ora</p>
+										<?php else : ?>
+                                            <p class="featured-price"><?php echo esc_html__( 'Prezzo su richiesta', 'mapparte' ); ?></p>
+										<?php endif; ?>
                                         <p class="featured-ppl"><?php echo esc_html( get_field( 'max_people', $id ) ); ?>
                                         <?php echo esc_html__( 'persone', 'mapparte' ); ?></p>
 

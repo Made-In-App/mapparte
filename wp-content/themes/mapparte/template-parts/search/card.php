@@ -6,6 +6,7 @@
 $date                  = date( 'Y-m-d H:i:s' );
 $sponsored_expiry_date = get_field( 'sponsored_expired' );
 $subscribed_class      = ( $sponsored_expiry_date && $sponsored_expiry_date > $date ) ? 'subscribed' : '';
+$hide_prices           = (bool) get_post_meta( get_the_ID(), 'hide_prices', true );
 ?>
     <div class="bg-light featured-tile <?php echo esc_attr( $subscribed_class ); ?>">
         <div data-subscribed="<?php echo esc_attr__( 'Sponsorizzato', 'mapparte' ); ?>" class="featured-img-slider owl-carousel owl-theme">
@@ -46,7 +47,11 @@ $subscribed_class      = ( $sponsored_expiry_date && $sponsored_expiry_date > $d
                 <?php endif;?>
 
                 
-                <p class="featured-price"><?php echo  sprintf(__( 'A partire da %s € l\'ora', 'mapparte' ),get_field("price_hour"));?></p>
+				<?php if ( ! $hide_prices ) : ?>
+                    <p class="featured-price"><?php echo  sprintf(__( 'A partire da %s € l\'ora', 'mapparte' ),get_field("price_hour"));?></p>
+				<?php else : ?>
+                    <p class="featured-price"><?php echo __("Prezzo su richiesta","mapparte"); ?></p>
+				<?php endif; ?>
                 <p class="featured-ppl"><?php echo get_field("max_people");?> <?php echo __("persone","mapparte"); ?></p>
             </a>
             <div class="wishlist-btn">

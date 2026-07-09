@@ -89,6 +89,24 @@ $step_name = __('Elenca i prezzi',"mapparte");
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-check">
+                        <input type="hidden" name="hide_prices" value="0">
+                        <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="hide_prices"
+                            name="hide_prices"
+                            value="1"
+							<?php checked( ! empty( $space_data['hide_prices'] ) ); ?>
+                        >
+                        <label class="form-check-label" for="hide_prices">
+							<?php echo __( 'Non mostrare i prezzi e ricevi solo richieste di contatto', 'mapparte' ); ?>
+                        </label>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

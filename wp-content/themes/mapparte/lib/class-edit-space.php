@@ -39,7 +39,7 @@ class Edit_Space {
 		$current_step = isset( $_REQUEST['step'] ) ? (int) $_REQUEST['step'] : 1;
 		$next_step    = $current_step + 1;
 		$prev_step    = $current_step - 1;
-		$max_steps    = 11;
+		$max_steps    = 10;
 		$progress     = ceil( ( 100 * $current_step ) / $max_steps ) + 1;
 
 		return [ $current_step, $next_step, $prev_step, $progress, $max_steps ];
@@ -132,6 +132,10 @@ class Edit_Space {
 					update_field( $key, $value, $space_id );
 				}
 			}
+		}
+
+		if ( isset( $_REQUEST['hide_prices'] ) && $space_id ) {
+			update_post_meta( $space_id, 'hide_prices', absint( $_REQUEST['hide_prices'] ) ? 1 : 0 );
 		}
 
 		if ( 4 === $current_step ) {
@@ -267,22 +271,6 @@ class Edit_Space {
 		}
 
 		if ( isset ( $_REQUEST['step'] ) && $_REQUEST['step'] == 10 ) {
-
-			$covid_notes     = '';
-			$covid_notes_key = acf_get_field( 'covid_notes' )['key'];
-
-			if ( isset( $_REQUEST['covid_notes_it'] ) && sanitize_text_field( $_REQUEST['covid_notes_it'] ) ) {
-				$covid_notes = sprintf( "{:it}%s{:}", sanitize_text_field( $_REQUEST['covid_notes_it'] ) );
-			}
-			if ( isset( $_REQUEST['covid_notes_en'] ) && sanitize_text_field( $_REQUEST['covid_notes_en'] ) ) {
-				$covid_notes .= sprintf( "%s{:en}%s{:}", $covid_notes, sanitize_text_field( $_REQUEST['covid_notes_en'] ) );
-			}
-
-			update_post_meta( $space_id, '_covid_notes', $covid_notes_key );
-			update_post_meta( $space_id, 'covid_notes', $covid_notes );
-		}
-
-		if ( isset ( $_REQUEST['step'] ) && $_REQUEST['step'] == 11 ) {
 
 			$cancel_policy     = '';
 			$cancel_policy_key = acf_get_field( 'cancel_policy' )['key'];

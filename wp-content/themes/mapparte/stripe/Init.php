@@ -20,8 +20,7 @@ class Init {
 
 	function enqueue_script() {
 		global $post;
-		if ( ( is_singular( 'booking' ) && isset( $post->post_status ) && 'accettata' === $post->post_status )
-			|| ( is_page( 'dettaglio-sponsorizzazione' ) && isset( $_REQUEST['plan'] ) && ! isset( $_REQUEST['paymentIntentId'] ) ) ) {
+		if ( is_page( 'dettaglio-sponsorizzazione' ) && isset( $_REQUEST['plan'] ) && ! isset( $_REQUEST['paymentIntentId'] ) ) {
 
 			/// Aggiungiamo la libreria Elements di Stripe
 			/// per sfruttare gli elementi di UI preconfezionati

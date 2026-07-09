@@ -314,7 +314,7 @@ get_header();
                             <div class="header-top">
                                 <div class="row align-items-center justify-content-between mx-0">
                                     <div class="col-md-6 col-6 header-left">
-                                        <p><?php echo __("Pagamenti","mapparte");?></p>
+                                        <p><?php echo __("Prenotazioni e pagamenti","mapparte");?></p>
                                     </div>
                                 </div>
                             </div>
@@ -350,30 +350,9 @@ get_header();
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
-                                            <p><?php echo __("Verifica il tuo account per ricevere i pagamenti tramite Mapparte.","mapparte");?></p>
-                                            <p> <?php echo __("Trasferiamo direttamente sul tuo conto bancario l’importo della prenotazione grazie alla nostra integrazione con Stripe, una piattaforma affidabile e sicura che gestisce miliardi di transazioni in tutto il mondo.","mapparte");?> </p>
-                                             <p><?php echo __("Quando un utente prenota il tuo spazio ed effettua il pagamento, riceverai automaticamente l’importo, al netto della nostra commissione.","mapparte");?></p>
+                                            <p><?php echo __("Mapparte gestisce solo richiesta e approvazione della prenotazione.","mapparte");?></p>
+                                            <p><?php echo __("Il pagamento avviene al di fuori della piattaforma, direttamente tra host e utente.","mapparte");?></p>
                                                
-                                            </div>
-                                        </div>
-                                        <h5 id="stripe" name="stripe" class="corporate-data-ttl"><?php echo __("informazioni su stripe","mapparte");?></h5>
-                                        <div class="row">
-                                            <div class="col-md-7">
-												<?php if ( isset( $_REQUEST['stripe_success'] ) && $_REQUEST['stripe_success'] ) {
-													echo "<div class=\"form-tile\"><h6>Operazione avvenuta con successo.</h6></div>";
-												} ?>
-                                                <div class="action-btn">
-													<?php echo \Mapparte\Stripe\Utils::stripe_onboard_button( get_the_permalink(), sprintf( '%s?stripe_success=1#stripe', get_the_permalink() ) ); ?>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-5">
-                                                <p><?php echo __("Stripe é un fornitore di servizi di pagamento regolamentato ed é tenuto a raccogliere vari documenti per elaborare i pagamenti. Queste regole di conformitå vengono aggiornate regolarmente, quindi potrebbe essere necessario fornire ulteriori informazioni in futuro. Ti informeremo qui e via e-mail se questo é il caso.","mapparte");?></p>
-												<?php
-												$stripe_connected_account_id = get_user_meta( $current_user_id, 'stripe_connected_account', true );
-												if ( $stripe_connected_account_id ) :
-													?>
-                                                    <p><?php echo __("Se desideri visualizzare o aggiornare le informazioni che hai fornito a Stripe, premi semplicemente \"Aggiorna le informazioni di verifica\" a fianco.","mapparte");?></p>
-												<?php endif; ?>
                                             </div>
                                         </div>
                                     </form>

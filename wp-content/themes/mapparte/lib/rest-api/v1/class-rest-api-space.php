@@ -262,6 +262,7 @@ class Space extends Rest_Api {
 		$_data['average_price_day'] = get_post_meta( $post->ID, 'average_price_day', true );
 		$_data['max_price_day']     = get_post_meta( $post->ID, 'max_price_day', true );
 		$_data['price_weekend']     = get_post_meta( $post->ID, 'price_weekend', true );
+		$_data['hide_prices']       = (bool) get_post_meta( $post->ID, 'hide_prices', true );
 		$user                       = new \Favorites\Entities\User\UserRepository;
 		$_data['is_favorite']       = $user->isFavorite( $post->ID, 1, null, 1 );
 

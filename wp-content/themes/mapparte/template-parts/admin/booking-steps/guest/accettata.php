@@ -12,25 +12,19 @@
                         <h6><?php echo __("ACCETTATA","mapparte");?></h6>
                     </li>
                     <li class="col-sm-5 col-6">
-                    <?php echo __("In attesa del pagamento","mapparte");?>
-                    </li>
-                    <li class="col-sm-4 col-6">
-                        <i class="fas fa-clock"></i>
-                        <?php echo __("2 giorni rimanenti","mapparte");?>
+                    <?php echo __("Prenotazione accettata. Concorda direttamente con l'host le modalità di pagamento.","mapparte");?>
                     </li>
                 </ul>
             </div>
-            <div class="col-md-4 status-note"><?php echo __("Se l’utente non prenoterà entro la scadenza dei giorni rimanenti la richiesta verrà automaticamente marcata come “cancellata”","mapparte");?>
+            <div class="col-md-4 status-note"><?php echo __("Il pagamento avverrà al di fuori della piattaforma, tra le parti.","mapparte");?>
             </div>
         </div>
     </div>
 
         <div class="col-md-12 status-form">
-            <p class="form-ttl"><?php echo __("EFFETTUA IL PAGAMENTO SU STRIPE","mapparte");?></p>
+            <p class="form-ttl"><?php echo __("Gestisci la prenotazione","mapparte");?></p>
             <div class="col-md-12">
                 <div class="row mx-0 px-0 align-items-center submit-btns">
-
-	                <?php \Mapparte\Stripe\Utils::stripe_checkout_form( $args, $post ); ?>
 
                     <form id="delete-form" method="post" action="<?php echo get_the_permalink() ?>"
                           class="row align-items-center">

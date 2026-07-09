@@ -11,6 +11,7 @@ class Filters {
 
 	public function __construct() {
 		add_filter( 'wp_nav_menu_items', [ $this, 'add_admin_link' ], 10, 2 );
+		add_filter( 'wp_nav_menu_objects', [ $this, 'remove_app_menu_item' ], 10, 2 );
 		add_filter( 'nav_menu_css_class', [ $this, 'add_additional_class_on_li' ], 10, 3 );
 		add_filter( 'wp_is_application_passwords_available', '__return_true' );
 		add_filter( 'body_class', [ $this, 'my_body_classes' ] );
@@ -110,6 +111,19 @@ class Filters {
 		}
 
 		return $items;
+	}
+
+	public function remove_app_menu_item( $items, $args ) {
+		return array_values( array_filter( $items, function ( $item ) {
+			$title = strtolower( trim( wp_strip_all_tags( $item->title ) ) );
+			$url   = strtolower( trim( $item->url ) );
+
+			$is_app_download = ( false !== strpos( $title, 'scarica' ) && false !== strpos( $title, 'app' ) )
+				|| false !== strpos( $url, 'scarica-lapp' )
+				|| false !== strpos( $url, 'scarica-app' );
+
+			return ! $is_app_download;
+		} ) );
 	}
 
 	public function add_additional_class_on_li( $classes, $item, $args ) {

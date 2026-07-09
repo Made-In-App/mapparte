@@ -13,6 +13,5 @@ get_template_part( 'template-parts/home/testimonianze' );
 get_template_part( 'template-parts/home/dal-magazine' );
 get_template_part( 'template-parts/home/i-servizi-di-mapparte' );
 get_template_part( 'template-parts/newsletter' );
-get_template_part( 'template-parts/home/bando' );
 get_template_part( 'template-parts/footer' );
 get_footer();

@@ -12,15 +12,11 @@
                         <h6><?php echo __("ACCETTATA","mapparte");?></h6>
                     </li>
                     <li class="col-sm-5 col-6">
-                    <?php echo __("In attesa del pagamento","mapparte");?>
-                    </li>
-                    <li class="col-sm-4 col-6">
-                        <i class="fas fa-clock"></i>
-                        <?php echo __("2 giorni rimanenti","mapparte");?>
+                    <?php echo __("Prenotazione accettata. Il pagamento avverrà direttamente tra le parti.","mapparte");?>
                     </li>
                 </ul>
             </div>
-            <div class="col-md-4 status-note"><?php echo __("Se l’utente non prenoterà entro la scadenza dei giorni rimanenti la richiesta verrà automaticamente marcata come “cancellata”","mapparte");?>
+            <div class="col-md-4 status-note"><?php echo __("Non è richiesto alcun pagamento su Mapparte.","mapparte");?>
             </div>
         </div>
     </div>

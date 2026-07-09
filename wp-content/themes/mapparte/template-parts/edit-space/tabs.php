@@ -4,8 +4,9 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 global $current_step, $space_data;
-$enable_tabs = [ 3, 9, 10 ];
-$step_template = sprintf( "%02d", $current_step );
+$enable_tabs = [ 3, 9 ];
+$template_step = ( $current_step >= 9 ) ? $current_step + 1 : $current_step;
+$step_template = sprintf( "%02d", $template_step );
 ?>
 <div class="col-md-6 form-wrapper">
 	<?php if ( in_array ( $current_step, $enable_tabs ) ) get_template_part( 'template-parts/edit-space/nav-tabs' ); ?>

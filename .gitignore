@@ -1,4 +1,6 @@
 wp-config.php
+.DS_Store
+.devcontainer/ssl/*.key
 
 # ignore everything in the "wp-content" directory, except:
 # "mu-plugins", "plugins", "themes" directory
