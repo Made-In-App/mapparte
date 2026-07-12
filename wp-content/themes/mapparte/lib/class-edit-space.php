@@ -364,9 +364,12 @@ class Edit_Space {
 				}
 
 				$message = sprintf( __("Buongiorno %s,<br>
-				abbiamo ricevuto i dati relativi al tuo spazio, ora in fase di approvazione.<br>
-				Appena il tuo annuncio sarà online ti verrà comunicato.<br><br>%s
-				Contattaci per informazioni o dubbi, saremo lieti di aiutarti!
+
+				abbiamo ricevuto i dati relativi al tuo spazio, ora in fase di approvazione. <br>
+				Potresti essere contattato per una conferma o integrazione dei dati.<br>
+				Appena il tuo annuncio sarà online, ti verrà comunicato via email.<br>
+				Per dubbi o informazioni, contattaci via email.
+
 				", 'mapparte' ), esc_html( $user->data->display_name ), $message_stripe );
 
 				$footer = __('Grazie.<br>Il team Mapparte!', 'mapparte' );
@@ -442,14 +445,13 @@ class Edit_Space {
 
 			$subject = __("Mapparte - Il tuo spazio è pubblicato!", 'mapparte' );
 
-			$message = sprintf( __("Buone notizie: <b>%s</b> è online!<br><br>
-				Da adesso sarà visibile sul nostro portale.<br>
-				Tutte le informazioni inserite appariranno nella scheda completa del tuo spazio.<br><br>
-				Potrai modificarle in qualsiasi momento accedendo alla dashboard del tuo profilo.<br><br>
-				Ricordati di attivare il tuo account di Stripe nella tua dashboard personale, alla voce \"Profilo e account\". 
+			$message = sprintf( __("Buone notizie: <b>%s</b> è online su Mapparte!<br><br>
+				Tutte le informazioni inserite appariranno nella scheda completa del tuo spazio. <br>
+				Potrai modificarle in qualsiasi momento accedendo alla tua area personale.<br>
+				Per dubbi o informazioni, contattaci via email. 
 				", 'mapparte' ), esc_html( $post->post_title ) );
 
-			$footer = __("A presto e buon lavoro,<br>Il team Mapparte!", 'mapparte' );
+			$footer = __("Grazie,<br>Il team Mapparte!", 'mapparte' );
 
 			$args = [
 				'h1'                 => false,

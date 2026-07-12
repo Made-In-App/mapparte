@@ -12,7 +12,7 @@
                         <h6><?php echo __("NUOVA","mapparte");?></h6>
                     </li>
                     <li class="col-sm-5 col-6">
-                    <?php echo __("In attesa di una tua risposta","mapparte");?>
+                    <?php echo __("In attesa di una risposta","mapparte");?>
                     </li>
                     <li class="col-sm-4 col-6">
                         <i class="fas fa-clock"></i>

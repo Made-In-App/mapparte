@@ -70,8 +70,8 @@ class Sponsorship {
 			$message = sprintf(
 				__(
 					'Congratulazioni! Hai scelto di attivare il piano <b>%s</b> per <b>%s</b>!<br>
-			A partire dal %s %s<br>
-			Trovi tutti i dettagli nella tua area riservata.<br>',
+			A partire dal %s %s il tuo spazio avrà maggiore visibilità per un anno!<br>
+			Trovi tutti i dettagli nella tua area riservata.',
 					'mapparte'
 				),
 				esc_html( strtoupper( $plan['name'] ) ),

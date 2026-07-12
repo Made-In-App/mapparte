@@ -75,7 +75,7 @@ class Bookings {
 
 					$subject = __("Mapparte - Conferma prenotazione", 'mapparte' );
 
-					$message = sprintf( __("<b>%s</b> ha accettato la tua richiesta.<br>Per effettuare il pagamento e confermare la prenotazione accedi alla tua area riservata entro 2 giorni!<br><br>%s%s", 'mapparte' ),
+					$message = sprintf( __("<b>%s</b> ha accettato la tua richiesta.<br>La prenotazione è confermata: contatta l’host per confermare il prezzo e concordare le modalità di pagamento e di accesso allo spazio.<br><br>%s%s", 'mapparte' ),
 						esc_html( $space_title ),
 						$user_msg,
 						$details_msg
