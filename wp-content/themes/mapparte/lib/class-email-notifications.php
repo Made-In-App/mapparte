@@ -12,7 +12,24 @@ class Email_Notification {
 	public function __construct() {
 		add_filter( 'wp_mail_from', [ $this, 'mail_from' ] );
 		add_filter( 'wp_mail_from_name', [ $this, 'mail_from_name' ] );
+		add_filter( 'option_xoo-uv-general-options', [ $this, 'customize_registration_notice' ] );
 		add_action( 'init', [ $this, 'filter_xoo_emailer' ], 1 );
+	}
+
+	/**
+	 * Testo del banner mostrato dopo la registrazione (popup login e notice WooCommerce).
+	 */
+	public function customize_registration_notice( $options ) {
+		if ( ! is_array( $options ) ) {
+			return $options;
+		}
+
+		$options['txt-onregister'] = __(
+			'Grazie per la registrazione. Abbiamo inviato una mail di verifica all\'indirizzo che hai indicato. Controlla la tua casella di posta elettronica.',
+			'mapparte'
+		);
+
+		return $options;
 	}
 
 	function mail_from( $old ) {
