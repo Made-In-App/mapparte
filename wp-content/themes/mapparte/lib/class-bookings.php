@@ -222,7 +222,7 @@ class Bookings {
 
 	// Add 30 mins interval for cronJobs
 	public function cron_schedules( $schedules ) {
-		if ( ! isset( $schedules["30min"] ) ) {
+		if ( ! isset( $schedules["30mins"] ) ) {
 			$schedules["30mins"] = array(
 				'interval' => 30 * 60,
 				'display'  => __( 'Once every 30 minutes' )
@@ -261,7 +261,7 @@ class Bookings {
 		$results = $wpdb->get_results( $query );
 
 		if ( count( $results ) === 0 ) {
-			exit();
+			return;
 		}
 
 		foreach ( $results as $result ) {
@@ -340,73 +340,57 @@ class Bookings {
 
 		global $wpdb;
 
-		$date = date( 'Y-m-d H:i:s', strtotime( '+2 hours' ) );
+		$date = current_time( 'mysql' );
 
 		$query = "select p.ID,p.post_status FROM " . $wpdb->prefix . "posts as p ";
 		$query .= "INNER JOIN " . $wpdb->prefix . "postmeta as m ON ( p.ID = m.post_id ) WHERE 1=1 ";
-		$query .= "AND ( ( m.meta_key = 'toDateTime' AND m.meta_value < '$date' ) AND p.post_type = 'booking' AND p.post_status = 'accettata' ) GROUP BY p.ID ORDER BY p.post_date DESC LIMIT 20";
+		$query .= $wpdb->prepare( "AND ( ( m.meta_key = 'toDateTime' AND m.meta_value < %s ) AND p.post_type = 'booking' AND p.post_status = 'accettata' ) GROUP BY p.ID ORDER BY p.post_date DESC LIMIT 20", $date );
 
 		$results = $wpdb->get_results( $query );
 
 		if ( count( $results ) === 0 ) {
-			exit();
+			return;
 		}
 
 		foreach ( $results as $result ) {
 
-			$time     = current_time( 'mysql', $gmt = 0 );
-			$time_gmt = current_time( 'mysql', $gmt = 1 );
-
-			$args    = [
-				'ID'                => $result->ID,
-				'post_status'       => 'feedback',
-				'post_modified'     => $time,
-				'post_modified_gmt' => $time_gmt
+			$booking_details = get_post_meta( $result->ID, '_booking_details', true );
+			$details_msg     = \Mapparte\Email_Notification::format_booking_details( $booking_details );
+			$to_email        = get_the_author_meta( 'email', $booking_details['userId'] );
+			$subject         = __( "Mapparte - Richiesta di feedback", 'mapparte' );
+			$message         = sprintf( __( "Grazie per aver utilizzato Mapparte!<br>
+			Come è stata la tua esperienza?<br>
+			La tua opinione è importante, per noi e per la community.<br>
+			Clicca qui per lasciare una recensione!<br><br>%s", 'mapparte' ), $details_msg );
+			$call_to_action     = __( "Lascia la tua recensione", 'mapparte' );
+			$call_to_action_url = sprintf( "%s/?p=%d&post_type=booking",
+				esc_url( get_home_url() ),
+				$result->ID
+			);
+			$footer = __( "Il team Mapparte!", 'mapparte' );
+			$args_notification = [
+				'h1'                 => false,
+				'body'               => $message,
+				'call_to_action'     => $call_to_action,
+				'call_to_action_url' => $call_to_action_url,
+				'footer'             => $footer,
 			];
-			$post_id = wp_update_post( $args, true );
 
-			if ( ! is_wp_error( $post_id ) ) {
+			$guest_email_sent = (bool) get_post_meta( $result->ID, '_feedback_email_guest_sent', true );
+			$host_email_sent  = (bool) get_post_meta( $result->ID, '_feedback_email_host_sent', true );
 
-				$booking_details = get_post_meta( $result->ID, '_booking_details', true );
-				$details_msg     = \Mapparte\Email_Notification::format_booking_details( $booking_details );
+			if ( ! $guest_email_sent ) {
+				$guest_email_sent = \Mapparte\Email_Notification::send_email( $to_email, $subject, $args_notification );
 
-				$to_email = get_the_author_meta( 'email', $booking_details['userId'] );
+				if ( $guest_email_sent ) {
+					update_post_meta( $result->ID, '_feedback_email_guest_sent', current_time( 'mysql' ) );
 
-				$notifiche_prenotazione = get_the_author_meta( 'notifiche_prenotazione', $booking_details['userId'] );
-				$one_signal             = get_the_author_meta( '_one_signal_tokens', $booking_details['userId'] );
-				$one_signal_tokens = json_decode( $one_signal, true );
-				$one_signal_ids = ( is_array( $one_signal_tokens ) ) ? array_keys( $one_signal_tokens ) : false;
+					$notifiche_prenotazione = get_the_author_meta( 'notifiche_prenotazione', $booking_details['userId'] );
+					$one_signal             = get_the_author_meta( '_one_signal_tokens', $booking_details['userId'] );
+					$one_signal_tokens      = json_decode( $one_signal, true );
+					$one_signal_ids         = ( is_array( $one_signal_tokens ) ) ? array_keys( $one_signal_tokens ) : false;
 
-				if ( "accettata" === $result->post_status ) {
-					// Mail per l'utente
-					$subject = __("Mapparte - Richiesta di feedback", 'mapparte' );
-
-					$message = sprintf( __("Grazie per aver utilizzato Mapparte!<br>
-					Come è stata la tua esperienza?<br>
-					La tua opinione è importante, per noi e per la community.<br><br>%s<br><br>
-					Clicca qui per lasciare una recensione!<br><br>", 'mapparte' ), $details_msg
-					);
-
-					$call_to_action = __("Lascia la tua recensione", 'mapparte' );
-
-					$call_to_action_url = sprintf( "%s/?p=%d&post_type=booking",
-						esc_url( get_home_url() ),
-						$result->ID
-					);
-
-					$footer = __("Il team Mapparte!", 'mapparte' );
-
-					$args_notification = [
-						'h1'                 => false,
-						'body'               => $message,
-						'call_to_action'     => $call_to_action,
-						'call_to_action_url' => $call_to_action_url,
-						'footer'             => $footer,
-					];
-
-					\Mapparte\Email_Notification::send_email( $to_email, $subject, $args_notification );
-
-					$message_notification = __("Grazie per aver utilizzato Mapparte! Come è stata la tua esperienza? La tua opinione è importante, per noi e per la community. Clicca qui per lasciare una recensione!", 'mapparte' );
+					$message_notification = __( "Grazie per aver utilizzato Mapparte! Come è stata la tua esperienza? La tua opinione è importante, per noi e per la community. Clicca qui per lasciare una recensione!", 'mapparte' );
 
 					if ( $notifiche_prenotazione && $one_signal_ids ) {
 						\Mapparte\Push_Notification::sendMessage( $subject, [
@@ -414,39 +398,24 @@ class Bookings {
 							"popup_link"    => $call_to_action_url
 						], $one_signal_ids );
 					}
-
-					// Mail per l'host
-
-					$to       = get_post_field( 'post_author', $booking_details['spaceId'] );
-					$to_email = get_the_author_meta( 'email', $to );
-
-					$subject = __("Mapparte - Richiesta di feedback", 'mapparte' );
-
-					$message = sprintf( __("Lascia un feedback sull'utente!<br>
-					Come è stata la tua esperienza da host?<br>
-					La tua opinione è importante, per noi e per la community.<br><br>%s<br><br>
-					Clicca qui per lasciare una recensione sull'utente!<br><br>", 'mapparte' ), $details_msg );
-
-					$call_to_action = __("Lascia un feedback sull'utente", 'mapparte' );
-
-					$call_to_action_url = sprintf( "%s/?p=%d&post_type=booking",
-						esc_url( get_home_url() ),
-						$result->ID
-					);
-
-					$footer = __("Il team Mapparte!", 'mapparte' );
-
-					$args_notification = [
-						'h1'                 => false,
-						'body'               => $message,
-						'call_to_action'     => $call_to_action,
-						'call_to_action_url' => $call_to_action_url,
-						'footer'             => $footer,
-					];
-
-					\Mapparte\Email_Notification::send_email( $to_email, $subject, $args_notification );
 				}
+			}
 
+			if ( ! $host_email_sent ) {
+				$host_id         = get_post_field( 'post_author', $booking_details['spaceId'] );
+				$host_email      = get_the_author_meta( 'email', $host_id );
+				$host_email_sent = \Mapparte\Email_Notification::send_email( $host_email, $subject, $args_notification );
+
+				if ( $host_email_sent ) {
+					update_post_meta( $result->ID, '_feedback_email_host_sent', current_time( 'mysql' ) );
+				}
+			}
+
+			if ( $guest_email_sent && $host_email_sent ) {
+				wp_update_post( [
+					'ID'          => $result->ID,
+					'post_status' => 'feedback',
+				] );
 			}
 		}
 	}

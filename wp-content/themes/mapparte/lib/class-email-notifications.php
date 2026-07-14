@@ -74,7 +74,7 @@ class Email_Notification {
 
 		$headers = array( 'Content-Type: text/html; charset=UTF-8' );
 
-		wp_mail( $to, $subject, $body, $headers );
+		return wp_mail( $to, $subject, $body, $headers );
 	}
 
 	/**
