@@ -16,6 +16,79 @@ class Filters {
 		add_filter( 'wp_is_application_passwords_available', '__return_true' );
 		add_filter( 'body_class', [ $this, 'my_body_classes' ] );
 		add_filter( 'use_block_editor_for_post', '__return_false' );
+		add_filter( 'mc4wp_form_settings', [ $this, 'newsletter_form_settings' ], 10, 2 );
+		add_filter( 'mc4wp_form_content', [ $this, 'newsletter_form_content' ], 20, 2 );
+		add_filter( 'mc4wp_form_messages', [ $this, 'newsletter_form_messages' ], 10, 2 );
+		add_action( 'mc4wp_form_subscribed', [ $this, 'send_newsletter_confirmation' ], 10, 2 );
+	}
+
+	/**
+	 * Keep the public newsletter form connected to the Mapparte audience.
+	 */
+	public function newsletter_form_settings( $settings, $form ) {
+		if ( 662 !== (int) $form->ID ) {
+			return $settings;
+		}
+
+		$settings['lists']        = [ 'a947082c65' ];
+		$settings['double_optin'] = false;
+
+		return $settings;
+	}
+
+	/**
+	 * Repair the email field stored in the legacy MC4WP form.
+	 */
+	public function newsletter_form_content( $content, $form ) {
+		if ( 662 !== (int) $form->ID ) {
+			return $content;
+		}
+
+		$email_field = '<input type="email" class="form-control" name="EMAIL" placeholder="Email" autocomplete="email" required>';
+
+		return preg_replace( '/<input\b[^>]*\btype=(["\'])email\1[^>]*>/i', $email_field, $content, 1 );
+	}
+
+	/**
+	 * Use the approved newsletter confirmation copy on the form response.
+	 */
+	public function newsletter_form_messages( $messages, $form ) {
+		if ( 662 !== (int) $form->ID ) {
+			return $messages;
+		}
+
+		$messages['subscribed'] = $this->newsletter_confirmation_message();
+
+		return $messages;
+	}
+
+	/**
+	 * Send the same confirmation copy by email after a successful subscription.
+	 */
+	public function send_newsletter_confirmation( $form, $email ) {
+		if ( 662 !== (int) $form->ID || ! is_email( $email ) ) {
+			return;
+		}
+
+		$args_notification = [
+			'h1'                 => false,
+			'body'               => $this->newsletter_confirmation_message(),
+			'call_to_action'     => false,
+			'call_to_action_url' => false,
+			'footer'             => false,
+		];
+
+		\Mapparte\Email_Notification::send_email(
+			$email,
+			__( 'Mapparte - Iscrizione alla newsletter', 'mapparte' ),
+			$args_notification
+		);
+	}
+
+	private function newsletter_confirmation_message() {
+		return __( 'Ora sei iscritta/o alla nostra Newsletter!<br>
+News, novità dalla community di Mapparte, sulla creatività e molto altro..<br>
+Non preoccuparti, ci sentiremo solo una volta al mese!', 'mapparte' );
 	}
 
 	public function my_body_classes( $classes ) {
