@@ -33,12 +33,12 @@
             </div>
             <div class="row mx-0 px-0 align-items-center justify-content-center submit-btns">
                 <div class="col-6 ps-0">
-                    <button id="status" name="status" type="submit" value="<?php echo __("accettata","mapparte");?>" class="btn btn-outline-primary">
+                    <button id="status" name="status" type="submit" value="accettata" class="btn btn-outline-primary">
                     <?php echo __("ACCETTA LA PRENOTAZIONE","mapparte");?>
                     </button>
                 </div>
                 <div class="col-6 pe-0">
-                    <button id="status" name="status" type="submit" value="<?php echo __("CANCELLATA","mapparte");?>" class="btn btn-secondary"><?php echo __("RIFIUTA LA PRENOTAZIONE","mapparte");?>
+                    <button id="status" name="status" type="submit" value="cancellata" class="btn btn-secondary"><?php echo __("RIFIUTA LA PRENOTAZIONE","mapparte");?>
                     </button>
                 </div>
             </div>

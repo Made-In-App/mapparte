@@ -31,7 +31,7 @@
                         <div class="col-md-8">
                             <div class="row mx-0 px-0 status-note align-items-center submit-btns">
                                 <div class="col-9 ps-0">
-                                    <button type="submit" id="status" name="status" value="<?php echo __("CANCELLATA","mapparte");?>" class="btn btn-secondary"><?php echo __("ANNULLA LA PRENOTAZIONE","mapparte");?>
+                                    <button type="submit" id="status" name="status" value="cancellata" class="btn btn-secondary"><?php echo __("ANNULLA LA PRENOTAZIONE","mapparte");?>
                                     </button>
                                 </div>
                             </div>

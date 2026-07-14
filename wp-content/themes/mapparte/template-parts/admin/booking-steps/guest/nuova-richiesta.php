@@ -27,7 +27,7 @@
     <div class="col-md-8 status-form">
         <form method="post" action="<?php echo get_the_permalink() ?>" class="row mx-0">
             <div class="submit-btns w-50 px-0">
-                <button id="status" name="status" type="submit" value="<?php echo __("CANCELLATA","mapparte");?>" class="btn btn-secondary"><?php echo __("ANNULLA LA PRENOTAZIONE","mapparte");?></button>
+                <button id="status" name="status" type="submit" value="cancellata" class="btn btn-secondary"><?php echo __("ANNULLA LA PRENOTAZIONE","mapparte");?></button>
             </div>
         </form>
     </div>

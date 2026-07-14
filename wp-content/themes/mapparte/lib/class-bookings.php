@@ -109,26 +109,51 @@ class Bookings {
 							"popup_link"    => $call_to_action_url
 						], $one_signal_ids );
 					}
-				} elseif ( 'cancellata' === $response['data']['post_status'] && get_current_user_id() === (int) get_post_field( 'post_author', $booking_details['spaceId'] ) ) {
+				} elseif ( 'cancellata' === $response['data']['post_status'] ) {
 
-					// Mail per l'utente
+					if ( get_current_user_id() === (int) get_post_field( 'post_author', $booking_details['spaceId'] ) ) {
+						// Mail per l'utente quando l'host rifiuta.
+						$subject = __("Mapparte - Prenotazione non confermata ", 'mapparte' );
 
-					$subject = __("Mapparte - Prenotazione non confermata ", 'mapparte' );
-
-					$message = sprintf( __("Ci dispiace! <b>%s</b> non ha accettato la tua prenotazione. :(
+						$message = sprintf( __("Ci dispiace! <b>%s</b> non ha accettato la tua prenotazione. :(
 <br>Prosegui nella ricerca, siamo sicuri che ci sono tanti altri spazi adatti alle tue esigenze! 
 <br><br>%s%s", 'mapparte' ),
-						esc_html( $space_title ),
-						$user_msg,
-						$details_msg
-					);
+							esc_html( $space_title ),
+							$user_msg,
+							$details_msg
+						);
 
-					$call_to_action = __("Cerca su Mapparte", 'mapparte' );
+						$call_to_action = __("Cerca su Mapparte", 'mapparte' );
 
-					$call_to_action_url = sprintf( "%s/%s",
-						esc_url( get_home_url() ),
-						'spaces/'
-					);
+						$call_to_action_url = sprintf( "%s/%s",
+							esc_url( get_home_url() ),
+							'spaces/'
+						);
+
+						$message_notification = sprintf( __("Ci dispiace! %s non ha accettato la tua prenotazione. :( Prosegui nella ricerca, siamo sicuri che ci sono tanti altri spazi adatti alle tue esigenze!", 'mapparte' ),
+							esc_html( $space_title )
+						);
+					} else {
+						// Mail per l'host quando l'utente annulla.
+						$to_email = get_the_author_meta( 'email', $host_id );
+						$subject = __("Mapparte - Prenotazione annullata", 'mapparte' );
+
+						$message = sprintf( __("<b>%s</b> ha annullato la prenotazione per <b>%s</b>.<br><br>%s%s", 'mapparte' ),
+							esc_html( $user_nicename ),
+							esc_html( $space_title ),
+							$user_msg,
+							$details_msg
+						);
+
+						$call_to_action = __("Vedi la prenotazione", 'mapparte' );
+
+						$call_to_action_url = sprintf( "%s/?p=%d&post_type=booking",
+							esc_url( get_home_url() ),
+							$booking_details['bookingId']
+						);
+
+						$message_notification = false;
+					}
 
 					$footer = __("Il team Mapparte!", 'mapparte' );
 
@@ -142,11 +167,7 @@ class Bookings {
 
 					\Mapparte\Email_Notification::send_email( $to_email, $subject, $args_notification );
 
-					$message_notification = sprintf( __("Ci dispiace! %s non ha accettato la tua prenotazione. :( Prosegui nella ricerca, siamo sicuri che ci sono tanti altri spazi adatti alle tue esigenze!", 'mapparte' ),
-						esc_html( $space_title )
-					);
-
-					if ( $notifiche_prenotazione && $one_signal_ids ) {
+					if ( $message_notification && $notifiche_prenotazione && $one_signal_ids ) {
 						\Mapparte\Push_Notification::sendMessage( $subject, [
 							"popup_message" => $message_notification,
 							"popup_link"    => $call_to_action_url
