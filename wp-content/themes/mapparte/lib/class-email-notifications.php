@@ -97,7 +97,7 @@ class Email_Notification {
 		$details .= __('Al', 'mapparte' ).': <b>' . \Mapparte\Frontend_Utils::format_date_time( $args['toDateTime'] ) . '</b><br>';
 		$details .= __('Numero persone', 'mapparte' ).': <b>' . esc_html( $args['guests'] ) . '</b><br>';
 		$details .= __('Destinazione d\'uso', 'mapparte' ).': <b>' . esc_html( $planningTo ) . '</b><br>';
-		$details .= __('Prezzo', 'mapparte' ).': <b>' . esc_html( $args['finalPrice'] ) . ' euro</b>';
+		$details .= __('Prezzo stimato', 'mapparte' ).': <b>' . esc_html( $args['finalPrice'] ) . ' euro</b>';
 
 		return $details;
 

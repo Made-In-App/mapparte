@@ -43,7 +43,7 @@ $planningTo = ( isset( $activity->name ) ) ? $activity->name : "N.D.";
                     <p class="booking-detail-content"><?php echo \Mapparte\Frontend_Utils::format_date_time( $args['toDateTime'] );; ?></p>
                 </div>
                 <div class="col-4">
-                    <h6 class="booking-detail-ttl"><?php echo __("Prezzo","mapparte");?></h6>
+                    <h6 class="booking-detail-ttl"><?php echo __("Prezzo stimato","mapparte");?></h6>
                 </div>
                 <div class="col-8">
                     <p class="booking-detail-content"><?php echo esc_html( $args['finalPrice'] ); ?> euro</p>
