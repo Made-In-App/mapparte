@@ -64,23 +64,24 @@ class Sponsorship {
 			update_post_meta( $_REQUEST['space_id'], 'sponsored_expired', $plan['enddate'] );
 			add_post_meta( $_REQUEST['space_id'], 'sponsorship_plan', $plan );
 
-			$to_email = get_the_author_meta( 'email', get_current_user_id() );
-			$subject  = sprintf( __( 'Mapparte - Il tuo piano %s è attivo!', 'mapparte' ), strtoupper( $plan['name'] ) );
+			$plan_name       = ucfirst( strtolower( $plan['name'] ) );
+			$email_startdate = date( 'Y-m-d H:i:s', strtotime( '+1 day', strtotime( $plan['startdate'] ) ) );
+			$to_email        = get_the_author_meta( 'email', get_current_user_id() );
+			$subject         = sprintf( __( 'Mapparte - Il tuo Piano %s è attivo!', 'mapparte' ), $plan_name );
 
 			$message = sprintf(
 				__(
-					'Congratulazioni! Hai scelto di attivare il piano <b>%s</b> per <b>%s</b>!<br>
+					'Congratulazioni! Hai scelto di attivare il piano %s!<br>
 			A partire dal %s %s<br>
 			Trovi tutti i dettagli nella tua area riservata.<br>',
 					'mapparte'
 				),
-				esc_html( strtoupper( $plan['name'] ) ),
-				esc_html( get_the_title( $_REQUEST['space_id'] ) ),
-				esc_html( \Mapparte\Frontend_Utils::format_date( $plan['startdate'] ) ),
+				esc_html( $plan_name ),
+				esc_html( \Mapparte\Frontend_Utils::format_date( $email_startdate ) ),
 				esc_html( $plan['desc_email'] ),
 			);
 
-			$footer = __( 'Grazie!', 'mapparte' ) . '<br/>' . __( 'Il team Mapparte!', 'mapparte' );
+			$footer = __( 'Grazie!', 'mapparte' ) . '<br>' . __( 'Il Team di Mapparte', 'mapparte' );
 
 			$args_notification = [
 				'h1'                 => false,
