@@ -19,6 +19,7 @@ class Filters {
 		add_filter( 'mc4wp_form_settings', [ $this, 'newsletter_form_settings' ], 10, 2 );
 		add_filter( 'mc4wp_form_content', [ $this, 'newsletter_form_content' ], 20, 2 );
 		add_filter( 'mc4wp_form_messages', [ $this, 'newsletter_form_messages' ], 10, 2 );
+		add_filter( 'xoo_aff_easy-login-woocommerce_field_args', [ $this, 'registration_residence_field_args' ] );
 		add_filter( 'xoo_aff_field_html', [ $this, 'registration_residence_label' ], 10, 3 );
 		add_filter( 'wpcf7_form_elements', [ $this, 'link_contact_form_terms' ] );
 		add_action( 'mc4wp_form_subscribed', [ $this, 'send_newsletter_confirmation' ], 10, 2 );
@@ -99,6 +100,18 @@ Non preoccuparti, ci sentiremo solo una volta al mese!', 'mapparte' );
 		}
 
 		return str_replace( 'Residenza', __( 'Indirizzo di residenza', 'mapparte' ), $html );
+	}
+
+	public function registration_residence_field_args( $args ) {
+		if ( isset( $args['label'] ) && 'Residenza' === rtrim( $args['label'], '*' ) ) {
+			$args['label'] = __( 'Indirizzo di residenza', 'mapparte' ) . ( '*' === substr( $args['label'], -1 ) ? '*' : '' );
+		}
+
+		if ( isset( $args['placeholder'] ) && 'Residenza' === $args['placeholder'] ) {
+			$args['placeholder'] = __( 'Indirizzo di residenza', 'mapparte' );
+		}
+
+		return $args;
 	}
 
 	public function link_contact_form_terms( $html ) {
