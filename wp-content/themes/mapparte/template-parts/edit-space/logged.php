@@ -4,7 +4,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-global $current_step, $space_data, $page_slug, $space_id;
+global $current_step, $space_data, $page_slug, $space_id, $space_terms_error;
 
 if ( ! $space_id ) {
 	$space_id = isset( $_REQUEST['space_id'] ) ? (int) $_REQUEST['space_id'] : 0;
@@ -33,8 +33,15 @@ if ( isset( $space_data['author'] ) && $space_data['author'] !== get_current_use
 if ( isset( $space_data['status'] ) || ! $space_id ) {
 
 	if ( is_int( $current_step ) && $current_step && $current_step == $max_steps + 1 ) :
-		\Mapparte\Edit_Space::space_approval_request( $space_id, get_current_user_id(), $current_step );
-    endif;
+		$approval_response = \Mapparte\Edit_Space::space_approval_request( $space_id, get_current_user_id(), $current_step );
+		if ( is_wp_error( $approval_response ) ) {
+			$space_terms_error = $approval_response->get_error_message();
+			$current_step      = $max_steps;
+			$next_step         = $max_steps + 1;
+			$prev_step         = $max_steps - 1;
+			$progress          = 100;
+		}
+	endif;
 
 	if ( is_int( $current_step ) && $current_step && $current_step <= $max_steps ) :
 

@@ -21,6 +21,11 @@ jQuery(document).ready(function ($) {
 
     $("#next, #save").click(function (e) {
         e.preventDefault();
+        var termsCheckbox = document.getElementById("space_terms_accepted");
+        if (termsCheckbox && !termsCheckbox.checked) {
+            termsCheckbox.reportValidity();
+            return;
+        }
         var allSelected = $("#grid td.k-state-selected");
         var allSelectedModels = {
             'mon': [],

@@ -322,8 +322,16 @@ class Edit_Space {
 			return;
 		}
 
-		// Step 13 - Set status to nuova-richiesta
-		if ( isset ( $space_id ) && 12 === $current_step && isset ( $_REQUEST['request-approval'] ) ) {
+		// Final step - Set status to nuova-richiesta after accepting the terms.
+		if ( isset ( $space_id ) && 11 === $current_step && isset ( $_REQUEST['request-approval'] ) ) {
+			$nonce = isset( $_REQUEST['space_approval_nonce'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['space_approval_nonce'] ) ) : '';
+			if ( ! wp_verify_nonce( $nonce, 'mapparte_space_approval_' . (int) $space_id ) ) {
+				return new \WP_Error( 'invalid_space_approval_nonce', __( 'La sessione è scaduta. Ricarica la pagina e riprova.', 'mapparte' ) );
+			}
+
+			if ( empty( $_REQUEST['space_terms_accepted'] ) ) {
+				return new \WP_Error( 'space_terms_required', __( 'Devi accettare i termini e le condizioni d’uso per inviare lo spazio.', 'mapparte' ) );
+			}
 
 			$args     = [
 				'ID'          => $space_id,
@@ -332,38 +340,27 @@ class Edit_Space {
 			$space_id = wp_update_post( $args );
 
 			if ( is_wp_error( $space_id ) ) {
-				return $space_id->get_error_message();
+				return $space_id;
 			} else {
+				update_post_meta( $space_id, 'terms_accepted_at', current_time( 'mysql' ) );
+				update_post_meta( $space_id, 'terms_accepted_by', (int) $user->data->ID );
+
 				// Send email notification
 				$subject = __('Mapparte - Inserimento del tuo spazio - in attesa di pubblicazione', 'mapparte' );
 
-				// Invita il locatore ad effettuare l'onboarding su Stripe se non lo ha ancora fatto
-				if ( ! get_user_meta( $user->data->ID, 'stripe_connected_account', true ) ) {
-					$message_stripe = __("Affinchè il tuo spazio diventi pubblico è necessario connettere 
-					il tuo account Mapparte alla piattaforma di pagamento Stripe.<br><br>", 'mapparte' );
-
-					$call_to_action     = __("Connetti il tuo account a Stripe", 'mapparte' );
-					$call_to_action_url = sprintf( "%s/profilo/#stripe", esc_url( get_home_url() ) );
-
-				} else {
-					$message_stripe     = '';
-					$call_to_action     = false;
-					$call_to_action_url = false;
-				}
-
 				$message = sprintf( __("Buongiorno %s,<br>
 				abbiamo ricevuto i dati relativi al tuo spazio, ora in fase di approvazione.<br>
-				Appena il tuo annuncio sarà online ti verrà comunicato.<br><br>%s
+				Appena il tuo annuncio sarà online ti verrà comunicato.<br><br>
 				Contattaci per informazioni o dubbi, saremo lieti di aiutarti!
-				", 'mapparte' ), esc_html( $user->data->display_name ), $message_stripe );
+				", 'mapparte' ), esc_html( $user->data->display_name ) );
 
 				$footer = __('Grazie.<br>Il team Mapparte!', 'mapparte' );
 
 				$args_notification = [
 					'h1'                 => false,
 					'body'               => $message,
-					'call_to_action'     => $call_to_action,
-					'call_to_action_url' => $call_to_action_url,
+					'call_to_action'     => false,
+					'call_to_action_url' => false,
 					'footer'             => $footer,
 				];
 
@@ -390,10 +387,12 @@ class Edit_Space {
 				];
 
 				\Mapparte\Email_Notification::send_email( get_bloginfo( 'admin_email' ), $subject, $args_notification );
+
+				echo "<script> jQuery(location).attr('href', '/my-spaces/'); </script>";
+
+				return $space_id;
 			}
 		}
-
-		echo "<script> jQuery(location).attr('href', '/my-spaces/'); </script>";
 	}
 
 	public function enqueue_script() {

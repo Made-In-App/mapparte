@@ -125,9 +125,9 @@ get_header();
                                                         <input type="text" class="form-control"
                                                                name="xoo_aff_text_residenza" id="xoo_aff_text_residenza"
                                                                value="<?php echo isset( $user_meta['xoo_aff_text_residenza'] ) ? esc_attr( $user_meta['xoo_aff_text_residenza'][0] ) : ''; ?>"
-                                                               placeholder="<?php echo __("Residenza","mapparte");?>">
+                                                               placeholder="<?php echo __("Indirizzo di residenza","mapparte");?>">
                                                         <label for="xoo_aff_text_residenza"
-                                                               class="form-label"><?php echo __("Residenza","mapparte");?></label>
+                                                               class="form-label"><?php echo __("Indirizzo di residenza","mapparte");?></label>
                                                     </div>
                                                 </div>
                                                 <div class="form-tile">
@@ -226,6 +226,14 @@ get_header();
                                         </div>
                                         <div class="col-md-5">
                                             <p><?php echo __("Il nome utente non può essere modificato.","mapparte");?></p>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-md-7">
+                                            <p><?php echo wp_kses_post( sprintf(
+                                                __( 'Per cancellare l’account scrivi un messaggio a %1$s con oggetto “Recesso dal Portale Mapparte.com”', 'mapparte' ),
+                                                '<a href="mailto:info@mapparte.com?subject=Recesso%20dal%20Portale%20Mapparte.com">info@mapparte.com</a>'
+                                            ) ); ?></p>
                                         </div>
                                     </div>
                                     <h5 class="corporate-data-ttl"><?php echo esc_html__( 'PIANI DI SPONSORIZZAZIONE DEGLI SPAZI', 'mapparte' ); ?></h5>

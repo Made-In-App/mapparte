@@ -2,7 +2,7 @@
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
-global $step_name, $space_data;
+global $step_name, $space_data, $space_terms_error;
 $step_name = __('Richiesta approvazione spazio',"mapparte");
 if ( 'draft' !== $space_data['status'] ) :
 	echo "<script> jQuery(location).attr('href', '".$space_data['link']."'); </script>";
@@ -17,6 +17,19 @@ else :
                 <div class="col-sm-8">
                     <div>
                         <input type="hidden" id="request-approval" name="request-approval" value="1">
+                        <?php wp_nonce_field( 'mapparte_space_approval_' . (int) $space_data['id'], 'space_approval_nonce' ); ?>
+                        <?php if ( $space_terms_error ) : ?>
+                            <p class="text-danger"><?php echo esc_html( $space_terms_error ); ?></p>
+                        <?php endif; ?>
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" id="space_terms_accepted"
+                                   name="space_terms_accepted" value="1" required>
+                            <label class="form-check-label" for="space_terms_accepted">
+                                <?php echo esc_html__( 'Accettazione', 'mapparte' ); ?>
+                                <a href="<?php echo esc_url( home_url( '/termini-e-condizioni-duso/' ) ); ?>"
+                                   target="_blank" rel="noopener noreferrer"><?php echo esc_html__( 'termini e condizioni d’uso', 'mapparte' ); ?></a>
+                            </label>
+                        </div>
                         <p><a href="#" id="next" class="btn btn-primary"><?php echo __("Invia la richiesta di approvazione a mapparte","mapparte"); ?></a></p>
                     </div>
                 </div>

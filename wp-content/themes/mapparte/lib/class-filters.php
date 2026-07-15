@@ -11,7 +11,7 @@ class Filters {
 
 	public function __construct() {
 		add_filter( 'wp_nav_menu_items', [ $this, 'add_admin_link' ], 10, 2 );
-		add_filter( 'wp_nav_menu_objects', [ $this, 'remove_app_menu_item' ], 10, 2 );
+		add_filter( 'wp_nav_menu_objects', [ $this, 'remove_app_menu_item' ], 100, 2 );
 		add_filter( 'nav_menu_css_class', [ $this, 'add_additional_class_on_li' ], 10, 3 );
 		add_filter( 'wp_is_application_passwords_available', '__return_true' );
 		add_filter( 'body_class', [ $this, 'my_body_classes' ] );
@@ -19,6 +19,8 @@ class Filters {
 		add_filter( 'mc4wp_form_settings', [ $this, 'newsletter_form_settings' ], 10, 2 );
 		add_filter( 'mc4wp_form_content', [ $this, 'newsletter_form_content' ], 20, 2 );
 		add_filter( 'mc4wp_form_messages', [ $this, 'newsletter_form_messages' ], 10, 2 );
+		add_filter( 'xoo_aff_field_html', [ $this, 'registration_residence_label' ], 10, 3 );
+		add_filter( 'wpcf7_form_elements', [ $this, 'link_contact_form_terms' ] );
 		add_action( 'mc4wp_form_subscribed', [ $this, 'send_newsletter_confirmation' ], 10, 2 );
 	}
 
@@ -89,6 +91,33 @@ class Filters {
 		return __( 'Ora sei iscritta/o alla nostra Newsletter!<br>
 News, novità dalla community di Mapparte, sulla creatività e molto altro..<br>
 Non preoccuparti, ci sentiremo solo una volta al mese!', 'mapparte' );
+	}
+
+	public function registration_residence_label( $html, $field_id, $field_data ) {
+		if ( 'xoo_aff_text_residenza' !== $field_id ) {
+			return $html;
+		}
+
+		return str_replace( 'Residenza', __( 'Indirizzo di residenza', 'mapparte' ), $html );
+	}
+
+	public function link_contact_form_terms( $html ) {
+		$contact_form = function_exists( 'wpcf7_get_current_contact_form' ) ? wpcf7_get_current_contact_form() : null;
+		if ( ! $contact_form || 322 !== (int) $contact_form->id() ) {
+			return $html;
+		}
+
+		$terms_link = sprintf(
+			'<a href="%s" target="_blank" rel="noopener noreferrer">%s</a>',
+			esc_url( home_url( '/termini-e-condizioni-duso/' ) ),
+			esc_html__( "termini e le condizioni d'uso", 'mapparte' )
+		);
+
+		return str_replace(
+			"termini e le condizioni d'uso",
+			$terms_link,
+			$html
+		);
 	}
 
 	public function my_body_classes( $classes ) {
@@ -190,12 +219,17 @@ Non preoccuparti, ci sentiremo solo una volta al mese!', 'mapparte' );
 		return array_values( array_filter( $items, function ( $item ) {
 			$title = strtolower( trim( wp_strip_all_tags( $item->title ) ) );
 			$url   = strtolower( trim( $item->url ) );
+			$classes = isset( $item->classes ) && is_array( $item->classes )
+				? strtolower( implode( ' ', $item->classes ) )
+				: '';
 
 			$is_app_download = ( false !== strpos( $title, 'scarica' ) && false !== strpos( $title, 'app' ) )
 				|| false !== strpos( $url, 'scarica-lapp' )
 				|| false !== strpos( $url, 'scarica-app' );
 
-			return ! $is_app_download;
+			$is_language_switcher = false !== strpos( $classes, 'wpglobus' );
+
+			return ! $is_app_download && ! $is_language_switcher;
 		} ) );
 	}
 
