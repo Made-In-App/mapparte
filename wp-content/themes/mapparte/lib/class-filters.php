@@ -94,7 +94,7 @@ Non preoccuparti, ci sentiremo solo una volta al mese!', 'mapparte' );
 	}
 
 	public function registration_residence_label( $html, $field_id, $field_data ) {
-		if ( 'xoo_aff_text_residenza' !== $field_id ) {
+		if ( 'xoo_aff_text_residenza' !== $field_id && false === strpos( $html, 'xoo_aff_text_residenza' ) ) {
 			return $html;
 		}
 
