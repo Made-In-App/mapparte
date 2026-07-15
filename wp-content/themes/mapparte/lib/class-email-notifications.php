@@ -19,6 +19,7 @@ class Email_Notification {
 		add_filter( 'wp_mail_from', [ $this, 'mail_from' ] );
 		add_filter( 'wp_mail_from_name', [ $this, 'mail_from_name' ] );
 		add_filter( 'wp_mail', [ $this, 'capture_mail' ], PHP_INT_MAX );
+		add_action( 'phpmailer_init', [ $this, 'configure_smtp' ], 1000 );
 		add_action( 'init', [ $this, 'filter_xoo_emailer' ], 1 );
 		add_action( 'wp_mail_failed', [ $this, 'handle_mail_failure' ] );
 		add_action( 'wp_mail_succeeded', [ $this, 'handle_mail_success' ] );
@@ -32,6 +33,33 @@ class Email_Notification {
 
 	function mail_from_name( $old ) {
 		return 'Mapparte';
+	}
+
+	/**
+	 * Use authenticated SMTP when credentials are defined outside the repository.
+	 */
+	public function configure_smtp( $mailer ) {
+		$required_constants = [
+			'MAPPARTE_SMTP_HOST',
+			'MAPPARTE_SMTP_PORT',
+			'MAPPARTE_SMTP_USERNAME',
+			'MAPPARTE_SMTP_PASSWORD',
+		];
+
+		foreach ( $required_constants as $constant ) {
+			if ( ! defined( $constant ) || '' === constant( $constant ) ) {
+				return;
+			}
+		}
+
+		$mailer->isSMTP();
+		$mailer->Host       = MAPPARTE_SMTP_HOST;
+		$mailer->Port       = (int) MAPPARTE_SMTP_PORT;
+		$mailer->SMTPAuth   = true;
+		$mailer->Username   = MAPPARTE_SMTP_USERNAME;
+		$mailer->Password   = MAPPARTE_SMTP_PASSWORD;
+		$mailer->SMTPSecure = defined( 'MAPPARTE_SMTP_SECURE' ) ? MAPPARTE_SMTP_SECURE : 'ssl';
+		$mailer->Timeout    = 20;
 	}
 
 	function filter_xoo_emailer() {
@@ -163,7 +191,7 @@ class Email_Notification {
 			'to'        => sanitize_text_field( $to ),
 			'subject'   => sanitize_text_field( isset( $mail['subject'] ) ? $mail['subject'] : '' ),
 			'attempt'   => $this->retry_attempt,
-			'transport' => defined( 'POST_SMTP_VER' ) ? 'post-smtp' : 'php-mail',
+			'transport' => defined( 'MAPPARTE_SMTP_HOST' ) ? 'smtp' : ( defined( 'POST_SMTP_VER' ) ? 'post-smtp' : 'php-mail' ),
 			'error'     => sanitize_textarea_field( $error ),
 		] );
 
@@ -189,7 +217,7 @@ class Email_Notification {
 		?>
 		<div class="wrap">
 			<h1><?php echo esc_html__( 'Log email Mapparte', 'mapparte' ); ?></h1>
-			<?php if ( ! defined( 'POST_SMTP_VER' ) ) : ?>
+			<?php if ( ! defined( 'MAPPARTE_SMTP_HOST' ) && ! defined( 'POST_SMTP_VER' ) ) : ?>
 				<div class="notice notice-warning inline"><p><?php echo esc_html__( 'SMTP non attivo: lo stato “accettata” indica solo che il server locale ha preso in carico il messaggio, non che sia stato consegnato.', 'mapparte' ); ?></p></div>
 			<?php endif; ?>
 			<table class="widefat striped">
