@@ -20,7 +20,8 @@ class Init {
 
 	function enqueue_script() {
 		global $post;
-		if ( is_page( 'dettaglio-sponsorizzazione' ) && isset( $_REQUEST['plan'] ) && ! isset( $_REQUEST['paymentIntentId'] ) ) {
+		$enable_sponsorship_checkout = apply_filters( 'mapparte_enable_sponsorship_checkout', false );
+		if ( $enable_sponsorship_checkout && is_page( 'dettaglio-sponsorizzazione' ) && isset( $_REQUEST['plan'] ) && ! isset( $_REQUEST['paymentIntentId'] ) ) {
 
 			/// Aggiungiamo la libreria Elements di Stripe
 			/// per sfruttare gli elementi di UI preconfezionati
