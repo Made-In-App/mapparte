@@ -4,7 +4,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 global $current_step, $space_data;
-$enable_tabs = [ 3, 9 ];
+$enable_tabs = [];
 $template_step = ( $current_step >= 9 ) ? $current_step + 1 : $current_step;
 $step_template = sprintf( "%02d", $template_step );
 ?>

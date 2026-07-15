@@ -19,6 +19,14 @@ jQuery(document).ready(function ($) {
         syncGalleryImgs();
     });
 
+    function toggleAvailabilityFields() {
+        var hideAvailability = $("#hide_availability").is(":checked");
+        $("#availability-fields").toggle(!hideAvailability);
+    }
+
+    $("#hide_availability").on("change", toggleAvailabilityFields);
+    toggleAvailabilityFields();
+
     $("#next, #save").click(function (e) {
         e.preventDefault();
         var termsCheckbox = document.getElementById("space_terms_accepted");

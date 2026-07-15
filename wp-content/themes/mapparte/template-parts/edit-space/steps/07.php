@@ -219,18 +219,7 @@ $step_name = __('Dettagli generali',"mapparte");
                 </div>
             </div>
         </div>
-        <p class="my-space-desc">(*)<?php echo __("campi obbligatori","mapparte"); ?>)</p>
+        <p class="my-space-desc">* <?php echo __("campi obbligatori","mapparte"); ?></p>
         <p class="my-space-desc">&nbsp;</p>
-    </div>
-    <div class="tab-pane fade" id="english" role="tabpanel" aria-labelledby="english-tab">
-        <h4 class="my-space-ttl"><?php echo esc_html($step_name); ?></h4>
-        <div class="dimensioni-wrapper">
-            <div class="row">
-                <div class="col-sm-4">
-
-                </div>
-            </div>
-        </div>
-        <p class="my-space-desc">(*)<?php echo __("campi obbligatori","mapparte"); ?>)</p>
     </div>
 </div>

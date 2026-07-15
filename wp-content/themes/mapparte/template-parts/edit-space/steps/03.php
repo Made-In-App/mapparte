@@ -100,38 +100,4 @@ $step_name = __('Informazioni di base',"mapparte");
             </div>
         </div>
     </div>
-    <div class="tab-pane fade" id="english" role="tabpanel" aria-labelledby="english-tab">
-        <h4 class="my-space-ttl"><?php echo esc_html( $step_name ); ?></h4>
-        <div class="dimensioni-wrapper">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h6><?php echo __("Nome dello spazio","mapparte"); ?></h6>
-                    <div class="form-floating input-group">
-                        <input type="text" name="post_title_en" id="post_title_en" class="form-control"
-                               value="<?php echo \WPGlobus_Core::text_filter( $post->post_title, 'en' ); ?>"
-                               placeholder="<?php echo __("Nome dello spazio","mapparte"); ?>">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <h6><?php echo __("Breve descrizione (max 40 caratteri)","mapparte"); ?></h6>
-                    <div class="form-floating input-group">
-                        <input type="text" name="post_excerpt_en" id="post_excerpt_en" maxlength="40"  class="form-control"
-                               value="<?php echo \WPGlobus_Core::text_filter( $post->post_excerpt, 'en' ); ?>"
-                               placeholder="<?php echo __("Breve descrizione dello spazio","mapparte"); ?>">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <h6><?php echo __("Descrizione dettagliata","mapparte"); ?></h6>
-                    <div class="form-floating input-group">
-                        <textarea cols="50" name="post_content_en" id="post_content_en" class="form-control"
-                                  placeholder="<?php echo __("Descrizione dettagliata dello spazio","mapparte"); ?>"><?php echo \WPGlobus_Core::text_filter( $post->post_content, 'en' ); ?></textarea>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>

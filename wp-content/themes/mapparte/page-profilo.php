@@ -166,7 +166,7 @@ get_header();
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
-                                                <p><?php echo __("Aiuta gli organizzatori di eventi a conoscerti Parla loro delle cose che ti piacciono: quali sono i tuoi hobby? Hai una passione per gli eventi e l'hosting? Condividi la tua musica, cibo, libri, artisti preferiti, ecc.","mapparte");?></p>
+                                                <p><?php echo __("Fatti conoscere dalla community: parla delle cose che ti piacciono. Racconta i tuoi hobby, le tue passioni e informazioni che ti fa piacere condividere. Aggiungi una tua foto!","mapparte");?></p>
                                             </div>
                                         </div>
                                         <h5 class="corporate-data-ttl"><?php echo __("dati aziendali","mapparte");?></h5>
@@ -312,55 +312,6 @@ get_header();
                                                        value="<?php echo esc_attr( $nonce ); ?>">
                                                 <button type="submit" class="btn btn-secondary"><?php echo __("Aggiorna Password","mapparte");?>
                                                 </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="profile-details-section">
-                            <div class="header-top">
-                                <div class="row align-items-center justify-content-between mx-0">
-                                    <div class="col-md-6 col-6 header-left">
-                                        <p><?php echo __("Prenotazioni e pagamenti","mapparte");?></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4 col-xl-3 text-center">
-                                </div>
-                                <div class="col-md-8 col-xl-7">
-                                    <form action="#" method="post" class="profile-update-form">
-                                        <div class="row">
-                                            <div class="col-md-7">
-                                                <div class="form-tile">
-                                                    <div class="form-floating">
-                                                        <input type="text" class="form-control" id="nome_titolare"
-                                                               name="nome_titolare"
-                                                               placeholder="accountholder"
-                                                               value="<?php echo isset( $user_meta['nome_titolare'] ) ? esc_attr( $user_meta['nome_titolare'][0] ) : ''; ?>">
-                                                        <label for="accountholder" class="form-label"><?php echo __("Nome del titolare del conto registrato","mapparte");?></label>
-                                                    </div>
-                                                </div>
-                                                <div class="form-tile">
-                                                    <div class="form-floating">
-                                                        <input type="text" class="form-control" id="nazione"
-                                                               name="nazione"
-                                                               placeholder="<?php echo __("Nazione","mapparte");?>"
-                                                               value="<?php echo isset( $user_meta['nazione'] ) ? esc_attr( $user_meta['nazione'][0] ) : ''; ?>">
-                                                        <label for="nation" class="form-label"><?php echo __("Nazione","mapparte");?></label>
-                                                    </div>
-                                                </div>
-                                                <div class="action-btn">
-                                                    <input type="hidden" id="nonce" name="nonce"
-                                                           value="<?php echo esc_attr( $nonce ); ?>">
-                                                    <button type="submit" class="btn btn-secondary"><?php echo __("SALVA","mapparte");?></button>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-5">
-                                            <p><?php echo __("Mapparte gestisce solo richiesta e approvazione della prenotazione.","mapparte");?></p>
-                                            <p><?php echo __("Il pagamento avviene al di fuori della piattaforma, direttamente tra host e utente.","mapparte");?></p>
-                                               
                                             </div>
                                         </div>
                                     </form>

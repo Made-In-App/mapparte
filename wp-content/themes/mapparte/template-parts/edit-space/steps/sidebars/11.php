@@ -1,3 +1,2 @@
-<p class="my-space-desc"><?php echo __("Bene, hai completato l’inserimento del tuo spazio. ","mapparte"); ?> </p>
-<p class="my-space-desc"><?php echo __("Accetta i termini e invia la richiesta di approvazione. Riceverai una conferma via email.","mapparte"); ?> </p>
-<p class="my-space-desc"><?php echo __("Per informazioni o chiarimenti contattaci su ","mapparte"); ?><a href="mailto:info@mapparte.com" style="color:#000">info@mapparte.com</a></p>
+<p class="my-space-desc"><?php echo __("Hai completato l’inserimento del tuo spazio! Ti comunicheremo la pubblicazione via email.","mapparte"); ?> </p>
+<p class="my-space-desc"><?php echo __("Ti ricordiamo che Mapparte è un canale gratuito per far conoscere il tuo spazio e per promuoverne l’uso. Puoi sempre contattarci via email all’indirizzo ","mapparte"); ?><a href="mailto:info@mapparte.com" style="color:#000">info@mapparte.com</a></p>

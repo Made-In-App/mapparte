@@ -6,7 +6,6 @@
                 <img class="logo" src="<?php echo get_template_directory_uri();?>/assets/images/logo.svg" alt="logo" />
                 <p>MAPPARTE <?php echo date("Y")?></p>
                 <p><?php echo __("Tutti i diritti riservati","mapparte");?></p>
-                <p>Powered by <a href="https://www.poetronicart.com/" target="_blank" rel="nofollow">Poetronicart</a></p>
                 <p>Designed by <a href="https://www.artbuilder.it/studio/" target="_blank" rel="nofollow">D’Orsi Studio</a></p>
                 <img class="divider" src="<?php echo get_template_directory_uri();?>/assets/images/footer-divider-1.svg" alt="divider" />
             </div>

@@ -7,7 +7,7 @@
         <div class="row how-work-tiles justify-content-between">
             <div class="col-md-5 text-center">
                 <div class="how-work-tile">
-                    <h4><?php echo __("Informazione per l’utente","mapparte"); ?></h4>
+                    <h4><?php echo __("Informazioni per l’utente","mapparte"); ?></h4>
                     <div class="how-work-desc row">
                         <div class="col-sm-4 col-12">
                             <img class="how-work-img" src="<?php echo get_template_directory_uri();?>/assets/images/coupon.png" alt="coupon" />
@@ -39,7 +39,7 @@
             </div>
             <div class="col-md-5 text-center">
                 <div class="how-work-tile">
-                    <h4><?php echo __("Informazione per l’host","mapparte"); ?></h4>
+                    <h4><?php echo __("Informazioni per l’host","mapparte"); ?></h4>
                     <div class="how-work-desc row">
                         <div class="col-sm-4 col-12">
                             <img class="how-work-img" src="<?php echo get_template_directory_uri();?>/assets/images/cancle.png" alt="coupon" />

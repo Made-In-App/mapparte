@@ -9,7 +9,7 @@ $step_name = __('Dove si trova il tuo spazio?',"mapparte");
     <div class="tab-pane fade show active" id="italian" role="tabpanel"
          aria-labelledby="italian-tab">
         <h4 class="my-space-ttl"><?php echo esc_html($step_name); ?></h4>
-        <p class="my-space-desc"><?php echo __("Iniziamo","mapparte"); ?><?php echo __("Inserisci l’indirizzo oppure sposta il marker sulla mappa.","mapparte"); ?></p>
+        <p class="my-space-desc"><?php echo __("Inserisci l’indirizzo oppure sposta il marker sulla mappa.","mapparte"); ?></p>
         <div class="dimensioni-wrapper">
             <div class="row">
                 <div class="col-sm-12">

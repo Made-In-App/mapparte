@@ -1,1 +1,2 @@
-<p class="my-space-desc"><?php echo __("Per selezionare orari diversi: da Pc tenere premuto il tasto Control, da Mac tenere  premuto il tasto Command; da cellulare inserire manualmente aggiungendo gli orari.","mapparte"); ?></p>
+<p class="my-space-desc"><?php echo __("Sei libero di indicare o meno gli orari di disponibilità del tuo spazio.","mapparte"); ?></p>
+<p class="my-space-desc"><?php echo __("Per selezionare le fasce orarie: trascina il cursore sugli slot per selezionarli. Nel caso di orari diversi, ripeti l’operazione tenendo premuto il tasto Control (per PC) o il tasto Command (per Mac). L’inserimento degli orari da cellulare è manuale.","mapparte"); ?></p>

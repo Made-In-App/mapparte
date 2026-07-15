@@ -8,10 +8,8 @@ $step_name = __('Politica di cancellazione ed Ente gestore',"mapparte");
 $cancel_policy = get_post_meta( $space_data['id'], 'cancel_policy' );
 if ( isset( $cancel_policy[0] ) ) {
 	$cancel_policy_it = \WPGlobus_Core::text_filter( $cancel_policy[0], 'it' );
-	$cancel_policy_en = \WPGlobus_Core::text_filter( $cancel_policy[0], 'en' );
 } else {
 	$cancel_policy_it = '';
-    $cancel_policy_en = '';
 }
 ?>
 <div class="tab-content" id="myTabContent">
@@ -45,20 +43,6 @@ if ( isset( $cancel_policy[0] ) ) {
 						);
 						acf_form( $options );
 						?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="tab-pane fade" id="english" role="tabpanel" aria-labelledby="english-tab">
-        <h4 class="my-space-ttl"><?php echo esc_html( $step_name ); ?></h4>
-        <div class="dimensioni-wrapper">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h6><?php echo __("Politica di cancellazione","mapparte"); ?></h6>
-                    <div class="form-floating input-group">
-                        <textarea cols="50" name="politica_en" id="politica_en" class="form-control"
-                                  placeholder="<?php echo __("Politica di cancellazione","mapparte"); ?>"><?php echo $cancel_policy_en; ?></textarea>
                     </div>
                 </div>
             </div>

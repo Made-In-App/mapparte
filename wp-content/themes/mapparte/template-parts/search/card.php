@@ -55,7 +55,7 @@ $hide_prices           = (bool) get_post_meta( get_the_ID(), 'hide_prices', true
                 <p class="featured-ppl"><?php echo get_field("max_people");?> <?php echo __("persone","mapparte"); ?></p>
             </a>
             <div class="wishlist-btn">
-            <?php echo get_favorites_button(get_the_ID());?>
+            <?php \Mapparte\Frontend_Utils::favorite_button( get_the_ID() ); ?>
             </div>
             <?php \Mapparte\Frontend_Utils::get_rating(get_the_ID(),"star"); ?>
             <!-- <div class="rating">

@@ -350,7 +350,7 @@ class Book extends Rest_Api {
 
 			// Calculate the platform discount in some conditions
 			// Adesione allo sconto accettata, minimo ore prenotate, nessun altro sconto gia' applicato
-			if ( $data['discount'] && $booking_data['hours_booked'] >= $this->platform_discount_min_hours && ! $already_discounted ) {
+			if ( apply_filters( 'mapparte_enable_hour_package_discount', false ) && $data['discount'] && $booking_data['hours_booked'] >= $this->platform_discount_min_hours && ! $already_discounted ) {
 				$booking_data['dates'][ $key ]['discount']       = $this->platform_discount;
 				$booking_data['dates'][ $key ]['original_price'] = Utils::format_price( $date['price'] );
 				// Calculate the 12 hours discount
@@ -643,7 +643,7 @@ class Book extends Rest_Api {
 			if ( isset( $data['data'] ) && 404 === $data['data']['status'] ) {
 				$response = Utils::rest_api_response( false, __('ID spazio non valido','mapparte') );
 			} else {
-				if ( 'POST' === $request->get_method() && ! empty( $data['hide_prices'] ) ) {
+				if ( 'POST' === $request->get_method() && ( ! empty( $data['hide_prices'] ) || ! empty( $data['hide_availability'] ) ) ) {
 					$response = Utils::rest_api_response( false, __( 'Per questo spazio è disponibile solo la richiesta di contatto.', 'mapparte' ) );
 					return rest_ensure_response( [
 						'success'  => $response[0],

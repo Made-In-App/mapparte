@@ -4458,4 +4458,13 @@ footer {
 
 /** theme */
 
+.favorite-login-button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0; }
+
 /*# sourceMappingURL=main.css.map */

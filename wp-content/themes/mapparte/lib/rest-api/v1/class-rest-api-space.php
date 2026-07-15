@@ -263,6 +263,8 @@ class Space extends Rest_Api {
 		$_data['max_price_day']     = get_post_meta( $post->ID, 'max_price_day', true );
 		$_data['price_weekend']     = get_post_meta( $post->ID, 'price_weekend', true );
 		$_data['hide_prices']       = (bool) get_post_meta( $post->ID, 'hide_prices', true );
+		$_data['hide_availability'] = (bool) get_post_meta( $post->ID, 'hide_availability', true );
+		$_data['space_url']         = get_post_meta( $post->ID, 'space_url', true );
 		$user                       = new \Favorites\Entities\User\UserRepository;
 		$_data['is_favorite']       = $user->isFavorite( $post->ID, 1, null, 1 );
 

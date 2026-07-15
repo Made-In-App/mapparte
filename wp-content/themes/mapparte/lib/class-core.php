@@ -249,40 +249,29 @@ class Core {
 
 			// TARIFFA QUERY
 			if ( isset( $_GET["fare"] ) && ! empty( $_GET["fare"] ) ) {
-				// TARIFFA QUERY
-				if ( $_GET["fare"] == "1" ) { //oraria infrasettimanale
-					$meta_obj[] = [
-						'key'     => 'price_hour',
-						'value'   => explode( ";", $_GET["priceRange"] ),
-						'type'    => 'numeric',
-						'compare' => 'BETWEEN',
+				$price_meta_keys = [
+					'1' => 'price_hour',
+					'2' => 'price_hour_weekend',
+					'3' => 'min_price_day',
+					'4' => 'price_weekend',
+				];
+				$fare            = sanitize_key( wp_unslash( $_GET['fare'] ) );
 
-					];
-				}
-				if ( $_GET["fare"] == "2" ) { //prezzo orario weekend
-					$meta_obj[] = [
-						'key'     => 'price_hour_weekend',
-						'value'   => explode( ";", $_GET["priceRange"] ),
-						'type'    => 'numeric',
-						'compare' => 'BETWEEN',
-
-					];
-				}
-				if ( $_GET["fare"] == "3" ) { //tariffa giornaliera
-					$meta_obj[] = [
-						'key'     => 'min_price_day',
-						'value'   => explode( ";", $_GET["priceRange"] ),
-						'type'    => 'numeric',
-						'compare' => 'BETWEEN',
-					];
-				}
-				if ( $_GET["fare"] == "4" ) { //tariffa weekend
-					$meta_obj[] = [
-						'key'     => 'price_weekend',
-						'value'   => explode( ";", $_GET["priceRange"] ),
-						'type'    => 'numeric',
-						'compare' => 'BETWEEN',
-
+				if ( isset( $price_meta_keys[ $fare ], $_GET['priceRange'] ) ) {
+					$price_range = array_map( 'floatval', explode( ';', wp_unslash( $_GET['priceRange'] ) ) );
+					$meta_obj[]  = [
+						'relation' => 'OR',
+						[
+							'key'     => $price_meta_keys[ $fare ],
+							'value'   => $price_range,
+							'type'    => 'numeric',
+							'compare' => 'BETWEEN',
+						],
+						[
+							'key'     => 'hide_prices',
+							'value'   => 1,
+							'compare' => '=',
+						],
 					];
 				}
 			}

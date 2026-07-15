@@ -71,25 +71,6 @@ $step_name = __('Elenca i prezzi',"mapparte");
                 </div>
             </div>
             <div class="row">
-                <h4 class="my-space-ttl"><?php echo __("Sconti","mapparte"); ?></h4>
-                <p class="my-space-desc"><?php echo __("Per 12 ore consecutive cliccando su accetto/non accetto viene applicato uno sconto del 10 percento sulla tariffa oraria infrasettimanale e tariffa oraria weekend.","mapparte"); ?> </p>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="form-check">
-			            <?php $options = array(
-				            'field_groups' => array(), // this will find the field groups for this post (post ID's of the acf post objects)
-				            'fields'       => array( 'discount' ),
-				            'form'         => false, // set this to false to prevent the <form> tag from being created
-				            'html_before_fields' => '', // html inside form before fields
-				            'html_after_fields' => '', // html inside form after fields
-			            );
-			            acf_form( $options );
-			            ?>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
                 <div class="col-sm-12">
                     <div class="form-check">
                         <input type="hidden" name="hide_prices" value="0">
@@ -102,7 +83,7 @@ $step_name = __('Elenca i prezzi',"mapparte");
 							<?php checked( ! empty( $space_data['hide_prices'] ) ); ?>
                         >
                         <label class="form-check-label" for="hide_prices">
-							<?php echo __( 'Non mostrare i prezzi e ricevi solo richieste di contatto', 'mapparte' ); ?>
+							<?php echo __( 'Preferisco non indicare i prezzi e ricevere solo richieste di contatto', 'mapparte' ); ?>
                         </label>
                     </div>
                 </div>

@@ -12,8 +12,22 @@ $step_name = __('Disponibilità',"mapparte");
     <div class="tab-pane fade show active" id="italian" role="tabpanel"
          aria-labelledby="italian-tab">
         <h4 class="my-space-ttl"><?php echo esc_html( $step_name ); ?></h4>
-        <p class="my-space-desc"><?php echo __("Per aumentare le prenotazioni è importante indicare tutti gli orari di disponibilità dello spazio durante la settimana.","mapparte"); ?></p>
+        <p class="my-space-desc"><?php echo __("Sei libero di indicare o meno gli orari di disponibilità del tuo spazio.","mapparte"); ?></p>
         <div class="dimensioni-wrapper">
+            <div class="row mb-4">
+                <div class="col-sm-12">
+                    <div class="form-check">
+                        <input type="hidden" name="hide_availability" value="0">
+                        <input class="form-check-input" type="checkbox" id="hide_availability"
+                               name="hide_availability" value="1"
+							<?php checked( ! empty( $space_data['hide_availability'] ) ); ?>>
+                        <label class="form-check-label" for="hide_availability">
+							<?php echo __( 'Preferisco non indicare gli orari e ricevere solo richieste di contatto', 'mapparte' ); ?>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div id="availability-fields">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="calendar-mobile" style="display:none">
@@ -89,6 +103,7 @@ $step_name = __('Disponibilità',"mapparte");
                     </div>
                     <input type="hidden" id="available_slots" name="available_slots" value="">
                 </div>
+            </div>
             </div>
         </div>
     </div>

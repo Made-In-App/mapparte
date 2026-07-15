@@ -70,14 +70,14 @@
             </a>
             <a data-redirect="<?php echo get_permalink(); ?>" href="<?php echo get_permalink(); ?>"
                class="xoo-el-login-tgr">
-                <button type="button" class="btn btn-secondary-outline"><?php echo __("Contatta l'host","mapparte");?>
+                <button type="button" class="btn btn-secondary-outline"><?php echo __("Per info contatta l'host","mapparte");?>
                 </button>
             </a>
 		<?php else : ?>
             <button type="button" class="btn btn-secondary send" id="send"><?php echo __("invia richiesta prenotazione","mapparte");?>
             </button>
             <button type="button" data-bs-toggle="modal" data-bs-target="#message-popup"
-                    class="btn btn-secondary-outline"><?php echo __("Contatta l'host","mapparte");?>
+                    class="btn btn-secondary-outline"><?php echo __("Per info contatta l'host","mapparte");?>
             </button>
 		<?php endif; ?>
     </div>

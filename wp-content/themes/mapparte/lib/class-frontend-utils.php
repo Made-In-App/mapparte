@@ -9,6 +9,19 @@ namespace Mapparte;
  */
 class Frontend_Utils {
 
+	public static function favorite_button( $post_id ) {
+		if ( is_user_logged_in() ) {
+			echo get_favorites_button( $post_id );
+			return;
+		}
+
+		printf(
+			'<button type="button" class="favorite-login-button xoo-el-login-tgr" data-redirect="%1$s" aria-label="%2$s" title="%2$s"><i class="sf-icon-wishlist" aria-hidden="true"></i></button>',
+			esc_url( get_permalink( $post_id ) ),
+			esc_attr__( 'Accedi o registrati per aggiungere lo spazio ai preferiti', 'mapparte' )
+		);
+	}
+
 	static public function get_taxonomy_select( $taxonomy, $label = '', $first_option = '', $value = '' ) {
 		echo "<select name=\"s_$taxonomy\" id=\"s_$taxonomy\" class=\"form-select form-control\" aria-label=\"$label\">";
 		$tax_terms = get_terms( $taxonomy, array( 'hide_empty' => '0' ) );

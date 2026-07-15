@@ -137,35 +137,42 @@ class Edit_Space {
 		if ( isset( $_REQUEST['hide_prices'] ) && $space_id ) {
 			update_post_meta( $space_id, 'hide_prices', absint( $_REQUEST['hide_prices'] ) ? 1 : 0 );
 		}
+		if ( isset( $_REQUEST['hide_availability'] ) && $space_id ) {
+			update_post_meta( $space_id, 'hide_availability', absint( $_REQUEST['hide_availability'] ) ? 1 : 0 );
+		}
 
 		if ( 4 === $current_step ) {
 			// Step 3 Title / Description
-			$post_title = '';
+			$post             = get_post( $space_id );
+			$post_title       = '';
+			$post_title_en    = $post ? \WPGlobus_Core::text_filter( $post->post_title, 'en' ) : '';
+			$post_excerpt_en  = $post ? \WPGlobus_Core::text_filter( $post->post_excerpt, 'en' ) : '';
+			$post_content_en  = $post ? \WPGlobus_Core::text_filter( $post->post_content, 'en' ) : '';
 
-			if ( $_REQUEST['post_title'] ) {
+			if ( isset( $_REQUEST['post_title'] ) && $_REQUEST['post_title'] ) {
 				$post_title = sprintf( "{:it}%s{:}", sanitize_text_field( $_REQUEST['post_title'] ) );
 			}
-			if ( $_REQUEST['post_title_en'] ) {
-				$post_title .= sprintf( "%s{:en}%s{:}", $post_title, sanitize_text_field( $_REQUEST['post_title_en'] ) );
+			if ( $post_title_en ) {
+				$post_title .= sprintf( "{:en}%s{:}", sanitize_text_field( $post_title_en ) );
 			}
 
 			$post_excerpt = '';
 
-			if ( $_REQUEST['post_excerpt'] ) {
+			if ( isset( $_REQUEST['post_excerpt'] ) && $_REQUEST['post_excerpt'] ) {
 				$post_excerpt = sprintf( "{:it}%s{:}", sanitize_text_field( $_REQUEST['post_excerpt'] ) );
 			}
-			if ( $_REQUEST['post_excerpt_en'] ) {
-				$post_excerpt .= sprintf( "%s{:en}%s{:}", $post_excerpt, sanitize_text_field( $_REQUEST['post_excerpt_en'] ) );
+			if ( $post_excerpt_en ) {
+				$post_excerpt .= sprintf( "{:en}%s{:}", sanitize_text_field( $post_excerpt_en ) );
 			}
 
 
 			$post_content = '';
 
-			if ( $_REQUEST['post_content'] ) {
+			if ( isset( $_REQUEST['post_content'] ) && $_REQUEST['post_content'] ) {
 				$post_content = sprintf( "{:it}%s{:}", sanitize_text_field( $_REQUEST['post_content'] ) );
 			}
-			if ( $_REQUEST['post_content_en'] ) {
-				$post_content .= sprintf( "%s{:en}%s{:}", $post_content, sanitize_text_field( $_REQUEST['post_content_en'] ) );
+			if ( $post_content_en ) {
+				$post_content .= sprintf( "{:en}%s{:}", sanitize_text_field( $post_content_en ) );
 			}
 
 			if ( $post_title || $post_excerpt || $post_content ) {
@@ -278,15 +285,17 @@ class Edit_Space {
 			if ( isset( $_REQUEST['politica_it'] ) && sanitize_text_field( $_REQUEST['politica_it'] ) ) {
 				$cancel_policy = sprintf( "{:it}%s{:}", sanitize_text_field( $_REQUEST['politica_it'] ) );
 			}
-			if ( isset( $_REQUEST['politica_en'] ) && sanitize_text_field( $_REQUEST['politica_en'] ) ) {
-				$cancel_policy .= sprintf( "%s{:en}%s{:}", $cancel_policy, sanitize_text_field( $_REQUEST['politica_en'] ) );
+			$existing_policy    = get_post_meta( $space_id, 'cancel_policy', true );
+			$cancel_policy_en   = $existing_policy ? \WPGlobus_Core::text_filter( $existing_policy, 'en' ) : '';
+			if ( $cancel_policy_en ) {
+				$cancel_policy .= sprintf( "{:en}%s{:}", sanitize_text_field( $cancel_policy_en ) );
 			}
 
 			update_post_meta( $space_id, '_cancel_policy', $cancel_policy_key );
 			update_post_meta( $space_id, 'cancel_policy', $cancel_policy );
 		}
 
-		if ( $_REQUEST['action'] === 'salva e chiudi' ) {
+		if ( isset( $_REQUEST['action'] ) && $_REQUEST['action'] === 'salva e chiudi' ) {
 			echo "<script> jQuery(location).attr('href', '" . get_home_url() . "/my-spaces/'); </script>";
 		}
 
@@ -331,6 +340,13 @@ class Edit_Space {
 
 			if ( empty( $_REQUEST['space_terms_accepted'] ) ) {
 				return new \WP_Error( 'space_terms_required', __( 'Devi accettare i termini e le condizioni d’uso per inviare lo spazio.', 'mapparte' ) );
+			}
+
+			$space_url = isset( $_REQUEST['space_url'] ) ? esc_url_raw( wp_unslash( $_REQUEST['space_url'] ) ) : '';
+			if ( $space_url ) {
+				update_post_meta( $space_id, 'space_url', $space_url );
+			} else {
+				delete_post_meta( $space_id, 'space_url' );
 			}
 
 			$args     = [
@@ -432,8 +448,7 @@ class Edit_Space {
 			$message = sprintf( __("Buone notizie: <b>%s</b> è online!<br><br>
 				Da adesso sarà visibile sul nostro portale.<br>
 				Tutte le informazioni inserite appariranno nella scheda completa del tuo spazio.<br><br>
-				Potrai modificarle in qualsiasi momento accedendo alla dashboard del tuo profilo.<br><br>
-				Ricordati di attivare il tuo account di Stripe nella tua dashboard personale, alla voce \"Profilo e account\". 
+				Potrai modificarle in qualsiasi momento accedendo alla dashboard del tuo profilo.
 				", 'mapparte' ), esc_html( $post->post_title ) );
 
 			$footer = __("A presto e buon lavoro,<br>Il team Mapparte!", 'mapparte' );

@@ -1,3 +1,3 @@
 <p class="my-space-desc"><?php echo __("Inserisci il nome completo della via,viale, piazza ecc., il numero civico, il CAP.","mapparte"); ?></p>
-<p class="my-space-desc"><?php echo __("L’indirizzo completo sarà visibile all’utente una volta loggato.","mapparte"); ?></p>
+<p class="my-space-desc"><?php echo __("L’indirizzo completo sarà visibile agli utenti registrati.","mapparte"); ?></p>
 <p class="my-space-desc"><?php echo __("Inserisci il quartiere dove lo spazio è ubicato e il piano (0 equivale a piano terra) ","mapparte"); ?></p>

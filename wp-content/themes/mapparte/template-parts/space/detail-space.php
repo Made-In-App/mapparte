@@ -11,7 +11,7 @@
         <img class="review" src="<?php echo get_template_directory_uri(); ?>/assets/images/star.svg" alt="star">
         <h5 class="review-count"><?php \Mapparte\Frontend_Utils::get_rating(get_the_ID(),"number"); ?></h5>
         <div class="wishlist-btn">
-            <?php echo get_favorites_button(get_the_ID());?>
+            <?php \Mapparte\Frontend_Utils::favorite_button( get_the_ID() ); ?>
         </div>
     </div>
     <div class="activities-wrapper">
@@ -69,9 +69,16 @@
 			<?php endif; ?>
         </div>
         <div class="space-desc mt-5">
-			<?php the_content(); ?>
+				<?php the_content(); ?>
         </div>
+		<?php if ( ! empty( $args['space_url'] ) ) : ?>
+            <div class="space-rule-wrapper">
+                <h4><?php echo esc_html__( 'Sito o canale social dello spazio', 'mapparte' ); ?></h4>
+                <p><a href="<?php echo esc_url( $args['space_url'] ); ?>" target="_blank" rel="noopener noreferrer nofollow"><?php echo esc_html( $args['space_url'] ); ?></a></p>
+            </div>
+		<?php endif; ?>
         <div class="row">
+			<?php if ( empty( $args['hide_availability'] ) ) : ?>
             <div class="col-md-6 timing-wrapper">
                 <div class="timing-header">
                     <img class="accordion-icon"
@@ -86,6 +93,7 @@
 					} ?>
                 </div>
             </div>
+			<?php endif; ?>
 			<?php if ( empty( $args['hide_prices'] ) ) : ?>
             <div class="col-md-6 pricing-wrapper">
                 <div class="pricing-header">
@@ -370,12 +378,12 @@
                     <a data-redirect="<?php echo get_permalink(); ?>" href="<?php echo get_permalink(); ?>"
                        class="xoo-el-login-tgr">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/btn.png" alt="btn">
-                        <p><?php echo __("Contatta l’host","mapparte");?></p>
+                        <p><?php echo __("Per info contatta l’host","mapparte");?></p>
                     </a>
 				<?php else : ?>
                     <a class="read-more" data-bs-toggle="modal" data-bs-target="#message-popup" href="#"><img
                                 src="<?php echo get_template_directory_uri(); ?>/assets/images/btn.png" alt="btn">
-                        <p><?php echo __("Contatta l’host","mapparte");?></p>
+                        <p><?php echo __("Per info contatta l’host","mapparte");?></p>
                     </a>
 				<?php endif; ?>
             </div>
@@ -384,9 +392,6 @@
 			<?php if ( isset( $args['address'] ) ) {
 				\Mapparte\Frontend_Utils::show_map( $args['address'] );
 			} ?>
-        </div>
-        <div class="position-wrapper">
-            <h4 class="position-ttl"><?php echo __("Il pagamento avviene al di fuori della piattaforma, direttamente tra le parti. Per maggiori info consulta le","mapparte");?> <a href="/come-funziona/">Faq</a></h4>
         </div>
     </div>
 </div>
