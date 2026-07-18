@@ -1,7 +1,7 @@
 </p></td>
 </tr>
 <?php if ( isset( $args['call_to_action'] ) && $args['call_to_action'] ) : ?>
-    <tr id="cta-row" style="border-collapse:collapse">
+    <tr style="border-collapse:collapse">
         <td align="center"
             style="Margin:0;padding-left:10px;padding-right:10px;padding-top:35px;padding-bottom:35px"><span
                     class="es-button-border"
@@ -19,7 +19,7 @@
     </tr>
 <?php endif; ?>
 <?php if ( isset( $args['footer'] ) && $args['footer'] ) : ?>
-<tr id="signature-row" style="border-collapse:collapse">
+<tr style="border-collapse:collapse">
     <td class="es-m-txt-l" bgcolor="#ffffff" align="left"
         style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
         <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px"><?php echo $args['footer'] ?></p>
@@ -27,18 +27,18 @@
             <br></p></td>
 </tr>
 <?php endif; ?>
-<!--<tr style="border-collapse:collapse">
+<tr style="border-collapse:collapse">
     <td align="center"
         style="padding:20px;Margin:0;font-size:0">
         <table border="0" width="100%" height="100%"
                cellpadding="0" cellspacing="0"
                role="presentation"
                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-            <tr style="border-collapse:collapse">
+            <!--<tr style="border-collapse:collapse">
                 <td style="padding:0;Margin:0;border-bottom:1px solid #CCCCCC;background:none;height:1px;width:100%;margin:0px"></td>
-            </tr>
+            </tr>-->
         </table></td>
-</tr>-->
+</tr>
 </table></td>
 </tr>
 </table></td>
@@ -47,7 +47,7 @@
 </tr>
 </table>
 <table class="es-content" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
-    <!--<tr style="border-collapse:collapse">
+    <tr style="border-collapse:collapse">
         <td align="center" bgcolor="#3d99bc" style="padding:0;Margin:0;background-color:#3D99BC">
             <table class="es-content-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px" cellspacing="0" cellpadding="0" align="center">
                 <tr style="border-collapse:collapse">
@@ -72,9 +72,9 @@
                         </table></td>
                 </tr>
             </table></td>
-    </tr>-->
+    </tr>
 </table>
-<table id="cta-site-row" class="es-content" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+<table class="es-content" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
     <tr style="border-collapse:collapse">
         <td align="center" bgcolor="#3d99bc" style="padding:0;Margin:0;background-color:#3D99BC">
             <table class="es-content-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px" cellspacing="0" cellpadding="0" align="center">
@@ -94,7 +94,27 @@
             </table></td>
     </tr>
 </table>
-</td>
+<table cellpadding="0" cellspacing="0" class="es-footer" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%;background-color:transparent;background-repeat:repeat;background-position:center top">
+    <tr style="border-collapse:collapse">
+        <td align="center" bgcolor="#3d99bc" style="padding:0;Margin:0;background-color:#3D99BC">
+            <table class="es-footer-body" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px">
+                <tr style="border-collapse:collapse">
+                    <td align="left" style="Margin:0;padding-top:30px;padding-bottom:30px;padding-left:30px;padding-right:30px">
+                        <!--<table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                            <tr style="border-collapse:collapse">
+                                <td valign="top" align="center" style="padding:0;Margin:0;width:540px">
+                                    <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                        <tr style="border-collapse:collapse">
+                                            <td align="left" style="padding:0;Margin:0;padding-top:25px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:21px;color:#000000;font-size:14px">Mapparte, Via Flavia 23/1, 34148 Trieste</p></td>
+                                        </tr>
+                                    </table></td>
+                            </tr>
+                        </table>-->
+                    </td>
+                </tr>
+            </table></td>
+    </tr>
+</table></td>
 </tr>
 </table>
 </div>
