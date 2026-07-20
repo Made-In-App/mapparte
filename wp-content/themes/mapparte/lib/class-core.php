@@ -298,28 +298,39 @@ class Core {
 	public function my_custom_query_blog( $query ) {
 
 		if ( ! is_admin() && $query->is_main_query() && $query->is_home() ) {
-			$ids         = [];
+			$ids = [];
+			$add_published_id = static function ( $selected_post ) use ( &$ids ) {
+				$post = get_post( $selected_post );
+				if ( $post instanceof \WP_Post && 'publish' === get_post_status( $post ) ) {
+					$ids[] = $post->ID;
+				}
+			};
+
 			$in_evidenza = get_field( "in_evidenza", "option" );
 			if ( ! empty( $in_evidenza ) ) {
-				$ids[] = $in_evidenza->ID;
+				$add_published_id( $in_evidenza );
 			}
 			$in_evidenza_altri = get_field( "in_evidenza_altri", "option" );
 			if ( ! empty( $in_evidenza_altri ) ) {
 				foreach ( $in_evidenza_altri as $post ) {
-					$ids[] = $post->ID;
+					$add_published_id( $post );
 				}
 			}
 			$breaking_news = get_field( "breaking_news", "option" );
 			if ( ! empty( $breaking_news ) ) {
 				foreach ( $breaking_news as $post ) {
-					$ids[] = $post->ID;
+					$add_published_id( $post );
 				}
 			}
-			$query->set( 'post__not_in', $ids );
+			$query->set( 'post__not_in', array_values( array_unique( $ids ) ) );
 			$query->set( 'post_type', [ 'post' ] );
+			$query->set( 'post_status', 'publish' );
+			$query->set( 'orderby', 'date' );
+			$query->set( 'order', 'DESC' );
 		}
 		if ( ! is_admin() && $query->is_main_query() && $query->is_search() ) {
 			$query->set( 'post_type', [ 'post' ] );
+			$query->set( 'post_status', 'publish' );
 		}
 	}
 

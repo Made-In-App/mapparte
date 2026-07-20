@@ -1,7 +1,17 @@
 <?php
-$in_evidenza = get_field("in_evidenza","option");
-$in_evidenza_altri = get_field("in_evidenza_altri","option");
-$breaking_news = get_field("breaking_news","option");
+$get_published_post = static function ( $value ) {
+    $post = get_post( $value );
+
+    return $post instanceof WP_Post && 'publish' === get_post_status( $post ) ? $post : null;
+};
+
+$filter_published_posts = static function ( $values ) use ( $get_published_post ) {
+    return array_values( array_filter( array_map( $get_published_post, (array) $values ) ) );
+};
+
+$in_evidenza = $get_published_post( get_field( "in_evidenza", "option" ) );
+$in_evidenza_altri = $filter_published_posts( get_field( "in_evidenza_altri", "option" ) );
+$breaking_news = $filter_published_posts( get_field( "breaking_news", "option" ) );
 ?>
 <div class="row magazine-tiles">
 
