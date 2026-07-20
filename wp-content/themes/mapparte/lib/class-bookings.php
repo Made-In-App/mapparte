@@ -80,30 +80,12 @@ class Bookings {
 
 					$subject = __("Mapparte - Conferma prenotazione", 'mapparte' );
 
-					$message = sprintf( __("<b>%s</b> ha accettato la tua richiesta.<br>La prenotazione è confermata: concorda direttamente con l'host le modalità di pagamento.<br><br>%s%s", 'mapparte' ),
-						esc_html( $space_title ),
-						$user_msg,
-						$details_msg
-					);
-
-					$call_to_action = __("Vedi la prenotazione", 'mapparte' );
-
 					$call_to_action_url = sprintf( "%s/?p=%d&post_type=booking",
 						esc_url( get_home_url() ),
 						$booking_details['bookingId']
 					);
 
-					$footer = __("Il team Mapparte!", 'mapparte' );
-
-					$args_notification = [
-						'h1'                 => false,
-						'body'               => $message,
-						'call_to_action'     => $call_to_action,
-						'call_to_action_url' => $call_to_action_url,
-						'footer'             => $footer,
-					];
-
-					\Mapparte\Email_Notification::send_email( $to_email, $subject, $args_notification );
+					self::send_acceptance_emails( $post->ID, $booking_details, $host_id, $user_msg );
 
 					$message_notification = sprintf( __("%s ha accettato la tua richiesta. La prenotazione è confermata: concorda direttamente con l'host le modalità di pagamento.", 'mapparte' ),
 						esc_html( $space_title )
@@ -224,6 +206,75 @@ class Bookings {
 			}
 		}
 
+	}
+
+	/**
+	 * Send independent booking confirmations to the guest and the host.
+	 */
+	public static function send_acceptance_emails( $booking_id, $booking_details, $host_id, $user_msg = false ) {
+		$results = [
+			'guest' => false,
+			'host'  => false,
+		];
+
+		if ( ! is_array( $booking_details ) || empty( $booking_details['userId'] ) || empty( $booking_details['spaceTitle'] ) ) {
+			return $results;
+		}
+
+		$guest_id = (int) $booking_details['userId'];
+		$host_id = (int) $host_id;
+		$guest_email = self::get_user_email( $guest_id );
+		$host_email = self::get_user_email( $host_id );
+		$space_title = $booking_details['spaceTitle'];
+		$guest_name = get_the_author_meta( 'nicename', $guest_id );
+		$details_msg = \Mapparte\Email_Notification::format_booking_details( $booking_details );
+		$subject = __( "Mapparte - Conferma prenotazione", 'mapparte' );
+		$call_to_action = __( "Vedi la prenotazione", 'mapparte' );
+		$call_to_action_url = sprintf( "%s/?p=%d&post_type=booking", esc_url( get_home_url() ), (int) $booking_id );
+		$footer = __( "Il team Mapparte!", 'mapparte' );
+
+		if ( $guest_email ) {
+			$guest_message = sprintf( __( "<b>%s</b> ha accettato la tua richiesta.<br>La prenotazione è confermata: concorda direttamente con l'host le modalità di pagamento.<br><br>%s%s", 'mapparte' ),
+				esc_html( $space_title ),
+				$user_msg,
+				$details_msg
+			);
+			$results['guest'] = \Mapparte\Email_Notification::send_email( $guest_email, $subject, [
+				'h1'                 => false,
+				'body'               => $guest_message,
+				'call_to_action'     => $call_to_action,
+				'call_to_action_url' => $call_to_action_url,
+				'footer'             => $footer,
+			] );
+			if ( $results['guest'] ) {
+				update_post_meta( $booking_id, '_acceptance_email_guest_sent', current_time( 'mysql' ) );
+			}
+		}
+
+		if ( $host_email ) {
+			$host_message = sprintf( __( "Hai accettato la prenotazione di <b>%s</b> per <b>%s</b>.<br>La prenotazione è confermata: concorda direttamente con l'utente le modalità di pagamento.<br><br>%s", 'mapparte' ),
+				esc_html( $guest_name ),
+				esc_html( $space_title ),
+				$details_msg
+			);
+			$results['host'] = \Mapparte\Email_Notification::send_email( $host_email, $subject, [
+				'h1'                 => false,
+				'body'               => $host_message,
+				'call_to_action'     => $call_to_action,
+				'call_to_action_url' => $call_to_action_url,
+				'footer'             => $footer,
+			] );
+			if ( $results['host'] ) {
+				update_post_meta( $booking_id, '_acceptance_email_host_sent', current_time( 'mysql' ) );
+			}
+		}
+
+		return $results;
+	}
+
+	private static function get_user_email( $user_id ) {
+		$user = get_userdata( (int) $user_id );
+		return $user && is_email( $user->user_email ) ? $user->user_email : '';
 	}
 
 	// Add 30 mins interval for cronJobs
