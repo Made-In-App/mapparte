@@ -258,21 +258,32 @@ class Core {
 				$fare            = sanitize_key( wp_unslash( $_GET['fare'] ) );
 
 				if ( isset( $price_meta_keys[ $fare ], $_GET['priceRange'] ) ) {
-					$price_range = array_map( 'floatval', explode( ';', wp_unslash( $_GET['priceRange'] ) ) );
-					$meta_obj[]  = [
-						'relation' => 'OR',
+					$price_range = array_slice( array_map( 'floatval', explode( ';', wp_unslash( $_GET['priceRange'] ) ) ), 0, 2 );
+					if ( 2 === count( $price_range ) ) {
+						sort( $price_range, SORT_NUMERIC );
+						$meta_obj[] = [
+							'relation' => 'AND',
+							[
+								'key'     => $price_meta_keys[ $fare ],
+								'value'   => $price_range,
+								'type'    => 'NUMERIC',
+								'compare' => 'BETWEEN',
+							],
 						[
-							'key'     => $price_meta_keys[ $fare ],
-							'value'   => $price_range,
-							'type'    => 'numeric',
-							'compare' => 'BETWEEN',
+							'relation' => 'OR',
+							[
+								'key'     => 'hide_prices',
+								'compare' => 'NOT EXISTS',
+							],
+							[
+								'key'     => 'hide_prices',
+								'value'   => 1,
+								'type'    => 'NUMERIC',
+								'compare' => '!=',
+							],
 						],
-						[
-							'key'     => 'hide_prices',
-							'value'   => 1,
-							'compare' => '=',
-						],
-					];
+						];
+					}
 				}
 			}
 

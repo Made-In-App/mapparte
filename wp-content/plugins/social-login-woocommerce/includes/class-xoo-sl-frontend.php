@@ -57,11 +57,12 @@ class Xoo_Sl_Frontend{
 		}
 
 		if( $this->settings['gl-goo-en'] === "yes" ){
-			wp_enqueue_script('google-social-login',"https://apis.google.com/js/platform.js");
-			wp_enqueue_script( 'xoo-sl-google-sdk', XOO_SL_URL.'/assets/js/google/google-sdk.js', array( 'jquery' ), XOO_SL_VERSION, true ); //Facebook SDK
+			wp_enqueue_script('google-social-login', "https://accounts.google.com/gsi/client", array(), null, true );
+			wp_enqueue_script( 'xoo-sl-google-sdk', XOO_SL_URL.'/assets/js/google/google-sdk.js', array( 'jquery', 'google-social-login' ), filemtime( XOO_SL_PATH . '/assets/js/google/google-sdk.js' ), true );
 			wp_localize_script( 'xoo-sl-google-sdk', 'xoo_sl_google_localize', array(
 				'adminurl'  => admin_url().'admin-ajax.php',
 				'clientID'	=> esc_attr( $this->settings['gl-goo-clientid'] ),
+				'nonce'     => wp_create_nonce( 'xoo_sl_google_login' ),
 			));
 		}
 		
@@ -74,7 +75,7 @@ class Xoo_Sl_Frontend{
 			$redirect_to = $this->settings['gl-red-url'];
 		}
 		elseif( $GLOBALS['pagenow'] === 'wp-login.php' ){
-			$redirect_to = get_site_url();
+			$redirect_to = admin_url();
 		}
 		else{
 			$redirect_to = $_SERVER['REQUEST_URI'];

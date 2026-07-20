@@ -108,8 +108,8 @@ $args = array_merge( $defaults, $args );
                                    value="<?php echo $args['priceRange'] ?>"/>
 							<?php
 							$vettRange = ( $args['priceRange'] ) ? explode( ";", $args['priceRange'] ) : [
-								'200',
-								'800'
+								'0',
+								'1000'
 							];
 							?>
                             <script>

@@ -13,10 +13,73 @@ class Edit_Space {
 	 */
 	public function __construct() {
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_script' ] );
+		add_filter( 'acf/load_fields', [ $this, 'filter_space_admin_fields' ], 20, 2 );
 		add_action( 'mapparte_update_prices_min_max', [ $this, 'update_prices_min_max' ], 10, 1 );
 		add_action( 'transition_post_status', [ $this, 'space_email_notifications' ], 10, 3 );
 		add_action( 'wp_insert_post', [ $this, 'set_default_rating' ], 10, 3 );
 		add_action( 'init', [ $this, 'remove_space' ] );
+	}
+
+	/**
+	 * Keep the space fields shown in ACF aligned with the public wizard.
+	 */
+	public function filter_space_admin_fields( $fields, $parent ) {
+		if ( empty( $parent['key'] ) || 'group_60281a67bdaa6' !== $parent['key'] ) {
+			return $fields;
+		}
+
+		$removed_fields  = [ 'covid', 'max_people_covid', 'covid_notes' ];
+		$required_fields = [ 'space_mq', 'max_people', 'accessibility', 'floor_type', 'space_access', 'services', 'features' ];
+		$existing_names  = [];
+
+		$fields = array_values( array_filter( $fields, static function ( $field ) use ( $removed_fields ) {
+			return empty( $field['name'] ) || ! in_array( $field['name'], $removed_fields, true );
+		} ) );
+
+		foreach ( $fields as &$field ) {
+			if ( ! empty( $field['name'] ) ) {
+				$existing_names[] = $field['name'];
+				if ( in_array( $field['name'], $required_fields, true ) ) {
+					$field['required'] = 1;
+				}
+			}
+		}
+		unset( $field );
+
+		$visibility_fields = [
+			[
+				'key'   => 'field_mapparte_hide_prices',
+				'label' => __( 'Preferisco non mostrare i prezzi', 'mapparte' ),
+				'name'  => 'hide_prices',
+			],
+			[
+				'key'   => 'field_mapparte_hide_availability',
+				'label' => __( 'Preferisco non mostrare gli orari', 'mapparte' ),
+				'name'  => 'hide_availability',
+			],
+		];
+
+		foreach ( $visibility_fields as $visibility_field ) {
+			if ( in_array( $visibility_field['name'], $existing_names, true ) ) {
+				continue;
+			}
+
+			$fields[] = array_merge( $visibility_field, [
+				'type'              => 'true_false',
+				'instructions'      => '',
+				'required'          => 0,
+				'conditional_logic' => 0,
+				'wrapper'           => [ 'width' => '', 'class' => '', 'id' => '' ],
+				'message'           => '',
+				'default_value'     => 0,
+				'ui'                => 1,
+				'ui_on_text'        => __( 'Sì', 'mapparte' ),
+				'ui_off_text'       => __( 'No', 'mapparte' ),
+				'parent'            => $parent['key'],
+			] );
+		}
+
+		return $fields;
 	}
 
 	function remove_space() {
@@ -136,9 +199,11 @@ class Edit_Space {
 
 		if ( isset( $_REQUEST['hide_prices'] ) && $space_id ) {
 			update_post_meta( $space_id, 'hide_prices', absint( $_REQUEST['hide_prices'] ) ? 1 : 0 );
+			update_post_meta( $space_id, '_hide_prices', 'field_mapparte_hide_prices' );
 		}
 		if ( isset( $_REQUEST['hide_availability'] ) && $space_id ) {
 			update_post_meta( $space_id, 'hide_availability', absint( $_REQUEST['hide_availability'] ) ? 1 : 0 );
+			update_post_meta( $space_id, '_hide_availability', 'field_mapparte_hide_availability' );
 		}
 
 		if ( 4 === $current_step ) {
@@ -303,6 +368,57 @@ class Edit_Space {
 	}
 
 	/**
+	 * Save fields belonging to the final wizard screen without requesting approval.
+	 */
+	public static function save_final_step( $space_id, $space_author ) {
+		$user_id = get_current_user_id();
+		if ( ! $space_id || ! is_user_logged_in() || ! user_can( $user_id, 'edit_post', $space_id ) ) {
+			return new \WP_Error( 'space_not_editable', __( 'Non puoi modificare questo spazio.', 'mapparte' ) );
+		}
+		if ( $space_author && (int) $space_author !== $user_id ) {
+			return new \WP_Error( 'space_not_owned', __( 'Non puoi modificare questo spazio.', 'mapparte' ) );
+		}
+
+		$space_url = isset( $_REQUEST['space_url'] ) ? esc_url_raw( wp_unslash( $_REQUEST['space_url'] ) ) : '';
+		if ( $space_url ) {
+			update_post_meta( $space_id, 'space_url', $space_url );
+		} else {
+			delete_post_meta( $space_id, 'space_url' );
+		}
+
+		return $space_id;
+	}
+
+	private static function validate_space_for_approval( $space_id ) {
+		$required_fields = [
+			'space_mq'      => __( 'Dimensione in metri quadri', 'mapparte' ),
+			'max_people'    => __( 'Numero massimo di persone', 'mapparte' ),
+			'accessibility' => __( 'Accessibilità per disabili', 'mapparte' ),
+			'floor_type'    => __( 'Pavimento', 'mapparte' ),
+			'space_access'  => __( 'Accesso allo spazio', 'mapparte' ),
+			'services'      => __( 'Servizi', 'mapparte' ),
+			'features'      => __( 'Caratteristiche', 'mapparte' ),
+		];
+		$missing = [];
+
+		foreach ( $required_fields as $field_name => $label ) {
+			$value = get_field( $field_name, $space_id );
+			if ( '' === $value || null === $value || false === $value || ( is_array( $value ) && empty( $value ) ) ) {
+				$missing[] = $label;
+			}
+		}
+
+		if ( $missing ) {
+			return new \WP_Error(
+				'space_required_fields',
+				sprintf( __( 'Completa i campi obbligatori prima dell’invio: %s.', 'mapparte' ), implode( ', ', $missing ) )
+			);
+		}
+
+		return true;
+	}
+
+	/**
 	 * Send the approval request to the website administators
 	 *
 	 * @param $space_id
@@ -338,16 +454,16 @@ class Edit_Space {
 				return new \WP_Error( 'invalid_space_approval_nonce', __( 'La sessione è scaduta. Ricarica la pagina e riprova.', 'mapparte' ) );
 			}
 
-			if ( empty( $_REQUEST['space_terms_accepted'] ) ) {
-				return new \WP_Error( 'space_terms_required', __( 'Devi accettare i termini e le condizioni d’uso per inviare lo spazio.', 'mapparte' ) );
-			}
+				if ( empty( $_REQUEST['space_terms_accepted'] ) ) {
+					return new \WP_Error( 'space_terms_required', __( 'Devi accettare i termini e le condizioni d’uso per inviare lo spazio.', 'mapparte' ) );
+				}
 
-			$space_url = isset( $_REQUEST['space_url'] ) ? esc_url_raw( wp_unslash( $_REQUEST['space_url'] ) ) : '';
-			if ( $space_url ) {
-				update_post_meta( $space_id, 'space_url', $space_url );
-			} else {
-				delete_post_meta( $space_id, 'space_url' );
-			}
+				$validation = self::validate_space_for_approval( $space_id );
+				if ( is_wp_error( $validation ) ) {
+					return $validation;
+				}
+
+				self::save_final_step( $space_id, $space_author );
 
 			$args     = [
 				'ID'          => $space_id,
@@ -413,7 +529,8 @@ class Edit_Space {
 
 	public function enqueue_script() {
 		if ( is_page( "inserisci-il-tuo-spazio" ) && is_user_logged_in() ) {
-			wp_enqueue_script( 'add-space-script', get_template_directory_uri() . '/assets/js/edit_space.js', array( 'jquery' ) );
+			$script_path = get_template_directory() . '/assets/js/edit_space.js';
+			wp_enqueue_script( 'add-space-script', get_template_directory_uri() . '/assets/js/edit_space.js', array( 'jquery' ), filemtime( $script_path ), true );
 		}
 	}
 

@@ -592,6 +592,25 @@
                 "step": ""
             },
             {
+                "key": "field_mapparte_hide_prices",
+                "label": "Preferisco non mostrare i prezzi",
+                "name": "hide_prices",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 1,
+                "ui_on_text": "Sì",
+                "ui_off_text": "No"
+            },
+            {
                 "key": "field_6029150a31206",
                 "label": "Adesione allo sconto",
                 "name": "discount",
@@ -1143,12 +1162,31 @@
                 ]
             },
             {
+                "key": "field_mapparte_hide_availability",
+                "label": "Preferisco non mostrare gli orari",
+                "name": "hide_availability",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 1,
+                "ui_on_text": "Sì",
+                "ui_off_text": "No"
+            },
+            {
                 "key": "field_60297248c9c09",
                 "label": "Dimensioni in mq",
                 "name": "space_mq",
                 "type": "number",
                 "instructions": "",
-                "required": 0,
+                "required": 1,
                 "conditional_logic": 0,
                 "wrapper": {
                     "width": "",
@@ -1232,7 +1270,7 @@
                 "name": "max_people",
                 "type": "number",
                 "instructions": "",
-                "required": 0,
+                "required": 1,
                 "conditional_logic": 0,
                 "wrapper": {
                     "width": "",
@@ -1253,7 +1291,7 @@
                 "name": "accessibility",
                 "type": "radio",
                 "instructions": "",
-                "required": 0,
+                "required": 1,
                 "conditional_logic": 0,
                 "wrapper": {
                     "width": "",
@@ -1277,7 +1315,7 @@
                 "name": "floor_type",
                 "type": "checkbox",
                 "instructions": "",
-                "required": 0,
+                "required": 1,
                 "conditional_logic": 0,
                 "wrapper": {
                     "width": "",
@@ -1310,7 +1348,7 @@
                 "name": "space_access",
                 "type": "checkbox",
                 "instructions": "",
-                "required": 0,
+                "required": 1,
                 "conditional_logic": 0,
                 "wrapper": {
                     "width": "",
@@ -1392,7 +1430,7 @@
                 "name": "services",
                 "type": "checkbox",
                 "instructions": "",
-                "required": 0,
+                "required": 1,
                 "conditional_logic": 0,
                 "wrapper": {
                     "width": "",
@@ -1502,7 +1540,7 @@
                 "name": "features",
                 "type": "checkbox",
                 "instructions": "",
-                "required": 0,
+                "required": 1,
                 "conditional_logic": 0,
                 "wrapper": {
                     "width": "",
@@ -1612,79 +1650,6 @@
                 "toggle": 0,
                 "return_format": "value",
                 "save_custom": 0
-            },
-            {
-                "key": "field_6029754b2c4f4",
-                "label": "Precauzioni covid",
-                "name": "covid",
-                "type": "checkbox",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "choices": {
-                    "segnali di distanziamento di 1 o 2 metri": "segnali di distanziamento di 1 o 2 metri",
-                    "sistema di entrata e uscita separate": "sistema di entrata e uscita separate",
-                    "rilevamento temperatura all’ingresso": "rilevamento temperatura all’ingresso",
-                    "disinfettante mani per tutti gli ospiti": "disinfettante mani per tutti gli ospiti",
-                    "asciugamani adeguati  per tutti gli ospiti": "asciugamani adeguati  per tutti gli ospiti",
-                    "tutte le superfici vengono accuratamente pulite prima di ogni prenotazione": "tutte le superfici vengono accuratamente pulite prima di ogni prenotazione",
-                    "pagamento non in contanti": "pagamento non in contanti",
-                    "servizi igienici indipendenti per gli ospiti": "servizi igienici indipendenti per gli ospiti",
-                    "mascherine richieste per gli ospiti": "mascherine richieste per gli ospiti",
-                    "mascherine richieste per lo staff": "mascherine richieste per lo staff"
-                },
-                "allow_custom": 0,
-                "default_value": [],
-                "layout": "vertical",
-                "toggle": 0,
-                "return_format": "value",
-                "save_custom": 0
-            },
-            {
-                "key": "field_602976297f286",
-                "label": "Numero massimo di persone covid",
-                "name": "max_people_covid",
-                "type": "number",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": "",
-                "min": "",
-                "max": "",
-                "step": ""
-            },
-            {
-                "key": "field_602976567f287",
-                "label": "Altre indicazioni per covid",
-                "name": "covid_notes",
-                "type": "textarea",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpglobus_multilingual_field": 1,
-                "default_value": "",
-                "placeholder": "",
-                "maxlength": "",
-                "rows": "",
-                "new_lines": ""
             },
             {
                 "key": "field_60293a6faae32",

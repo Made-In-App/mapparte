@@ -33,7 +33,15 @@ if ( isset( $space_data['author'] ) && $space_data['author'] !== get_current_use
 if ( isset( $space_data['status'] ) || ! $space_id ) {
 
 	if ( is_int( $current_step ) && $current_step && $current_step == $max_steps + 1 ) :
-		$approval_response = \Mapparte\Edit_Space::space_approval_request( $space_id, get_current_user_id(), $current_step );
+		$requested_action = isset( $_REQUEST['action'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['action'] ) ) : '';
+		if ( 'salva e chiudi' === $requested_action ) {
+			$approval_response = \Mapparte\Edit_Space::save_final_step( $space_id, get_current_user_id() );
+			if ( ! is_wp_error( $approval_response ) ) {
+				echo '<script>window.location.href=' . wp_json_encode( home_url( '/my-spaces/' ) ) . ';</script>';
+			}
+		} else {
+			$approval_response = \Mapparte\Edit_Space::space_approval_request( $space_id, get_current_user_id(), $current_step );
+		}
 		if ( is_wp_error( $approval_response ) ) {
 			$space_terms_error = $approval_response->get_error_message();
 			$current_step      = $max_steps;
@@ -98,7 +106,7 @@ if ( isset( $space_data['status'] ) || ! $space_id ) {
 	                    <input type="submit" id="save" name="save" value="salva e chiudi" class="btn btn-secondary" />
                         <input type="hidden" id="space_id" name="space_id" value="<?php echo esc_attr( $space_id ); ?>">
                         <input type="hidden" id="step" name="step" value="<?php echo esc_attr( $next_step ); ?>">
-                        <input type="hidden" id="action" name="action" value="">
+	                        <input type="hidden" id="action" name="action" value="">
 						<?php if ( $next_step <= $max_steps ) : ?>
                             <button type="submit" id="next" class="btn btn-primary"><?php echo __("Continua","mapparte"); ?></button>
 						<?php endif; ?>

@@ -1,65 +1,97 @@
 jQuery(document).ready(function ($) {
 
-    var auth2;
+    var googleInitialized = false;
+    var activeButton = null;
 
-    function handleGoogleSuccess(googleUser, $button) {
-        var profile = googleUser.getBasicProfile();
-        var userInfo = {
-            social_type: 'google',
-            email: profile.getEmail(),
-            first_name: profile.getGivenName(),
-            last_name: profile.getFamilyName(),
-            id: profile.getId(),
-            name: profile.getName()
-        };
-        xoo_sl_localize.sendUserInfo(userInfo, $button); // Send data to server
-    }
+    function redirectAfterLogin(response, $button) {
+        if (response.message) {
+            $('.xoo-sl-notice-container').html(response.message);
+        }
 
-    function bindGoogleButtons() {
-        if (!auth2) return;
-        $('.xoo-sl-google-btn').each(function () {
-            var $button = $(this);
-            if ($button.data('xooSlGoogleBound')) return;
-            $button.data('xooSlGoogleBound', true);
-            auth2.attachClickHandler(
-                this,
-                {},
-                function (googleUser) {
-                    handleGoogleSuccess(googleUser, $button);
-                }
-            );
-        });
-    }
-
-    function startApp() {
-        if (typeof gapi === 'undefined') {
-            setTimeout(startApp, 300);
+        if (response.success !== 'true') {
             return;
         }
-        gapi.load('auth2', function () {
-            auth2 = gapi.auth2.init({
-                client_id: xoo_sl_google_localize.clientID,
-                cookiepolicy: 'single_host_origin',
-                scope: 'profile email'
+
+        var redirectTo = xoo_sl_localize.redirect_to;
+        var $easyLoginSection = $button.parents('.xoo-el-section');
+        if ($easyLoginSection.length && $easyLoginSection.find('input[name="xoo_el_redirect"]').length) {
+            redirectTo = $easyLoginSection.find('input[name="xoo_el_redirect"]').val();
+        }
+
+        var separator = redirectTo.indexOf('?') === -1 ? '?' : '&';
+        redirectTo += separator + 'xoo_sl_login=1&_ts=' + Date.now();
+        setTimeout(function () {
+            window.location.replace(redirectTo);
+        }, 300);
+    }
+
+    function handleCredentialResponse(response) {
+		var $button = activeButton || $('.xoo-sl-google-btn[data-xoo-sl-google-rendered="1"]:visible').first();
+        $.ajax({
+            url: xoo_sl_google_localize.adminurl,
+            type: 'POST',
+            data: {
+                action: 'xoo_sl_google_data',
+                credential: response.credential,
+                security: xoo_sl_google_localize.nonce
+            },
+            success: function (loginResponse) {
+                redirectAfterLogin(loginResponse, $button);
+                $(document).trigger('xoo_sl_processing_userinfo', [loginResponse]);
+            }
+        });
+    }
+
+    function renderGoogleButtons() {
+        if (!googleInitialized || typeof google === 'undefined' || !google.accounts || !google.accounts.id) {
+            return;
+        }
+
+        $('.xoo-sl-google-btn').each(function () {
+            var $button = $(this);
+            if ($button.attr('data-xoo-sl-google-rendered') === '1') {
+                return;
+            }
+
+            $button.attr('data-xoo-sl-google-rendered', '1').empty();
+            google.accounts.id.renderButton(this, {
+                type: 'standard',
+                theme: 'filled_blue',
+                size: 'large',
+                text: 'continue_with',
+                shape: 'rectangular',
+                width: Math.max(180, Math.round($button.outerWidth() || 220))
             });
-            bindGoogleButtons();
+            $button.on('click', function () {
+                activeButton = $button;
+            });
         });
     }
 
-    startApp();
+    function startGoogleIdentity() {
+        if (typeof google === 'undefined' || !google.accounts || !google.accounts.id) {
+            setTimeout(startGoogleIdentity, 200);
+            return;
+        }
 
-    // Easy Login popup renders buttons dynamically: bind again when DOM changes.
+        google.accounts.id.initialize({
+            client_id: xoo_sl_google_localize.clientID,
+            callback: handleCredentialResponse,
+            ux_mode: 'popup',
+            use_fedcm_for_prompt: true
+        });
+        googleInitialized = true;
+        renderGoogleButtons();
+    }
+
+    startGoogleIdentity();
+
     if (typeof MutationObserver !== 'undefined') {
-        var observer = new MutationObserver(function () {
-            bindGoogleButtons();
-        });
-        observer.observe(document.body, { childList: true, subtree: true });
+        var observer = new MutationObserver(renderGoogleButtons);
+        observer.observe(document.body, {childList: true, subtree: true});
     }
 
-    // Also re-check after opening login modal.
     $(document).on('click', '.xoo-el-login-tgr', function () {
-        setTimeout(bindGoogleButtons, 300);
-        setTimeout(bindGoogleButtons, 900);
+        setTimeout(renderGoogleButtons, 100);
     });
-
-})
+});

@@ -22,7 +22,7 @@ $step_name = __('Disponibilità',"mapparte");
                                name="hide_availability" value="1"
 							<?php checked( ! empty( $space_data['hide_availability'] ) ); ?>>
                         <label class="form-check-label" for="hide_availability">
-							<?php echo __( 'Preferisco non indicare gli orari e ricevere solo richieste di contatto', 'mapparte' ); ?>
+							<?php echo __( 'Preferisco non mostrare gli orari e ricevere solo richieste di contatto', 'mapparte' ); ?>
                         </label>
                     </div>
                 </div>

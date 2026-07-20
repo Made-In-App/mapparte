@@ -24,10 +24,101 @@ class Xoo_Sl_Handler{
         $this->hooks();
 	}
 
-    public function hooks(){
-        add_action( 'wp_ajax_xoo_sl_fb_data', array( $this, 'xoo_sl_fb_data' ) );
-        add_action( 'wp_ajax_nopriv_xoo_sl_fb_data', array( $this, 'xoo_sl_fb_data' ) );
-    }
+	public function hooks(){
+	    add_action( 'wp_ajax_xoo_sl_fb_data', array( $this, 'xoo_sl_fb_data' ) );
+	    add_action( 'wp_ajax_nopriv_xoo_sl_fb_data', array( $this, 'xoo_sl_fb_data' ) );
+	    add_action( 'wp_ajax_xoo_sl_google_data', array( $this, 'xoo_sl_google_data' ) );
+	    add_action( 'wp_ajax_nopriv_xoo_sl_google_data', array( $this, 'xoo_sl_google_data' ) );
+	}
+
+	private function base64url_decode( $value ) {
+		$remainder = strlen( $value ) % 4;
+		if ( $remainder ) {
+			$value .= str_repeat( '=', 4 - $remainder );
+		}
+		return base64_decode( strtr( $value, '-_', '+/' ), true );
+	}
+
+	private function get_google_certificates() {
+		$certificates = get_transient( 'xoo_sl_google_certificates' );
+		if ( is_array( $certificates ) && $certificates ) {
+			return $certificates;
+		}
+
+		$response = wp_remote_get( 'https://www.googleapis.com/oauth2/v1/certs', array( 'timeout' => 10 ) );
+		if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) ) {
+			return new WP_Error( 'xoo_sl_google_certs', __( 'Google login is temporarily unavailable.', 'social-login-woocommerce' ) );
+		}
+
+		$certificates = json_decode( wp_remote_retrieve_body( $response ), true );
+		if ( ! is_array( $certificates ) || ! $certificates ) {
+			return new WP_Error( 'xoo_sl_google_certs', __( 'Google login is temporarily unavailable.', 'social-login-woocommerce' ) );
+		}
+
+		$ttl = HOUR_IN_SECONDS;
+		$cache_control = wp_remote_retrieve_header( $response, 'cache-control' );
+		if ( $cache_control && preg_match( '/max-age=(\d+)/', $cache_control, $matches ) ) {
+			$ttl = max( 300, (int) $matches[1] );
+		}
+		set_transient( 'xoo_sl_google_certificates', $certificates, $ttl );
+
+		return $certificates;
+	}
+
+	private function verify_google_credential( $credential ) {
+		$parts = explode( '.', $credential );
+		if ( 3 !== count( $parts ) ) {
+			return new WP_Error( 'xoo_sl_google_token', __( 'Invalid Google login response.', 'social-login-woocommerce' ) );
+		}
+
+		$header  = json_decode( $this->base64url_decode( $parts[0] ), true );
+		$payload = json_decode( $this->base64url_decode( $parts[1] ), true );
+		$signature = $this->base64url_decode( $parts[2] );
+		$client_id = isset( $this->settings['gl-goo-clientid'] ) ? (string) $this->settings['gl-goo-clientid'] : '';
+
+		if ( ! is_array( $header ) || ! is_array( $payload ) || ! $signature ||
+			'RS256' !== ( $header['alg'] ?? '' ) || empty( $header['kid'] ) ||
+			empty( $payload['aud'] ) || ! hash_equals( $client_id, (string) $payload['aud'] ) ||
+			! in_array( $payload['iss'] ?? '', array( 'accounts.google.com', 'https://accounts.google.com' ), true ) ||
+			empty( $payload['exp'] ) || (int) $payload['exp'] < time() ||
+			empty( $payload['email'] ) || empty( $payload['email_verified'] ) ) {
+			return new WP_Error( 'xoo_sl_google_token', __( 'Invalid Google login response.', 'social-login-woocommerce' ) );
+		}
+
+		$certificates = $this->get_google_certificates();
+		if ( is_wp_error( $certificates ) ) {
+			return $certificates;
+		}
+		if ( empty( $certificates[ $header['kid'] ] ) || 1 !== openssl_verify( $parts[0] . '.' . $parts[1], $signature, $certificates[ $header['kid'] ], OPENSSL_ALGO_SHA256 ) ) {
+			return new WP_Error( 'xoo_sl_google_signature', __( 'Invalid Google login response.', 'social-login-woocommerce' ) );
+		}
+
+		return $payload;
+	}
+
+	public function xoo_sl_google_data() {
+		nocache_headers();
+		if ( ! check_ajax_referer( 'xoo_sl_google_login', 'security', false ) ) {
+			wp_send_json( array( 'success' => 'false', 'message' => xoo_sl_add_notice( __( 'The session has expired. Please reload the page.', 'social-login-woocommerce' ), 'error' ) ) );
+		}
+
+		$credential = isset( $_POST['credential'] ) ? sanitize_text_field( wp_unslash( $_POST['credential'] ) ) : '';
+		$payload = $this->verify_google_credential( $credential );
+		if ( is_wp_error( $payload ) ) {
+			wp_send_json( array( 'success' => 'false', 'message' => xoo_sl_add_notice( $payload->get_error_message(), 'error' ) ) );
+		}
+
+		$_POST['userInfo'] = array(
+			'social_type' => 'google',
+			'email'        => sanitize_email( $payload['email'] ),
+			'first_name'   => sanitize_text_field( $payload['given_name'] ?? '' ),
+			'last_name'    => sanitize_text_field( $payload['family_name'] ?? '' ),
+			'id'           => sanitize_text_field( $payload['sub'] ?? '' ),
+			'name'         => sanitize_text_field( $payload['name'] ?? '' ),
+		);
+
+		$this->xoo_sl_fb_data();
+	}
 
     public static function update_user_social_login_status( $user_id, $social_type ){
         update_user_meta( $user_id, '_xoo-sl-social-login', sanitize_text_field( $social_type ) );
@@ -135,10 +226,8 @@ class Xoo_Sl_Handler{
         }
 
         // Handle password creation.
-        if ( isset( $user_data['password'] ) && !empty( $user_data['password'] ) ) {
-            $password           = wp_generate_password();
-            $password_generated = true;
-        }
+		$password           = wp_generate_password();
+		$password_generated = true;
 
         // Use WP_Error to handle registration errors.
         $errors = new WP_Error();

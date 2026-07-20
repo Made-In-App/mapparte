@@ -83,7 +83,7 @@ $step_name = __('Elenca i prezzi',"mapparte");
 							<?php checked( ! empty( $space_data['hide_prices'] ) ); ?>
                         >
                         <label class="form-check-label" for="hide_prices">
-							<?php echo __( 'Preferisco non indicare i prezzi e ricevere solo richieste di contatto', 'mapparte' ); ?>
+							<?php echo __( 'Preferisco non mostrare i prezzi e ricevere solo richieste di contatto', 'mapparte' ); ?>
                         </label>
                     </div>
                 </div>
