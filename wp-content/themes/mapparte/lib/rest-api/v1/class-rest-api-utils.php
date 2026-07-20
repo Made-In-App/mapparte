@@ -114,19 +114,11 @@ class Utils extends Rest_Api {
 	 * @return array
 	 */
 	public static function get_booking( $bookingId ) {
+		$booking = get_post( absint( $bookingId ) );
 
-		$args = array(
-			'p'           => $bookingId,
-			'post_type'   => 'booking',
-			'post_status' => 'any',
-		);
-
-		$booking = new \WP_Query( $args );
-
-		if ( $booking->have_posts() ) {
-			$data          = $booking->posts[0];
-			$data->details = get_post_meta( $data->ID, '_booking_details', true );
-			return $data;
+		if ( $booking instanceof \WP_Post && 'booking' === $booking->post_type ) {
+			$booking->details = get_post_meta( $booking->ID, '_booking_details', true );
+			return $booking;
 		}
 
 		return false;
