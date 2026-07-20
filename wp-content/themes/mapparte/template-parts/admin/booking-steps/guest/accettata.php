@@ -28,6 +28,7 @@
 
                     <form id="delete-form" method="post" action="<?php echo get_the_permalink() ?>"
                           class="row align-items-center">
+						<?php wp_nonce_field( 'mapparte_update_booking_' . get_the_ID(), 'mapparte_booking_nonce' ); ?>
                         <div class="col-md-8">
                             <div class="row mx-0 px-0 status-note align-items-center submit-btns">
                                 <div class="col-9 ps-0">

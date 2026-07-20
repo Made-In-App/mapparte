@@ -144,7 +144,7 @@ class Book extends Rest_Api {
 		register_rest_route( self::NAMESPACE, '/bookings/(?P<bookingId>[\d]+)', array(
 			'methods'             => 'PUT',
 			'callback'            => [ $this, 'edit_book_space' ],
-			'permission_callback' => [ $this, 'permission_callback' ],
+			'permission_callback' => [ $this, 'permission_callback_booking_owner' ],
 			'args'                => array(
 				'status' => array(
 					'description' => "The booking status",
@@ -160,6 +160,29 @@ class Book extends Rest_Api {
 				),
 			),
 		) );
+	}
+
+	/**
+	 * Allow a booking update only to its guest, its space host, or an administrator.
+	 */
+	public function permission_callback_booking_owner( $request ) {
+		if ( ! is_user_logged_in() ) {
+			return false;
+		}
+
+		$booking_id = absint( $request['bookingId'] );
+		$booking    = get_post( $booking_id );
+		if ( ! $booking || 'booking' !== $booking->post_type ) {
+			return false;
+		}
+
+		$details = get_post_meta( $booking_id, '_booking_details', true );
+		$space_id = is_array( $details ) && isset( $details['spaceId'] ) ? absint( $details['spaceId'] ) : 0;
+		$user_id = get_current_user_id();
+
+		return current_user_can( 'manage_options' )
+			|| $user_id === (int) $booking->post_author
+			|| ( $space_id && $user_id === (int) get_post_field( 'post_author', $space_id ) );
 	}
 
 	/**
@@ -676,19 +699,52 @@ class Book extends Rest_Api {
 	public function edit_book_space( $request ) {
 
 		$params = $request->get_params();
+		$booking_id = absint( $params['bookingId'] );
+		$new_status = sanitize_key( $params['status'] );
+		$booking = get_post( $booking_id );
+
+		if ( ! $booking || 'booking' !== $booking->post_type ) {
+			$response = Utils::rest_api_response( false, __('ID booking non valido','mapparte') );
+			return rest_ensure_response( [
+				'success' => $response[0],
+				'code'    => 'fail',
+				'message' => $response[1],
+				'data'    => $response[2],
+			] );
+		}
+
+		$details = get_post_meta( $booking_id, '_booking_details', true );
+		$space_id = is_array( $details ) && isset( $details['spaceId'] ) ? absint( $details['spaceId'] ) : 0;
+		$user_id = get_current_user_id();
+		$is_guest = $user_id === (int) $booking->post_author;
+		$is_host = $space_id && $user_id === (int) get_post_field( 'post_author', $space_id );
+		$is_admin = current_user_can( 'manage_options' );
+		$valid_transition = $is_admin
+			|| ( $is_guest && 'cancellata' === $new_status && in_array( $booking->post_status, [ 'nuova-richiesta', 'accettata' ], true ) )
+			|| ( $is_host && 'nuova-richiesta' === $booking->post_status && in_array( $new_status, [ 'accettata', 'cancellata' ], true ) );
+
+		if ( ! $valid_transition ) {
+			$response = Utils::rest_api_response( false, __( 'Cambio di stato non consentito', 'mapparte' ) );
+			return rest_ensure_response( [
+				'success' => $response[0],
+				'code'    => 'fail',
+				'message' => $response[1],
+				'data'    => $response[2],
+			] );
+		}
 
 		$time     = current_time( 'mysql', $gmt = 0 );
 		$time_gmt = current_time( 'mysql', $gmt = 1 );
 
-		$data = Utils::get_booking( $params['bookingId'] );
+		$data = Utils::get_booking( $booking_id );
 
 		if ( ! $data ) {
 			$response = Utils::rest_api_response( false, __('ID booking non valido','mapparte') );
 		} else {
 
 			$args    = [
-				'ID'                => $params['bookingId'],
-				'post_status'       => $params['status'],
+				'ID'                => $booking_id,
+				'post_status'       => $new_status,
 				'post_modified'     => $time,
 				'post_modified_gmt' => $time_gmt
 			];

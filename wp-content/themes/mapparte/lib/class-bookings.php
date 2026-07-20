@@ -34,11 +34,11 @@ class Bookings {
 			return;
 		}
 
-		if ( ! user_can( get_current_user_id(), 'edit_posts' ) ) {
+		$booking_details = get_post_meta( $post->ID, '_booking_details', true );
+		if ( ! is_array( $booking_details ) || empty( $booking_details['spaceId'] ) || empty( $booking_details['userId'] ) ) {
 			return;
 		}
 
-		$booking_details = get_post_meta( $post->ID, '_booking_details', true );
 		if ( get_current_user_id() !== (int) $post->post_author && get_current_user_id() !== (int) get_post_field( 'post_author', $booking_details['spaceId'] ) ) {
 			return;
 		}
@@ -56,8 +56,13 @@ class Bookings {
 		$one_signal_ids = ( is_array( $one_signal_tokens ) ) ? array_keys( $one_signal_tokens ) : false;
 
 		if ( isset( $_POST['status'] ) ) {
+			if ( ! isset( $_POST['mapparte_booking_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['mapparte_booking_nonce'] ) ), 'mapparte_update_booking_' . $post->ID ) ) {
+				return;
+			}
+
+			$status = sanitize_key( wp_unslash( $_POST['status'] ) );
 			$request = new \WP_REST_Request( 'PUT', sprintf( '/mapparte/v1/bookings/%d', $post->ID ) );
-			$request->set_query_params( array( 'status' => $_POST['status'] ) );
+			$request->set_query_params( array( 'status' => $status ) );
 			$rest_response = rest_do_request( $request );
 			$server        = rest_get_server();
 			$response      = $server->response_to_data( $rest_response, false );
@@ -177,7 +182,8 @@ class Bookings {
 				}
 			}
 
-			wp_redirect( get_the_permalink() );
+			wp_safe_redirect( get_the_permalink() );
+			exit;
 		} else if ( isset ( $_REQUEST['acf'] ) ) {
 
 			$guest_id = (int) $booking_details['userId'];

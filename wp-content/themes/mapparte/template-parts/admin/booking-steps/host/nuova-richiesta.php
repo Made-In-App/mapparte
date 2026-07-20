@@ -27,6 +27,7 @@
     </div>
     <div class="col-md-8 status-form">
         <form method="post" action="<?php echo get_the_permalink() ?>" class="row mx-0">
+			<?php wp_nonce_field( 'mapparte_update_booking_' . get_the_ID(), 'mapparte_booking_nonce' ); ?>
             <div class="mb-3 px-0">
                                         <textarea id="message" name="message" class="form-control"
                                                   placeholder="<?php echo __("Invia un messaggio all’utente","mapparte");?>…"></textarea>
