@@ -118,7 +118,7 @@ $breaking_news = $filter_published_posts( get_field( "breaking_news", "option" )
 <div class="col-md-3 aside">
 
     <div class="order-md-3 order-sm-3 order-4 magazine-tile align-self-center">
-        <p class="news-ttl">BREAKING NEWS</p>
+        <p class="news-ttl"><?php echo esc_html__( 'Altre news', 'mapparte' ); ?></p>
         <?php
         for ($i=0;$i<=3;$i++){
             if (!empty($breaking_news[$i])){
