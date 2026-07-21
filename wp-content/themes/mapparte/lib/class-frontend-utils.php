@@ -16,7 +16,7 @@ class Frontend_Utils {
 		}
 
 		printf(
-			'<button type="button" class="favorite-login-button xoo-el-login-tgr" data-redirect="%1$s" aria-label="%2$s" title="%2$s"><i class="sf-icon-wishlist" aria-hidden="true"></i></button>',
+			'<button type="button" class="favorite-login-button xoo-el-login-tgr" data-redirect="%1$s" aria-label="%2$s" title="%2$s"><i class="far fa-heart" aria-hidden="true"></i></button>',
 			esc_url( get_permalink( $post_id ) ),
 			esc_attr__( 'Accedi o registrati per aggiungere lo spazio ai preferiti', 'mapparte' )
 		);

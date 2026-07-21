@@ -21,7 +21,7 @@
                 <a href="<?php echo get_home_url(); ?>/magazine/">Magazine</a>
                 <a href="<?php echo get_home_url(); ?>/team/">Team</a>
                 <a href="<?php echo get_home_url(); ?>/contatti/"><?php echo __("Contatti","mapparte");?></a>
-                <a href="<?php echo get_home_url(); ?>/posizioni-aperte/"><?php echo __("Posizioni aperte","mapparte");?></a>
+                <a href="<?php echo esc_url( home_url( '/sostieni-progetto/' ) ); ?>"><?php echo esc_html__( 'Sostieni il progetto', 'mapparte' ); ?></a>
                 <a href="<?php echo get_home_url(); ?>/come-funziona/">Faq</a>
                 <img class="divider" src="<?php echo get_template_directory_uri();?>/assets/images/footer-divider-3.svg" alt="divider" />
             </div>

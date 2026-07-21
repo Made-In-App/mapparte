@@ -47,7 +47,7 @@
                     <h1 class="banner-ttl"><?php echo __("Inserisci il tuo spazio","mapparte"); ?></h1>
                     <div class="row align-items-center">
                         <div class="col-8">
-                            <p class="banner-desc"><?php echo __("Diventa un host, condividi il tuo spazio e fai crescere la tua attività.","mapparte"); ?>
+                            <p class="banner-desc"><?php echo __("Diventa un host, condividi il tuo spazio e fai crescere la tua attività","mapparte"); ?>
                             </p>
                         </div>
                         <div class="col-3 space-btn">
@@ -60,4 +60,3 @@
             </div>
     </section>
     <!--banner section end-->
-   

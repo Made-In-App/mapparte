@@ -70,8 +70,10 @@
 															echo esc_html( $typology[0]->name );
 														} ?></td>
                                                     <td class="col-2">
-														<?php if ( 'Pubblicato' === $status[2] ) : ?>
-                                                        <a href="<?php echo esc_url( get_home_url() . '/attiva-sponsorizzazione/?space_id=' . (int) $space->ID ); ?>"><?php echo esc_html( $sponsored_text ); ?></a>
+													<?php if ( 'Pubblicato' === $status[2] ) : ?>
+	                                                        <a href="<?php echo esc_url( ( $sponsored_expiry_date && $sponsored_expiry_date >= date( 'Y-m-d H:i:s' ) )
+														? home_url( '/dettaglio-sponsorizzazione/?space_id=' . (int) $space->ID . '&plan=' . rawurlencode( $sponsored_type ) )
+														: home_url( '/attiva-sponsorizzazione/?space_id=' . (int) $space->ID ) ); ?>"><?php echo esc_html( $sponsored_text ); ?></a>
 														<?php endif; ?>
                                                     </td>
                                                     <td class="col-2">

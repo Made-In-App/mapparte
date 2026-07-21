@@ -268,7 +268,7 @@ get_header();
                                                     </div>
                                                     <div class="col-sm-5">
                                                         <a class="active-plan"
-                                                           href="<?php echo esc_url( home_url( '/attiva-sponsorizzazione/?space_id=' . (int) $space->ID ) ); ?>">
+														   href="<?php echo esc_url( home_url( '/dettaglio-sponsorizzazione/?space_id=' . (int) $space->ID . '&plan=' . rawurlencode( $sponsored_type ) ) ); ?>">
                                                             <p><?php echo wp_kses_post( $sponsored_text ); ?></p>
                                                             <i class="fa fa-chevron-right"></i>
                                                         </a>

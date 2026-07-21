@@ -39,7 +39,7 @@ $can_request_approval = 'draft' === $space_data['status'];
                                    target="_blank" rel="noopener noreferrer"><?php echo esc_html__( 'termini e le condizioni d’uso', 'mapparte' ); ?></a>
                             </label>
 	                        </div>
-	                        <p><a href="#" id="next" data-action="request-approval" class="btn btn-primary"><?php echo __("Invia la richiesta di approvazione a mapparte","mapparte"); ?></a></p>
+	                        <p><button type="submit" id="next" data-action="request-approval" class="btn btn-primary"><?php echo __("Invia la richiesta di approvazione a mapparte","mapparte"); ?></button></p>
 	                        <?php endif; ?>
                     </div>
                 </div>

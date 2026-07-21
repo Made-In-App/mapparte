@@ -18,7 +18,8 @@ class Filters {
 		add_filter( 'use_block_editor_for_post', '__return_false' );
 		add_filter( 'mc4wp_form_settings', [ $this, 'newsletter_form_settings' ], 10, 2 );
 		add_filter( 'mc4wp_form_content', [ $this, 'newsletter_form_content' ], 20, 2 );
-		add_filter( 'mc4wp_form_messages', [ $this, 'newsletter_form_messages' ], 10, 2 );
+			add_filter( 'mc4wp_form_messages', [ $this, 'newsletter_form_messages' ], 10, 2 );
+			add_filter( 'mc4wp_form_response_html', [ $this, 'newsletter_form_response_html' ], 10, 2 );
 		add_filter( 'xoo_aff_easy-login-woocommerce_field_args', [ $this, 'registration_residence_field_args' ] );
 		add_filter( 'xoo_aff_field_html', [ $this, 'registration_residence_label' ], 10, 3 );
 		add_filter( 'wpcf7_form_elements', [ $this, 'link_contact_form_terms' ] );
@@ -63,6 +64,19 @@ class Filters {
 		$messages['subscribed'] = $this->newsletter_confirmation_message();
 
 		return $messages;
+	}
+
+	/**
+	 * The form's saved message overrides defaults, so normalize the rendered success response too.
+	 */
+	public function newsletter_form_response_html( $html, $form ) {
+		if ( 662 !== (int) $form->ID || false === strpos( $html, 'mc4wp-success' ) ) {
+			return $html;
+		}
+
+		return '<div class="mc4wp-alert mc4wp-success" role="alert"><p>'
+			. esc_html__( 'Grazie. Iscrizione avvenuta con successo', 'mapparte' )
+			. '</p></div>';
 	}
 
 	/**

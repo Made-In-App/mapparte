@@ -216,6 +216,36 @@ input[type=number] {
   color: #e94250;
 }
 
+.detail-wrapper .contact-host-button {
+  align-items: center;
+  display: inline-flex;
+  flex-wrap: wrap;
+  font-size: 18px;
+  font-weight: 600;
+  gap: 0.5rem;
+  justify-content: center;
+  min-height: 3.5rem;
+  padding: 0.75rem 1.25rem;
+  width: 100%;
+}
+
+.detail-wrapper .contact-host-button small {
+  display: block;
+  flex-basis: 100%;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.favorite-login-button .fa-heart {
+  font-size: 1.75rem;
+}
+
+.detail-wrapper .mbl-action-btn .contact-host-button {
+  flex: 0 0 100%;
+  max-width: 100%;
+  width: 100%;
+}
+
 @media (max-width: 991.98px) {
   header .header-wrapper nav .navbar-nav .nav-item a {
     font-size: 2rem;

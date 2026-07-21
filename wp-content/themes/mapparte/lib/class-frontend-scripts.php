@@ -18,7 +18,8 @@ class Frontend_Scripts {
 	}
 
 	public function enqueue_styles() {
-		wp_enqueue_style( 'mapparte', get_template_directory_uri() . '/style.css' );
+		$style_path = get_template_directory() . '/style.css';
+		wp_enqueue_style( 'mapparte', get_template_directory_uri() . '/style.css', [], filemtime( $style_path ) );
 	}
 
 	public function enqueue_script() {

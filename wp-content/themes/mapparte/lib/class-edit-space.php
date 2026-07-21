@@ -469,24 +469,29 @@ class Edit_Space {
 				'ID'          => $space_id,
 				'post_status' => 'nuova-richiesta',
 			];
-			$space_id = wp_update_post( $args );
+				$updated_space_id = wp_update_post( $args, true );
 
-			if ( is_wp_error( $space_id ) ) {
-				return $space_id;
-			} else {
-				update_post_meta( $space_id, 'terms_accepted_at', current_time( 'mysql' ) );
+				if ( is_wp_error( $updated_space_id ) ) {
+					return $updated_space_id;
+				} else {
+					clean_post_cache( $space_id );
+					if ( 'nuova-richiesta' !== get_post_status( $space_id ) ) {
+						return new \WP_Error( 'space_approval_status_failed', __( 'Non è stato possibile inviare la richiesta. Riprova senza chiudere questa pagina.', 'mapparte' ) );
+					}
+
+					update_post_meta( $space_id, 'terms_accepted_at', current_time( 'mysql' ) );
 				update_post_meta( $space_id, 'terms_accepted_by', (int) $user->data->ID );
 
 				// Send email notification
 				$subject = __('Mapparte - Inserimento del tuo spazio - in attesa di pubblicazione', 'mapparte' );
 
-				$message = sprintf( __("Buongiorno %s,<br>
-				abbiamo ricevuto i dati relativi al tuo spazio, ora in fase di approvazione.<br>
-				Appena il tuo annuncio sarà online ti verrà comunicato.<br><br>
-				Contattaci per informazioni o dubbi, saremo lieti di aiutarti!
-				", 'mapparte' ), esc_html( $user->data->display_name ) );
+					$message = sprintf( __("Buongiorno %s,<br><br>
+					abbiamo ricevuto i dati relativi al tuo spazio, ora in fase di approvazione. Potresti essere contattato per una conferma o integrazione dei dati.<br>
+					Appena il tuo annuncio sarà online, ti verrà comunicato via email.<br>
+					Per dubbi o informazioni, contattaci via email.
+					", 'mapparte' ), esc_html( $user->data->display_name ) );
 
-				$footer = __('Grazie.<br>Il team Mapparte!', 'mapparte' );
+					$footer = __( 'Grazie.', 'mapparte' );
 
 				$args_notification = [
 					'h1'                 => false,
