@@ -23,7 +23,7 @@
                             <a href="<?php echo esc_url( get_the_permalink( $id ) ); ?>">
 								<?php
 								$photos = ( is_array( get_field( 'photos', $id ) ) ) ? get_field( 'photos', $id )[0]['sizes']['featured-image-desktop'] : get_template_directory_uri() . '/assets/images/logo-desktop-slideshow.png'; ?>
-                                <img class="d-none d-md-block" src="<?php echo esc_url( $photos ); ?>" alt="featured"/>
+                                <img class="d-md-block" src="<?php echo esc_url( $photos ); ?>" alt="featured"/>
                                 <div class="featured-content">
                                     <a data-subscribed="<?php echo esc_attr__( 'Sponsorizzato', 'mapparte' ); ?>" href="<?php echo esc_url( get_the_permalink( $id ) ); ?>">
 										<?php if ( is_user_logged_in() ) : ?>
