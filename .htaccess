@@ -1,3 +1,11 @@
+<IfModule mod_headers.c>
+<Files "index.php">
+Header always set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+Header always set Pragma "no-cache"
+Header always set Expires "0"
+</Files>
+</IfModule>
+
 # BEGIN WordPress
 # Le direttive (linee) tra `BEGIN WordPress` e `END WordPress` sono
 # generate dinamicamente, e dovrebbero essere modificate solo tramite i filtri di WordPress.
