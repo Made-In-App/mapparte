@@ -7,6 +7,12 @@ $date                  = date( 'Y-m-d H:i:s' );
 $sponsored_expiry_date = get_field( 'sponsored_expired' );
 $subscribed_class      = ( $sponsored_expiry_date && $sponsored_expiry_date > $date ) ? 'subscribed' : '';
 $hide_prices           = (bool) get_post_meta( get_the_ID(), 'hide_prices', true );
+$space                  = get_post();
+$space_subtitle         = '';
+
+if ( $space instanceof WP_Post && '' !== trim( $space->post_excerpt ) ) {
+	$space_subtitle = apply_filters( 'get_the_excerpt', $space->post_excerpt, $space );
+}
 ?>
     <div class="bg-light featured-tile <?php echo esc_attr( $subscribed_class ); ?>">
         <div data-subscribed="<?php echo esc_attr__( 'Sponsorizzato', 'mapparte' ); ?>" class="featured-img-slider owl-carousel owl-theme">
@@ -37,16 +43,11 @@ $hide_prices           = (bool) get_post_meta( get_the_ID(), 'hide_prices', true
         </div>
         <div class="featured-content">
             <a href="<?php the_permalink(); ?>">
-                <?php if (is_user_logged_in()) :?>
                 <h6 class="featured-ttl"><?php the_title(); ?></h6>
-                <span class="featured-subttl"><?php the_excerpt();?></span>
+                <?php if ( '' !== $space_subtitle ) : ?>
+                    <span class="featured-subttl"><?php echo esc_html( wp_strip_all_tags( $space_subtitle ) ); ?></span>
+                <?php endif; ?>
                 <p class="featured-desc"><?php echo substr(wp_strip_all_tags( get_the_content()),0,100)?>...</p>
-                <?php else:?>
-                <h6 class="featured-ttl"><?php the_excerpt(); ?></h6>
-                <p class="featured-desc"><?php echo substr(wp_strip_all_tags( get_the_content()),0,100)?>...</p>
-                <?php endif;?>
-
-                
 				<?php if ( ! $hide_prices ) : ?>
                     <p class="featured-price"><?php echo  sprintf(__( 'A partire da %s € l\'ora', 'mapparte' ),get_field("price_hour"));?></p>
 				<?php else : ?>

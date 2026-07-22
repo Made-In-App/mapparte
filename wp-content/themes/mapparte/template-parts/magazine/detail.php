@@ -16,7 +16,7 @@ while ( have_posts() ) :
                     </div>
                     <div class="name">
                         <img src="<?php echo get_template_directory_uri();?>/assets/images/user.png" alt="user">
-                        <span><?php echo __("di","mapparte"); ?> <?php echo get_the_author_meta("nicename");?></span>
+                        <span><?php echo __("di","mapparte"); ?> <?php echo esc_html( get_the_author_meta( "display_name" ) ); ?></span>
                         
                     </div>
                 </div>

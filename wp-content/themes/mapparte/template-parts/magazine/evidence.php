@@ -68,7 +68,7 @@ $breaking_news = $filter_published_posts( get_field( "breaking_news", "option" )
                 <?php echo wp_trim_words(get_the_excerpt($in_evidenza->ID),20,"...");?></p><br>
                     <div class="name" style="position:relative;margin-top:20px">
                         <img src="<?php echo get_template_directory_uri();?>/assets/images/user.png" alt="user">
-                        <span><?php echo __("di","mapparte"); ?> <?php echo get_the_author_meta("nicename",$in_evidenza->post_author);?></span>
+                        <span><?php echo __("di","mapparte"); ?> <?php echo esc_html( get_the_author_meta( "display_name", $in_evidenza->post_author ) ); ?></span>
                     </div>
             </div>
             <?php
