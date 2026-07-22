@@ -27,7 +27,8 @@ class Frontend_Scripts {
 			wp_enqueue_script( 'all-min', get_template_directory_uri() . '/assets/js/all.min.js' );
 		}
 		if ( is_singular( 'space' ) ) {
-			wp_enqueue_script( 'booking-script', get_template_directory_uri() . '/assets/js/booking.js', array( 'jquery' ) );
+			$booking_script_path = get_template_directory() . '/assets/js/booking.js';
+			wp_enqueue_script( 'booking-script', get_template_directory_uri() . '/assets/js/booking.js', array( 'jquery' ), filemtime( $booking_script_path ), true );
 			wp_localize_script( 'booking-script', 'booking', array(
 					'restURL'           => rest_url(),
 					'getHome'           => get_home_url(),

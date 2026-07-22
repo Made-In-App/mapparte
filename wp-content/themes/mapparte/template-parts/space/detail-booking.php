@@ -27,20 +27,21 @@
     <div class="row mx-0 d-sm-none mbl-action-btn">
 		<?php if ( ! is_user_logged_in() ) : ?>
 			<?php if ( ! $contact_only ) : ?>
-                <button type="button" class="btn btn-secondary col-6"><?php echo __("invia richiesta prenotazione","mapparte");?>
+	                <button type="button" data-redirect="<?php echo esc_url( get_permalink() ); ?>"
+	                        class="btn btn-secondary col-6 mobile-booking-button xoo-el-login-tgr"><?php echo __("invia richiesta prenotazione","mapparte");?>
                 </button>
 			<?php endif; ?>
 	            <button type="button" data-redirect="<?php echo esc_url( get_permalink() ); ?>"
-	                    class="btn btn-secondary-outline xoo-el-login-tgr <?php echo ! $contact_only ? 'col-6' : 'col-12 contact-host-button'; ?>"><?php echo ! $contact_only ? __("Per info contatta l'host","mapparte") : __("Richiedi un contatto con l'host","mapparte");?>
+	                    class="btn btn-secondary-outline mobile-contact-button xoo-el-login-tgr <?php echo ! $contact_only ? 'col-6' : 'col-12 contact-host-button'; ?>"><?php echo ! $contact_only ? __("Per info contatta l'host","mapparte") : __("Richiedi un contatto con l'host","mapparte");?>
             </button>
 		<?php else : ?>
 			<?php if ( ! $contact_only ) : ?>
                 <button id="send-booking-request" name="send-booking-request" type="button"
-                        class="btn btn-secondary col-6"><?php echo __("invia richiesta prenotazione","mapparte");?>
+	                        class="btn btn-secondary col-6 mobile-booking-button"><?php echo __("invia richiesta prenotazione","mapparte");?>
                 </button>
 			<?php endif; ?>
             <button type="button" data-bs-toggle="modal" data-bs-target="#message-popup"
-	                    class="btn btn-secondary-outline <?php echo ! $contact_only ? 'col-6' : 'col-12 contact-host-button'; ?>"><?php echo ! $contact_only ? __("Per info contatta l'host","mapparte") : __("Richiedi un contatto con l'host","mapparte");?>
+		                    class="btn btn-secondary-outline mobile-contact-button <?php echo ! $contact_only ? 'col-6' : 'col-12 contact-host-button'; ?>"><?php echo ! $contact_only ? __("Per info contatta l'host","mapparte") : __("Richiedi un contatto con l'host","mapparte");?>
             </button>
 		<?php endif; ?>
     </div>

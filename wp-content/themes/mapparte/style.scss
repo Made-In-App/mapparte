@@ -272,6 +272,19 @@ input[type=number] {
   width: 100%;
 }
 
+.detail-wrapper .mbl-action-btn .btn {
+  font-size: 16px;
+  line-height: 1.2;
+  min-height: 64px;
+  white-space: normal;
+}
+
+@media (max-width: 575.98px) {
+  .detail-wrapper .booking-form-wrapper.mobile-booking-open {
+    display: block !important;
+  }
+}
+
 @media (max-width: 991.98px) {
   header .header-wrapper nav .navbar-nav .nav-item a {
     font-size: 2rem;

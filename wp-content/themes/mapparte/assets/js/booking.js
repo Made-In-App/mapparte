@@ -11,10 +11,7 @@ jQuery(document).ready(function ($) {
         $(".booking-form select").prop("disabled", true);
         $(".booking-form textarea").prop("disabled", true);
 
-        $(".mbl-action-btn button").click(function () {
-            $('#open-modal-login').click();
-        });
-    }
+	}
 
     $('#more-days').click(function () {
         $(".time-slot-wrapper").toggleClass('active');
@@ -49,10 +46,14 @@ jQuery(document).ready(function ($) {
         request_booking();
     });
 
-    $('#send-booking-request').click(function () {
-        $('html, body').animate({
-            scrollTop: $('#booking-form').offset().top - 150
-        }, 200);
+	$('#send-booking-request').click(function () {
+		var $bookingForm = $('#booking-form');
+		$bookingForm.removeClass('d-none').addClass('mobile-booking-open');
+		$('.mbl-action-btn').addClass('d-none');
+
+		$('html, body').animate({
+			scrollTop: $bookingForm.offset().top - 80
+		}, 200);
 
     });
 
@@ -286,5 +287,3 @@ jQuery(document).ready(function ($) {
         }
     }
 });
-
-
