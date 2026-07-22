@@ -46,7 +46,7 @@ get_header();
                         <img class="review" src="<?php echo get_template_directory_uri();?>/assets/images/star.svg" alt="star">
                         <h5 class="review-count">4.5</h5>
                         <div class="wishlist-btn">
-                            <?php echo get_favorites_button(get_the_ID());?>
+                            <?php \Mapparte\Frontend_Utils::favorite_button( get_the_ID() ); ?>
                         </div>
                     </div>
                     <div class="activities-wrapper">
