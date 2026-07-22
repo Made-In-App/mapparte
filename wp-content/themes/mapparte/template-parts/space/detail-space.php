@@ -369,7 +369,7 @@
                 </div>
             </div>
 	        <?php endif; ?>
-            <div class="col-6 col-sm-5 col-lg-4 space-btn">
+            <div class="col-sm-5 col-lg-4 space-btn">
 				<?php if ( ! is_user_logged_in() ) : ?>
                     <a data-redirect="<?php echo get_permalink(); ?>" href="<?php echo get_permalink(); ?>"
                        class="xoo-el-login-tgr">
