@@ -18,6 +18,7 @@ require get_stylesheet_directory() . '/lib/class-space.php';
 require get_stylesheet_directory() . '/lib/plugins/class-acf.php';
 require get_stylesheet_directory() . '/lib/plugins/class-easy-login.php';
 require get_stylesheet_directory() . '/lib/class-script-cache-bust.php';
+require get_stylesheet_directory() . '/lib/class-magazine-cache.php';
 require get_stylesheet_directory() . '/lib/class-comments.php';
 require get_stylesheet_directory() . '/lib/class-bookings.php';
 require get_stylesheet_directory() . '/lib/class-sponsorship.php';
