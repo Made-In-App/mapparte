@@ -8,7 +8,13 @@
         <div class="mt-5  testimonial-tiles owl-theme owl-carousel">
         <?php
         $count = 1;
-        $query = new WP_Query(['post_type' => 'testimonial','posts_per_page' => -1, 'post_status' => 'published']);
+        $query = new WP_Query( [
+            'post_type'           => 'testimonial',
+            'posts_per_page'      => -1,
+            'post_status'         => 'publish',
+            'ignore_sticky_posts' => true,
+            'no_found_rows'       => true,
+        ] );
         if ($query->have_posts() ) : 
             while ( $query->have_posts() ) : $query->the_post();
             ?>
