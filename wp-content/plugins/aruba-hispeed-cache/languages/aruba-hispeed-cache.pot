@@ -1,0 +1,489 @@
+# Copyright (C) 2022 Aruba.it
+# This file is distributed under the same license as the Aruba HiSpeed Cache plugin.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Aruba HiSpeed Cache 0.0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/aruba-hispeed-"
+"cache\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-03-17 11:03+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: aruba-hispeed-cache\n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;"
+
+#: admin/pages/views/partials/sections/section-ahsc-db-optimizations.php:28
+msgid " Status:"
+msgstr ""
+
+#: aruba-hispeed-cache.php:359
+msgid ""
+"<b>Debug mode is active.</b> To improve the responsiveness of your site, we "
+"suggest you disable it. This will remove any log files."
+msgstr ""
+
+#: src/AHSC_Apc.php:14
+msgid ""
+"<strong>Another plugin use object cache.</strong> Deactivate the plugin or "
+"functionality and retry."
+msgstr ""
+
+#. %s: the hosting truck url.
+#: src/AHSC_Check.php:323
+#: admin/pages/views/partials/sections/section-ahsc-service-status.php:71
+#, php-format
+msgid ""
+"<strong>The Aruba HiSpeed Cache plugin cannot be used because your WordPress "
+"website is not hosted on an Aruba hosting platform.</strong> Buy an <a "
+"href=\"%s\" rel=\"nofollow\" target=\"_blank\">Aruba Hosting service</a> and "
+"migrate your website to use the plugin."
+msgstr ""
+
+#. %2$s: the guide url.
+#: admin/pages/views/partials/sections/section-ahsc-service-status.php:89
+#, php-format
+msgid ""
+"<strong>The HiSpeed Cache service is enabled.</strong>  For further details "
+"<a href=\"%1$s\" rel=\"nofollow\" target=\"_blank\">see our guide</a>."
+msgstr ""
+
+#. %2$s: the guide url.
+#: src/AHSC_Check.php:284
+#: admin/pages/views/partials/sections/section-ahsc-service-status.php:37
+#, php-format
+msgid ""
+"<strong>The HiSpeed Cache service is not enabled.</strong> To activate it, "
+"go to your domain <a href=\"%1$s\" rel=\"nofollow\" target=\"_blank\">"
+"control panel</a> (verifying the status may take up to 15 minutes). For "
+"further details <a href=\"%2$s\" rel=\"nofollow\" target=\"_blank\">see our "
+"guide</a>."
+msgstr ""
+
+#. %s: the assistance url.
+#: src/AHSC_Check.php:304
+#: admin/pages/views/partials/sections/section-ahsc-service-status.php:54
+#, php-format
+msgid ""
+"<strong>The HiSpeed Cache service with which the plugin interfaces is not "
+"available on the server that hosts your website.</strong> To use HiSpeed "
+"Cache and the plugin, please contact <a href=\"%s\" rel=\"nofollow\" "
+"target=\"_blank\">support</a>."
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-enable-purge.php:74
+msgid ""
+"A <strong>comment</strong> is entered, approved, declined, published or "
+"deleted in any part of the website"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-enable-purge.php:93
+msgid ""
+"A <strong>term</strong> or <strong>menu</strong> is edited, added or deleted"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-cdn-status.php:61
+msgid "ACCESS THE PANEL"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-enable-purge.php:55
+msgid ""
+"An <strong>article</strong>, <strong>page</strong>, or <strong>personalized "
+"content</strong> is added, edited or deleted"
+msgstr ""
+
+#: aruba-hispeed-cache.php:164 aruba-hispeed-cache.php:174
+#: aruba-hispeed-cache.php:182 aruba-hispeed-cache.php:192
+msgid "An error occurred. Please try again later or contact support."
+msgstr ""
+
+#: admin/pages/views/admin-settings-new.php:50
+msgid "APCu"
+msgstr ""
+
+#. Name of the plugin
+#: admin/AHSC_Admin_Menu.php:13 admin/AHSC_Admin_Menu.php:14
+#: admin/pages/views/admin-settings-new.php:12
+msgid "Aruba HiSpeed Cache"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Aruba HiSpeed Cache interfaces directly with the Aruba HiSpeed Cache service "
+"of the Aruba hosting platform and automates its management."
+msgstr ""
+
+#: admin/pages/views/admin-settings-new.php:19
+msgid ""
+"Aruba HiSpeed Cache is the plugin that allows you to increase page loading "
+"speed by optimizing cache management with the support of artificial "
+"intelligence and improving your website performance, to offer a better "
+"browsing experience to your users."
+msgstr ""
+
+#. Author of the plugin
+msgid "arubait"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-enable-purge.php:15
+msgid "Automatically clear cache"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-enable-purge.php:49
+msgid "Automatically clear whole cache when:"
+msgstr ""
+
+#: admin/pages/AHSC_Page.php:38
+msgid ""
+"By confirming this action, all the plugin's original settings will be "
+"restored. Are you sure you want to proceed?"
+msgstr ""
+
+#: admin/pages/views/admin-settings-new.php:39
+msgid "Cache"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-cache-warmer.php:14
+msgid "Cache preload"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-cache-warmer.php:19
+#: admin/pages/views/partials/sections/section-ahsc-cache-warmer.php:24
+msgid ""
+"Cache preload is the process by which web pages are preloaded into the cache "
+"so that they can be displayed faster.The homepage and the most recent ten "
+"items will be automatically preloaded."
+msgstr ""
+
+#: aruba-hispeed-cache.php:169
+msgid "Cache purged."
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-service-status.php:9
+msgid "Cache Status "
+msgstr ""
+
+#: admin/pages/views/admin-settings-new.php:41
+#: admin/pages/views/partials/sections/section-ahsc-cdn-status.php:14
+msgid "CDN"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-service-status.php:13
+#: admin/pages/views/partials/sections/section-ahsc-service-status.php:18
+msgid "check if the cache service is enabled and active in the domain"
+msgstr ""
+
+#: src/AHSC_Functions.php:107
+msgid "Customer support"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-db-optimizations.php:14
+msgid "Database table optimization"
+msgstr ""
+
+#: admin/pages/views/admin-settings-new.php:43
+msgid "Debug"
+msgstr ""
+
+#: aruba-hispeed-cache.php:384
+msgid "debug mode has been disabled"
+msgstr ""
+
+#: aruba-hispeed-cache.php:359
+msgid "Disable Debugging"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-xmlrpc-status.php:28
+msgid "Disable XML-RPC"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-cdn-status.php:46
+msgid "Disabled"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-dns-preconnect.php:14
+msgid "DNS Prefetch and Preconnect"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-dns-preconnect.php:18
+#: admin/pages/views/partials/sections/section-ahsc-dns-preconnect.php:22
+msgid ""
+"DNS Prefetch and Preconnect are used to reduce the time to establish a "
+"connection to external resources, like CSS, fonts, js from some third-party "
+"domain."
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-dns-preconnect.php:48
+msgid "DNS Prefetch and Preconnect domain list."
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-enable-purge.php:21
+#: admin/pages/views/partials/sections/section-ahsc-enable-purge.php:27
+msgid "Enable automatic cache clearing "
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-cache-warmer.php:30
+msgid "Enable cache preload"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-dns-preconnect.php:29
+msgid "Enable DNS Prefetch and Preconnect for external domain resources"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-html-optimizer.php:29
+msgid "Enable HTML code optimization"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-apc.php:30
+msgid "Enable object cache"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-lazy-load.php:29
+msgid "Enable optimization of image loading"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-enable-cron.php:29
+msgid "Enable Wp-Cron"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-cdn-status.php:42
+msgid "Enabled"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-xmlrpc-status.php:18
+#: admin/pages/views/partials/sections/section-ahsc-xmlrpc-status.php:22
+msgid ""
+"Enhance the protection of your website from cyber attacks by disabling the "
+"XML-RPC function that allows data transfer."
+msgstr ""
+
+#: aruba-hispeed-cache.php:187
+msgid "Expired transient purged."
+msgstr ""
+
+#: Debug/views/partials/admin-tab-debug.php:30
+msgid ""
+"File not found. The log file is not created, or is removed automatically, if "
+"the WordPress debugging feature is not enabled."
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-cron-status.php:41
+msgid "Frequency of execution"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-enable-cron.php:47
+msgid "Frequency of jobs"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://hosting.aruba.it/wordpress.aspx"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.aruba.it/"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-lazy-load.php:18
+#: admin/pages/views/partials/sections/section-ahsc-lazy-load.php:22
+msgid ""
+"Improve page loading times using Lazy Load (asynchronous loading) of images."
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-dns-preconnect.php:66
+msgid ""
+"Insert one external domain per line, for example \"https://dominioesterno."
+"it\""
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-cron-status.php:13
+#: admin/pages/views/partials/sections/section-ahsc-cron-status.php:17
+msgid ""
+"It allows you to schedule the automatic execution of some tasks, in specific "
+"time intervals. By setting the execution frequency, all operations, such as "
+"editing or publishing posts and pages, will be performed in the chosen "
+"interval, possibly replacing the day and time scheduled on WordPress."
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-static-cache.php:19
+#: admin/pages/views/partials/sections/section-ahsc-static-cache.php:24
+msgid ""
+"Manage the expiry of static files (JPEG, GIF, PNG, WebPL, SVG, X-Icon, CSS, "
+"JavaScript) and set the length of time you want to save them in the local "
+"cache on the browser, before they are deleted."
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-cron-status.php:9
+#: admin/pages/views/partials/sections/section-ahsc-cron-status.php:23
+msgid "Manage WP-Cron schedule"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-cdn-status.php:50
+msgid "No active"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-db-optimizations.php:43
+msgid "Not Optimized"
+msgstr ""
+
+#: admin/pages/AHSC_Page.php:40
+msgid "Not optimized"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-apc.php:14
+msgid "Object cache"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-db-optimizations.php:50
+msgid "Optimize"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-html-optimizer.php:14
+msgid "Optimize HTML code"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-lazy-load.php:14
+msgid "Optimize image loading"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-static-cache.php:14
+msgid "Optimize the cache of static files on the browser"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-static-cache.php:30
+msgid "Optimize the cache on browser"
+msgstr ""
+
+#: admin/pages/AHSC_Page.php:39
+#: admin/pages/views/partials/sections/section-ahsc-db-optimizations.php:41
+msgid "Optimized"
+msgstr ""
+
+#: src/AHSC_Functions.php:221
+msgid "Original settings restored."
+msgstr ""
+
+#: admin/pages/views/admin-settings-new.php:40
+msgid "Performance"
+msgstr ""
+
+#: admin/AHSC_Admin_Bar.php:37 admin/AHSC_Admin_Bar.php:105
+msgid "Purge Cache"
+msgstr ""
+
+#: admin/pages/views/admin-settings-new.php:28
+msgid "Purge entire cache"
+msgstr ""
+
+#: admin/AHSC_Admin_Bar.php:60 admin/AHSC_Admin_Bar.php:62
+msgid "Purge Expired Transient"
+msgstr ""
+
+#: admin/AHSC_Admin_Bar.php:32 admin/AHSC_Admin_Bar.php:102
+msgid "Purge page cache"
+msgstr ""
+
+#: Debug/views/partials/admin-tab-debug.php:15
+msgid "Purging Log Actions"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-html-optimizer.php:18
+#: admin/pages/views/partials/sections/section-ahsc-html-optimizer.php:22
+msgid "Reduce the dimensions of the HTML page for faster loading times."
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-apc.php:19
+#: admin/pages/views/partials/sections/section-ahsc-apc.php:24
+msgid ""
+"Reduces the number of queries made to the database and the related execution "
+"times for processing the queries necessary to display the pages, improving "
+"site loading performance via APCu."
+msgstr ""
+
+#: aruba-hispeed-cache.php:699
+msgid "Reload"
+msgstr ""
+
+#: admin/pages/views/admin-settings-new.php:31
+msgid "Reset default value"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-db-optimizations.php:52
+msgid "Restore default"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-enable-cron.php:18
+#: admin/pages/views/partials/sections/section-ahsc-enable-cron.php:22
+msgid ""
+"Schedule automatic tasks and jobs, at specific times.By setting up a "
+"frequency of jobs and tasks, like changing or publishing articles and pages, "
+"they will run at the required time, replacing any existing date and time "
+"scheduled on WordPress."
+msgstr ""
+
+#: Debug/views/partials/admin-tab-debug.php:35
+msgid "Service check request headers."
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-cron-status.php:54
+msgid "Set the time interval after which the activity should be repeated"
+msgstr ""
+
+#: src/AHSC_Functions.php:101
+msgid "Settings"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-enable-cron.php:60
+msgid "Setup the time after which the job needs to be repeated."
+msgstr ""
+
+#. %s: the min php version required.
+#: src/AHSC_Version.php:43
+#, php-format
+msgid "Sorry, Aruba HiSpeed Cache requires PHP %s or higher."
+msgstr ""
+
+#. %s: the wp min required version.
+#: src/AHSC_Version.php:15
+#, php-format
+msgid "Sorry, Aruba HiSpeed Cache requires WordPress %s or higher."
+msgstr ""
+
+#: admin/pages/AHSC_Settings.php:12
+msgid "Sorry, you need to be an administrator to use HiSpeed Cache."
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-cdn-status.php:28
+msgid "Status:"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-cdn-status.php:17
+#: admin/pages/views/partials/sections/section-ahsc-cdn-status.php:21
+msgid ""
+"The <strong>Content Delivery Network</strong> (CDN) reduces website loading "
+"times by distributing content across a network of remote servers. You can "
+"manage the CDN through the Aruba control panel."
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-db-optimizations.php:18
+#: admin/pages/views/partials/sections/section-ahsc-db-optimizations.php:23
+msgid ""
+"This process improves data retrieval speed, making your site faster and more "
+"responsive for both visitors and you in the admin area."
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-enable-cron.php:14
+msgid "WP-Cron"
+msgstr ""
+
+#: admin/pages/views/partials/sections/section-ahsc-xmlrpc-status.php:14
+msgid "XML-RPC"
+msgstr ""
+
+#: admin/pages/AHSC_Page.php:37
+msgid "You are about to purge the entire cache. Do you want to continue?"
+msgstr ""

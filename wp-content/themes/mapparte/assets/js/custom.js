@@ -1,16 +1,3 @@
-(function () {
-    var isSpacesArchive = window.location.pathname.replace(/\/+$/, '') === '/spaces';
-    var isGuest = !document.body.classList.contains('logged-in');
-    var hasStaleFavoriteButtons = document.querySelector('.wishlist-btn .simplefavorite-button');
-    var refreshKey = 'mapparte_refresh';
-
-    if (isSpacesArchive && isGuest && hasStaleFavoriteButtons && !new URLSearchParams(window.location.search).has(refreshKey)) {
-        var refreshedUrl = new URL(window.location.href);
-        refreshedUrl.searchParams.set(refreshKey, '6072eb8');
-        window.location.replace(refreshedUrl.toString());
-    }
-})();
-
 jQuery('.drawer-btn').click(function () {
     jQuery('.booking-menu-wrapper').toggleClass('active');
 });
